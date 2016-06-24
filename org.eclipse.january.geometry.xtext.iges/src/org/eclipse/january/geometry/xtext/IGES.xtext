@@ -15,7 +15,7 @@ Start:
 
 Global:
 	{Global}
-	((values+=Value)* WS? 'G' WS? INT ENDLINE)+
+	((values+=Value)*  WS? 'G' WS? INT ENDLINE)+
 	(values+=Value)* ';' WS? 'G' WS? INT ENDLINE;
 
 Data:
