@@ -106,7 +106,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cENDLINETerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
 		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValuesValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cSEPARATERTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Keyword cGKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final RuleCall cWSTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
@@ -115,10 +115,10 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Global:
 		//	{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+
-		//	values+=Value* ';' WS? 'G' WS? INT ENDLINE;
+		//	values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+ values+=Value* ';' WS? 'G' WS? INT ENDLINE
+		//{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+ values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//{Global}
@@ -154,8 +154,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//Value
 		public RuleCall getValuesValueParserRuleCall_2_0() { return cValuesValueParserRuleCall_2_0; }
 		
-		//';'
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		//SEPARATER
+		public RuleCall getSEPARATERTerminalRuleCall_3() { return cSEPARATERTerminalRuleCall_3; }
 		
 		//WS?
 		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
@@ -453,7 +453,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeINTTerminalRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValuesValueParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cSEPARATERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		private final Assignment cDIndexAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDIndexINTTerminalRuleCall_4_0 = (RuleCall)cDIndexAssignment_4.eContents().get(0);
@@ -465,10 +465,10 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PEntry:
 		//	type=INT
-		//	values+=Value* ';' WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
+		//	values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=INT values+=Value* ';' WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE
+		//type=INT values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//type=INT
@@ -483,8 +483,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//Value
 		public RuleCall getValuesValueParserRuleCall_1_0() { return cValuesValueParserRuleCall_1_0; }
 		
-		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		//SEPARATER
+		public RuleCall getSEPARATERTerminalRuleCall_2() { return cSEPARATERTerminalRuleCall_2; }
 		
 		//WS?
 		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
@@ -526,7 +526,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cENDLINETerminalRuleCall_0_6 = (RuleCall)cGroup_0.eContents().get(6);
 		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValuesValueParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cSEPARATERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Keyword cPKeyword_5 = (Keyword)cGroup.eContents().get(5);
@@ -536,10 +536,10 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PMultiEntry PEntry:
 		//	(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-		//	values+=Value* ';' WS? INT 'P' WS? INT ENDLINE
+		//	values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+ values+=Value* ';' WS? INT 'P' WS? INT ENDLINE
+		//(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+ values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
@@ -581,8 +581,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//Value
 		public RuleCall getValuesValueParserRuleCall_1_0() { return cValuesValueParserRuleCall_1_0; }
 		
-		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		//SEPARATER
+		public RuleCall getSEPARATERTerminalRuleCall_2() { return cSEPARATERTerminalRuleCall_2; }
 		
 		//WS?
 		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
@@ -628,20 +628,20 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	public class HStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.HString");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValHOLLERITHTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//HString:
-		//	','? val=HOLLERITH ','?;
+		//	DELIMITER? val=HOLLERITH DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//','? val=HOLLERITH ','?
+		//DELIMITER? val=HOLLERITH DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//','?
-		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
 		
 		//val=HOLLERITH
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
@@ -649,26 +649,26 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//HOLLERITH
 		public RuleCall getValHOLLERITHTerminalRuleCall_1_0() { return cValHOLLERITHTerminalRuleCall_1_0; }
 		
-		//','?
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
 	}
 	public class ParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Param");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValDOUBLETerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Param:
-		//	','? val=DOUBLE ','?;
+		//	DELIMITER? val=DOUBLE DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//','? val=DOUBLE ','?
+		//DELIMITER? val=DOUBLE DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//','?
-		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
 		
 		//val=DOUBLE
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
@@ -676,26 +676,26 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//DOUBLE
 		public RuleCall getValDOUBLETerminalRuleCall_1_0() { return cValDOUBLETerminalRuleCall_1_0; }
 		
-		//','?
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
 	}
 	public class PointerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Pointer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Pointer:
-		//	','? val=INT ','?;
+		//	DELIMITER? val=INT DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//','? val=INT ','?
+		//DELIMITER? val=INT DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//','?
-		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
 		
 		//val=INT
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
@@ -703,8 +703,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
 		
-		//','?
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
 	}
 	public class EndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.End");
@@ -862,6 +862,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tSTRING;
 	private final TerminalRule tWS;
 	private final TerminalRule tENDLINE;
+	private final TerminalRule tDELIMITER;
+	private final TerminalRule tSEPARATER;
 	
 	private final Grammar grammar;
 
@@ -888,6 +890,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.STRING");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.WS");
 		this.tENDLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.ENDLINE");
+		this.tDELIMITER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.DELIMITER");
+		this.tSEPARATER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.SEPARATER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -939,7 +943,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Global:
 	//	{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+
-	//	values+=Value* ';' WS? 'G' WS? INT ENDLINE;
+	//	values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE;
 	public GlobalElements getGlobalAccess() {
 		return pGlobal;
 	}
@@ -983,7 +987,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PEntry:
 	//	type=INT
-	//	values+=Value* ';' WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
+	//	values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
 	public PEntryElements getPEntryAccess() {
 		return pPEntry;
 	}
@@ -994,7 +998,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PMultiEntry PEntry:
 	//	(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-	//	values+=Value* ';' WS? INT 'P' WS? INT ENDLINE
+	//	values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
 	public PMultiEntryElements getPMultiEntryAccess() {
 		return pPMultiEntry;
 	}
@@ -1014,7 +1018,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//HString:
-	//	','? val=HOLLERITH ','?;
+	//	DELIMITER? val=HOLLERITH DELIMITER?;
 	public HStringElements getHStringAccess() {
 		return pHString;
 	}
@@ -1024,7 +1028,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Param:
-	//	','? val=DOUBLE ','?;
+	//	DELIMITER? val=DOUBLE DELIMITER?;
 	public ParamElements getParamAccess() {
 		return pParam;
 	}
@@ -1034,7 +1038,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Pointer:
-	//	','? val=INT ','?;
+	//	DELIMITER? val=INT DELIMITER?;
 	public PointerElements getPointerAccess() {
 		return pPointer;
 	}
@@ -1097,5 +1101,17 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	//	'\r'? '\n';
 	public TerminalRule getENDLINERule() {
 		return tENDLINE;
+	}
+	
+	//terminal DELIMITER:
+	//	',';
+	public TerminalRule getDELIMITERRule() {
+		return tDELIMITER;
+	}
+	
+	//terminal SEPARATER:
+	//	';';
+	public TerminalRule getSEPARATERRule() {
+		return tSEPARATER;
 	}
 }

@@ -21,22 +21,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIGESParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_INT", "RULE_ENDLINE", "RULE_STRING", "RULE_HOLLERITH", "RULE_DOUBLE", "'G'", "';'", "'D'", "'P'", "','", "'S'", "'T'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_INT", "RULE_ENDLINE", "RULE_SEPARATER", "RULE_STRING", "RULE_DELIMITER", "RULE_HOLLERITH", "RULE_DOUBLE", "'G'", "'D'", "'P'", "'S'", "'T'"
     };
-    public static final int RULE_HOLLERITH=8;
+    public static final int RULE_HOLLERITH=10;
+    public static final int RULE_SEPARATER=7;
     public static final int RULE_ENDLINE=6;
     public static final int RULE_WS=4;
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=8;
+    public static final int RULE_DELIMITER=9;
     public static final int T__15=15;
-    public static final int RULE_DOUBLE=9;
+    public static final int RULE_DOUBLE=11;
     public static final int T__16=16;
     public static final int RULE_INT=5;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__10=10;
 
     // delegates
     // delegators
@@ -486,7 +486,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGlobal"
-    // InternalIGES.g:221:1: ruleGlobal returns [EObject current=null] : ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE ) ;
+    // InternalIGES.g:221:1: ruleGlobal returns [EObject current=null] : ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE ) ;
     public final EObject ruleGlobal() throws RecognitionException {
         EObject current = null;
 
@@ -495,7 +495,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
         Token this_WS_4=null;
         Token this_INT_5=null;
         Token this_ENDLINE_6=null;
-        Token otherlv_8=null;
+        Token this_SEPARATER_8=null;
         Token this_WS_9=null;
         Token otherlv_10=null;
         Token this_WS_11=null;
@@ -510,11 +510,11 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIGES.g:227:2: ( ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE ) )
-            // InternalIGES.g:228:2: ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE )
+            // InternalIGES.g:227:2: ( ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE ) )
+            // InternalIGES.g:228:2: ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE )
             {
-            // InternalIGES.g:228:2: ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE )
-            // InternalIGES.g:229:3: () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE
+            // InternalIGES.g:228:2: ( () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE )
+            // InternalIGES.g:229:3: () ( ( (lv_values_1_0= ruleValue ) )* (this_WS_2= RULE_WS )? otherlv_3= 'G' (this_WS_4= RULE_WS )? this_INT_5= RULE_INT this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? otherlv_10= 'G' (this_WS_11= RULE_WS )? this_INT_12= RULE_INT this_ENDLINE_13= RULE_ENDLINE
             {
             // InternalIGES.g:229:3: ()
             // InternalIGES.g:230:4: 
@@ -543,7 +543,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
             	        int alt2=2;
             	        int LA2_0 = input.LA(1);
 
-            	        if ( (LA2_0==RULE_INT||(LA2_0>=RULE_HOLLERITH && LA2_0<=RULE_DOUBLE)||LA2_0==14) ) {
+            	        if ( (LA2_0==RULE_INT||(LA2_0>=RULE_DELIMITER && LA2_0<=RULE_DOUBLE)) ) {
             	            alt2=1;
             	        }
 
@@ -607,7 +607,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,10,FOLLOW_9); 
+            	    otherlv_3=(Token)match(input,12,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getGlobalAccess().getGKeyword_1_2());
             	    			
@@ -659,7 +659,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==RULE_INT||(LA6_0>=RULE_HOLLERITH && LA6_0<=RULE_DOUBLE)||LA6_0==14) ) {
+                if ( (LA6_0==RULE_INT||(LA6_0>=RULE_DELIMITER && LA6_0<=RULE_DOUBLE)) ) {
                     alt6=1;
                 }
 
@@ -702,9 +702,9 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,11,FOLLOW_14); 
+            this_SEPARATER_8=(Token)match(input,RULE_SEPARATER,FOLLOW_14); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getGlobalAccess().getSemicolonKeyword_3());
+            			newLeafNode(this_SEPARATER_8, grammarAccess.getGlobalAccess().getSEPARATERTerminalRuleCall_3());
             		
             // InternalIGES.g:304:3: (this_WS_9= RULE_WS )?
             int alt7=2;
@@ -727,7 +727,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,10,FOLLOW_9); 
+            otherlv_10=(Token)match(input,12,FOLLOW_9); 
 
             			newLeafNode(otherlv_10, grammarAccess.getGlobalAccess().getGKeyword_5());
             		
@@ -1415,7 +1415,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,12,FOLLOW_9); 
+            otherlv_18=(Token)match(input,13,FOLLOW_9); 
 
             			newLeafNode(otherlv_18, grammarAccess.getEntryAccess().getDKeyword_18());
             		
@@ -1788,7 +1788,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_36=(Token)match(input,12,FOLLOW_9); 
+            otherlv_36=(Token)match(input,13,FOLLOW_9); 
 
             			newLeafNode(otherlv_36, grammarAccess.getEntryAccess().getDKeyword_36());
             		
@@ -1903,7 +1903,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 int alt30=2;
                 int LA30_0 = input.LA(1);
 
-                if ( ((LA30_0>=RULE_WS && LA30_0<=RULE_INT)||(LA30_0>=RULE_HOLLERITH && LA30_0<=RULE_DOUBLE)||LA30_0==14) ) {
+                if ( ((LA30_0>=RULE_WS && LA30_0<=RULE_INT)||(LA30_0>=RULE_DELIMITER && LA30_0<=RULE_DOUBLE)) ) {
                     alt30=1;
                 }
 
@@ -2044,12 +2044,12 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePEntry"
-    // InternalIGES.g:854:1: rulePEntry returns [EObject current=null] : ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* otherlv_2= ';' (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE ) ;
+    // InternalIGES.g:854:1: rulePEntry returns [EObject current=null] : ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* this_SEPARATER_2= RULE_SEPARATER (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE ) ;
     public final EObject rulePEntry() throws RecognitionException {
         EObject current = null;
 
         Token lv_type_0_0=null;
-        Token otherlv_2=null;
+        Token this_SEPARATER_2=null;
         Token this_WS_3=null;
         Token lv_dIndex_4_0=null;
         Token otherlv_5=null;
@@ -2063,11 +2063,11 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIGES.g:860:2: ( ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* otherlv_2= ';' (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE ) )
-            // InternalIGES.g:861:2: ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* otherlv_2= ';' (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE )
+            // InternalIGES.g:860:2: ( ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* this_SEPARATER_2= RULE_SEPARATER (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE ) )
+            // InternalIGES.g:861:2: ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* this_SEPARATER_2= RULE_SEPARATER (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE )
             {
-            // InternalIGES.g:861:2: ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* otherlv_2= ';' (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE )
-            // InternalIGES.g:862:3: ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* otherlv_2= ';' (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE
+            // InternalIGES.g:861:2: ( ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* this_SEPARATER_2= RULE_SEPARATER (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE )
+            // InternalIGES.g:862:3: ( (lv_type_0_0= RULE_INT ) ) ( (lv_values_1_0= ruleValue ) )* this_SEPARATER_2= RULE_SEPARATER (this_WS_3= RULE_WS )? ( (lv_dIndex_4_0= RULE_INT ) ) otherlv_5= 'P' (this_WS_6= RULE_WS )? ( (lv_indicies_7_0= RULE_INT ) ) this_ENDLINE_8= RULE_ENDLINE
             {
             // InternalIGES.g:862:3: ( (lv_type_0_0= RULE_INT ) )
             // InternalIGES.g:863:4: (lv_type_0_0= RULE_INT )
@@ -2101,7 +2101,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 int alt31=2;
                 int LA31_0 = input.LA(1);
 
-                if ( (LA31_0==RULE_INT||(LA31_0>=RULE_HOLLERITH && LA31_0<=RULE_DOUBLE)||LA31_0==14) ) {
+                if ( (LA31_0==RULE_INT||(LA31_0>=RULE_DELIMITER && LA31_0<=RULE_DOUBLE)) ) {
                     alt31=1;
                 }
 
@@ -2144,9 +2144,9 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_2=(Token)match(input,11,FOLLOW_9); 
+            this_SEPARATER_2=(Token)match(input,RULE_SEPARATER,FOLLOW_9); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getPEntryAccess().getSemicolonKeyword_2());
+            			newLeafNode(this_SEPARATER_2, grammarAccess.getPEntryAccess().getSEPARATERTerminalRuleCall_2());
             		
             // InternalIGES.g:903:3: (this_WS_3= RULE_WS )?
             int alt32=2;
@@ -2195,7 +2195,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,13,FOLLOW_9); 
+            otherlv_5=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_5, grammarAccess.getPEntryAccess().getPKeyword_5());
             		
@@ -2309,7 +2309,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePMultiEntry"
-    // InternalIGES.g:970:1: rulePMultiEntry returns [EObject current=null] : ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE ) ;
+    // InternalIGES.g:970:1: rulePMultiEntry returns [EObject current=null] : ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE ) ;
     public final EObject rulePMultiEntry() throws RecognitionException {
         EObject current = null;
 
@@ -2319,7 +2319,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
         Token this_WS_4=null;
         Token lv_indicies_5_0=null;
         Token this_ENDLINE_6=null;
-        Token otherlv_8=null;
+        Token this_SEPARATER_8=null;
         Token this_WS_9=null;
         Token this_INT_10=null;
         Token otherlv_11=null;
@@ -2335,11 +2335,11 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIGES.g:976:2: ( ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE ) )
-            // InternalIGES.g:977:2: ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE )
+            // InternalIGES.g:976:2: ( ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE ) )
+            // InternalIGES.g:977:2: ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE )
             {
-            // InternalIGES.g:977:2: ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE )
-            // InternalIGES.g:978:3: ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* otherlv_8= ';' (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE
+            // InternalIGES.g:977:2: ( ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE )
+            // InternalIGES.g:978:3: ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+ ( (lv_values_7_0= ruleValue ) )* this_SEPARATER_8= RULE_SEPARATER (this_WS_9= RULE_WS )? this_INT_10= RULE_INT otherlv_11= 'P' (this_WS_12= RULE_WS )? this_INT_13= RULE_INT this_ENDLINE_14= RULE_ENDLINE
             {
             // InternalIGES.g:978:3: ( ( (lv_values_0_0= ruleValue ) )* (this_WS_1= RULE_WS )? ( (lv_dIndex_2_0= RULE_INT ) ) otherlv_3= 'P' (this_WS_4= RULE_WS )? ( (lv_indicies_5_0= RULE_INT ) ) this_ENDLINE_6= RULE_ENDLINE )+
             int cnt37=0;
@@ -2360,13 +2360,13 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
             	        if ( (LA34_0==RULE_INT) ) {
             	            int LA34_2 = input.LA(2);
 
-            	            if ( ((LA34_2>=RULE_WS && LA34_2<=RULE_INT)||(LA34_2>=RULE_HOLLERITH && LA34_2<=RULE_DOUBLE)||LA34_2==14) ) {
+            	            if ( ((LA34_2>=RULE_WS && LA34_2<=RULE_INT)||(LA34_2>=RULE_DELIMITER && LA34_2<=RULE_DOUBLE)) ) {
             	                alt34=1;
             	            }
 
 
             	        }
-            	        else if ( ((LA34_0>=RULE_HOLLERITH && LA34_0<=RULE_DOUBLE)||LA34_0==14) ) {
+            	        else if ( ((LA34_0>=RULE_DELIMITER && LA34_0<=RULE_DOUBLE)) ) {
             	            alt34=1;
             	        }
 
@@ -2456,7 +2456,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,13,FOLLOW_9); 
+            	    otherlv_3=(Token)match(input,14,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getPMultiEntryAccess().getPKeyword_0_3());
             	    			
@@ -2530,7 +2530,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 int alt38=2;
                 int LA38_0 = input.LA(1);
 
-                if ( (LA38_0==RULE_INT||(LA38_0>=RULE_HOLLERITH && LA38_0<=RULE_DOUBLE)||LA38_0==14) ) {
+                if ( (LA38_0==RULE_INT||(LA38_0>=RULE_DELIMITER && LA38_0<=RULE_DOUBLE)) ) {
                     alt38=1;
                 }
 
@@ -2573,9 +2573,9 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,11,FOLLOW_9); 
+            this_SEPARATER_8=(Token)match(input,RULE_SEPARATER,FOLLOW_9); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getPMultiEntryAccess().getSemicolonKeyword_2());
+            			newLeafNode(this_SEPARATER_8, grammarAccess.getPMultiEntryAccess().getSEPARATERTerminalRuleCall_2());
             		
             // InternalIGES.g:1078:3: (this_WS_9= RULE_WS )?
             int alt39=2;
@@ -2602,7 +2602,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_INT_10, grammarAccess.getPMultiEntryAccess().getINTTerminalRuleCall_4());
             		
-            otherlv_11=(Token)match(input,13,FOLLOW_9); 
+            otherlv_11=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_11, grammarAccess.getPMultiEntryAccess().getPKeyword_5());
             		
@@ -2715,7 +2715,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
             // InternalIGES.g:1124:2: (this_Param_0= ruleParam | this_Pointer_1= rulePointer | this_HString_2= ruleHString )
             int alt41=3;
             switch ( input.LA(1) ) {
-            case 14:
+            case RULE_DELIMITER:
                 {
                 switch ( input.LA(2) ) {
                 case RULE_HOLLERITH:
@@ -2878,38 +2878,38 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHString"
-    // InternalIGES.g:1162:1: ruleHString returns [EObject current=null] : ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (otherlv_2= ',' )? ) ;
+    // InternalIGES.g:1162:1: ruleHString returns [EObject current=null] : ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) ;
     public final EObject ruleHString() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token this_DELIMITER_0=null;
         Token lv_val_1_0=null;
-        Token otherlv_2=null;
+        Token this_DELIMITER_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalIGES.g:1168:2: ( ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (otherlv_2= ',' )? ) )
-            // InternalIGES.g:1169:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (otherlv_2= ',' )? )
+            // InternalIGES.g:1168:2: ( ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) )
+            // InternalIGES.g:1169:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
             {
-            // InternalIGES.g:1169:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (otherlv_2= ',' )? )
-            // InternalIGES.g:1170:3: (otherlv_0= ',' )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (otherlv_2= ',' )?
+            // InternalIGES.g:1169:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
+            // InternalIGES.g:1170:3: (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_HOLLERITH ) ) (this_DELIMITER_2= RULE_DELIMITER )?
             {
-            // InternalIGES.g:1170:3: (otherlv_0= ',' )?
+            // InternalIGES.g:1170:3: (this_DELIMITER_0= RULE_DELIMITER )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==14) ) {
+            if ( (LA42_0==RULE_DELIMITER) ) {
                 alt42=1;
             }
             switch (alt42) {
                 case 1 :
-                    // InternalIGES.g:1171:4: otherlv_0= ','
+                    // InternalIGES.g:1171:4: this_DELIMITER_0= RULE_DELIMITER
                     {
-                    otherlv_0=(Token)match(input,14,FOLLOW_21); 
+                    this_DELIMITER_0=(Token)match(input,RULE_DELIMITER,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_0, grammarAccess.getHStringAccess().getCommaKeyword_0());
+                    				newLeafNode(this_DELIMITER_0, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_0());
                     			
 
                     }
@@ -2943,20 +2943,20 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIGES.g:1194:3: (otherlv_2= ',' )?
+            // InternalIGES.g:1194:3: (this_DELIMITER_2= RULE_DELIMITER )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==14) ) {
+            if ( (LA43_0==RULE_DELIMITER) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // InternalIGES.g:1195:4: otherlv_2= ','
+                    // InternalIGES.g:1195:4: this_DELIMITER_2= RULE_DELIMITER
                     {
-                    otherlv_2=(Token)match(input,14,FOLLOW_2); 
+                    this_DELIMITER_2=(Token)match(input,RULE_DELIMITER,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getHStringAccess().getCommaKeyword_2());
+                    				newLeafNode(this_DELIMITER_2, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_2());
                     			
 
                     }
@@ -3023,38 +3023,38 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParam"
-    // InternalIGES.g:1211:1: ruleParam returns [EObject current=null] : ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_DOUBLE ) ) (otherlv_2= ',' )? ) ;
+    // InternalIGES.g:1211:1: ruleParam returns [EObject current=null] : ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_DOUBLE ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) ;
     public final EObject ruleParam() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token this_DELIMITER_0=null;
         Token lv_val_1_0=null;
-        Token otherlv_2=null;
+        Token this_DELIMITER_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalIGES.g:1217:2: ( ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_DOUBLE ) ) (otherlv_2= ',' )? ) )
-            // InternalIGES.g:1218:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_DOUBLE ) ) (otherlv_2= ',' )? )
+            // InternalIGES.g:1217:2: ( ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_DOUBLE ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) )
+            // InternalIGES.g:1218:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_DOUBLE ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
             {
-            // InternalIGES.g:1218:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_DOUBLE ) ) (otherlv_2= ',' )? )
-            // InternalIGES.g:1219:3: (otherlv_0= ',' )? ( (lv_val_1_0= RULE_DOUBLE ) ) (otherlv_2= ',' )?
+            // InternalIGES.g:1218:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_DOUBLE ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
+            // InternalIGES.g:1219:3: (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_DOUBLE ) ) (this_DELIMITER_2= RULE_DELIMITER )?
             {
-            // InternalIGES.g:1219:3: (otherlv_0= ',' )?
+            // InternalIGES.g:1219:3: (this_DELIMITER_0= RULE_DELIMITER )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==14) ) {
+            if ( (LA44_0==RULE_DELIMITER) ) {
                 alt44=1;
             }
             switch (alt44) {
                 case 1 :
-                    // InternalIGES.g:1220:4: otherlv_0= ','
+                    // InternalIGES.g:1220:4: this_DELIMITER_0= RULE_DELIMITER
                     {
-                    otherlv_0=(Token)match(input,14,FOLLOW_23); 
+                    this_DELIMITER_0=(Token)match(input,RULE_DELIMITER,FOLLOW_23); 
 
-                    				newLeafNode(otherlv_0, grammarAccess.getParamAccess().getCommaKeyword_0());
+                    				newLeafNode(this_DELIMITER_0, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_0());
                     			
 
                     }
@@ -3088,20 +3088,20 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIGES.g:1243:3: (otherlv_2= ',' )?
+            // InternalIGES.g:1243:3: (this_DELIMITER_2= RULE_DELIMITER )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==14) ) {
+            if ( (LA45_0==RULE_DELIMITER) ) {
                 alt45=1;
             }
             switch (alt45) {
                 case 1 :
-                    // InternalIGES.g:1244:4: otherlv_2= ','
+                    // InternalIGES.g:1244:4: this_DELIMITER_2= RULE_DELIMITER
                     {
-                    otherlv_2=(Token)match(input,14,FOLLOW_2); 
+                    this_DELIMITER_2=(Token)match(input,RULE_DELIMITER,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getParamAccess().getCommaKeyword_2());
+                    				newLeafNode(this_DELIMITER_2, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_2());
                     			
 
                     }
@@ -3168,38 +3168,38 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePointer"
-    // InternalIGES.g:1260:1: rulePointer returns [EObject current=null] : ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_INT ) ) (otherlv_2= ',' )? ) ;
+    // InternalIGES.g:1260:1: rulePointer returns [EObject current=null] : ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_INT ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) ;
     public final EObject rulePointer() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token this_DELIMITER_0=null;
         Token lv_val_1_0=null;
-        Token otherlv_2=null;
+        Token this_DELIMITER_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalIGES.g:1266:2: ( ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_INT ) ) (otherlv_2= ',' )? ) )
-            // InternalIGES.g:1267:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_INT ) ) (otherlv_2= ',' )? )
+            // InternalIGES.g:1266:2: ( ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_INT ) ) (this_DELIMITER_2= RULE_DELIMITER )? ) )
+            // InternalIGES.g:1267:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_INT ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
             {
-            // InternalIGES.g:1267:2: ( (otherlv_0= ',' )? ( (lv_val_1_0= RULE_INT ) ) (otherlv_2= ',' )? )
-            // InternalIGES.g:1268:3: (otherlv_0= ',' )? ( (lv_val_1_0= RULE_INT ) ) (otherlv_2= ',' )?
+            // InternalIGES.g:1267:2: ( (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_INT ) ) (this_DELIMITER_2= RULE_DELIMITER )? )
+            // InternalIGES.g:1268:3: (this_DELIMITER_0= RULE_DELIMITER )? ( (lv_val_1_0= RULE_INT ) ) (this_DELIMITER_2= RULE_DELIMITER )?
             {
-            // InternalIGES.g:1268:3: (otherlv_0= ',' )?
+            // InternalIGES.g:1268:3: (this_DELIMITER_0= RULE_DELIMITER )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==14) ) {
+            if ( (LA46_0==RULE_DELIMITER) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
-                    // InternalIGES.g:1269:4: otherlv_0= ','
+                    // InternalIGES.g:1269:4: this_DELIMITER_0= RULE_DELIMITER
                     {
-                    otherlv_0=(Token)match(input,14,FOLLOW_10); 
+                    this_DELIMITER_0=(Token)match(input,RULE_DELIMITER,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_0, grammarAccess.getPointerAccess().getCommaKeyword_0());
+                    				newLeafNode(this_DELIMITER_0, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_0());
                     			
 
                     }
@@ -3233,20 +3233,20 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIGES.g:1292:3: (otherlv_2= ',' )?
+            // InternalIGES.g:1292:3: (this_DELIMITER_2= RULE_DELIMITER )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==14) ) {
+            if ( (LA47_0==RULE_DELIMITER) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
-                    // InternalIGES.g:1293:4: otherlv_2= ','
+                    // InternalIGES.g:1293:4: this_DELIMITER_2= RULE_DELIMITER
                     {
-                    otherlv_2=(Token)match(input,14,FOLLOW_2); 
+                    this_DELIMITER_2=(Token)match(input,RULE_DELIMITER,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getPointerAccess().getCommaKeyword_2());
+                    				newLeafNode(this_DELIMITER_2, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_2());
                     			
 
                     }
@@ -3395,7 +3395,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,10,FOLLOW_9); 
+            otherlv_3=(Token)match(input,12,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getEndAccess().getGKeyword_3());
             		
@@ -3446,7 +3446,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,12,FOLLOW_9); 
+            otherlv_6=(Token)match(input,13,FOLLOW_9); 
 
             			newLeafNode(otherlv_6, grammarAccess.getEndAccess().getDKeyword_6());
             		
@@ -3497,7 +3497,7 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,13,FOLLOW_9); 
+            otherlv_9=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_9, grammarAccess.getEndAccess().getPKeyword_9());
             		
@@ -3802,20 +3802,20 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
     protected DFA37 dfa37 = new DFA37(this);
     static final String dfa_1s = "\12\uffff";
     static final String dfa_2s = "\1\4\1\5\3\4\2\uffff\3\4";
-    static final String dfa_3s = "\1\16\1\11\3\16\2\uffff\3\16";
+    static final String dfa_3s = "\1\14\1\13\3\14\2\uffff\3\14";
     static final String dfa_4s = "\5\uffff\1\2\1\1\3\uffff";
     static final String dfa_5s = "\12\uffff}>";
     static final String[] dfa_6s = {
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\1",
-            "\1\3\2\uffff\1\4\1\2",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\7",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\10",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\11",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\3\4\uffff\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\7\1\4\1\2\1\6",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\10\1\4\1\2\1\6",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\11\1\4\1\2\1\6",
             "",
             "",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\1",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\1",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\6\1\5\2\uffff\1\1"
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2\1\6"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -3844,23 +3844,23 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
     }
     static final String dfa_7s = "\15\uffff";
     static final String dfa_8s = "\1\4\1\uffff\5\4\1\uffff\3\4\1\5\1\4";
-    static final String dfa_9s = "\1\16\1\uffff\5\16\1\uffff\3\16\1\11\1\16";
+    static final String dfa_9s = "\1\13\1\uffff\1\16\2\13\1\16\1\13\1\uffff\5\13";
     static final String dfa_10s = "\1\uffff\1\1\5\uffff\1\2\5\uffff";
     static final String dfa_11s = "\15\uffff}>";
     static final String[] dfa_12s = {
-            "\1\1\1\2\2\uffff\2\1\4\uffff\1\1",
+            "\1\1\1\2\3\uffff\3\1",
             "",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\1\uffff\1\1\1\3",
-            "\1\1\1\5\2\uffff\1\6\1\4\4\uffff\1\1",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\10",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\1\uffff\1\1\1\11",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\12",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\3\1\6\1\4\2\uffff\1\1",
+            "\1\1\1\5\3\uffff\1\1\1\6\1\4",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\10\1\6\1\4",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\11\1\6\1\4\2\uffff\1\1",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\12\1\6\1\4",
             "",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\13",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\13",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\13",
-            "\1\14\2\uffff\1\6\1\4",
-            "\1\1\1\5\2\uffff\1\6\1\4\1\uffff\1\7\2\uffff\1\11"
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\13\1\6\1\4",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\13\1\6\1\4",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\13\1\6\1\4",
+            "\1\14\4\uffff\1\6\1\4",
+            "\1\1\1\5\1\uffff\1\7\1\uffff\1\11\1\6\1\4"
     };
 
     static final short[] dfa_7 = DFA.unpackEncodedString(dfa_7s);
@@ -3889,21 +3889,21 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
     }
     static final String dfa_13s = "\13\uffff";
     static final String dfa_14s = "\1\4\1\5\3\4\2\uffff\4\4";
-    static final String dfa_15s = "\1\16\1\11\3\16\2\uffff\4\16";
+    static final String dfa_15s = "\3\13\1\16\1\13\2\uffff\4\13";
     static final String dfa_16s = "\5\uffff\1\2\1\1\4\uffff";
     static final String dfa_17s = "\13\uffff}>";
     static final String[] dfa_18s = {
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\1",
-            "\1\7\2\uffff\1\4\1\2",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\10",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\1\uffff\1\6\1\11",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\12",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2",
+            "\1\7\4\uffff\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\10\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\11\1\4\1\2\2\uffff\1\6",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\12\1\4\1\2",
             "",
             "",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\11",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\1",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\1",
-            "\1\6\1\3\2\uffff\1\4\1\2\1\uffff\1\5\2\uffff\1\1"
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\11\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2",
+            "\1\6\1\3\1\uffff\1\5\1\uffff\1\1\1\4\1\2"
     };
 
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
@@ -3934,28 +3934,28 @@ public class InternalIGESParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004730L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001E30L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004330L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000E30L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008092L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008112L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000004F30L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000004B20L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000410L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000001EB0L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000EA0L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000001010L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000000000B0L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000004332L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000004B30L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000130L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000E32L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000EB0L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000008090L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000008110L});
 
 }

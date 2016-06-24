@@ -22,22 +22,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIGESParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_WS", "RULE_INT", "RULE_ENDLINE", "RULE_HOLLERITH", "RULE_DOUBLE", "';'", "'G'", "'D'", "'P'", "','", "'S'", "'T'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_WS", "RULE_SEPARATER", "RULE_INT", "RULE_ENDLINE", "RULE_DELIMITER", "RULE_HOLLERITH", "RULE_DOUBLE", "'G'", "'D'", "'P'", "'S'", "'T'"
     };
-    public static final int RULE_HOLLERITH=8;
-    public static final int RULE_ENDLINE=7;
+    public static final int RULE_HOLLERITH=10;
+    public static final int RULE_SEPARATER=6;
+    public static final int RULE_ENDLINE=8;
     public static final int RULE_WS=5;
     public static final int RULE_STRING=4;
+    public static final int RULE_DELIMITER=9;
     public static final int T__15=15;
-    public static final int RULE_DOUBLE=9;
+    public static final int RULE_DOUBLE=11;
     public static final int T__16=16;
-    public static final int RULE_INT=6;
-    public static final int T__11=11;
+    public static final int RULE_INT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__10=10;
 
     // delegates
     // delegators
@@ -435,7 +435,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                     if ( (LA2_2==RULE_INT) ) {
                         int LA2_3 = input.LA(3);
 
-                        if ( ((LA2_3>=RULE_WS && LA2_3<=RULE_INT)) ) {
+                        if ( (LA2_3==RULE_WS||LA2_3==RULE_INT) ) {
                             alt2=1;
                         }
 
@@ -638,7 +638,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>=RULE_WS && LA3_0<=RULE_INT)||(LA3_0>=RULE_HOLLERITH && LA3_0<=RULE_DOUBLE)||LA3_0==14) ) {
+                if ( (LA3_0==RULE_WS||LA3_0==RULE_INT||(LA3_0>=RULE_DELIMITER && LA3_0<=RULE_DOUBLE)) ) {
                     alt3=1;
                 }
 
@@ -1378,7 +1378,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:448:1: ( ( ruleParam ) | ( rulePointer ) | ( ruleHString ) )
             int alt5=3;
             switch ( input.LA(1) ) {
-            case 14:
+            case RULE_DELIMITER:
                 {
                 switch ( input.LA(2) ) {
                 case RULE_HOLLERITH:
@@ -2248,7 +2248,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_INT||(LA8_0>=RULE_HOLLERITH && LA8_0<=RULE_DOUBLE)||LA8_0==14) ) {
+                if ( (LA8_0==RULE_INT||(LA8_0>=RULE_DELIMITER && LA8_0<=RULE_DOUBLE)) ) {
                     alt8=1;
                 }
 
@@ -2332,21 +2332,21 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__3__Impl"
-    // InternalIGES.g:727:1: rule__Global__Group__3__Impl : ( ';' ) ;
+    // InternalIGES.g:727:1: rule__Global__Group__3__Impl : ( RULE_SEPARATER ) ;
     public final void rule__Global__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:731:1: ( ( ';' ) )
-            // InternalIGES.g:732:1: ( ';' )
+            // InternalIGES.g:731:1: ( ( RULE_SEPARATER ) )
+            // InternalIGES.g:732:1: ( RULE_SEPARATER )
             {
-            // InternalIGES.g:732:1: ( ';' )
-            // InternalIGES.g:733:2: ';'
+            // InternalIGES.g:732:1: ( RULE_SEPARATER )
+            // InternalIGES.g:733:2: RULE_SEPARATER
             {
-             before(grammarAccess.getGlobalAccess().getSemicolonKeyword_3()); 
-            match(input,10,FOLLOW_2); 
-             after(grammarAccess.getGlobalAccess().getSemicolonKeyword_3()); 
+             before(grammarAccess.getGlobalAccess().getSEPARATERTerminalRuleCall_3()); 
+            match(input,RULE_SEPARATER,FOLLOW_2); 
+             after(grammarAccess.getGlobalAccess().getSEPARATERTerminalRuleCall_3()); 
 
             }
 
@@ -2512,7 +2512,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:787:2: 'G'
             {
              before(grammarAccess.getGlobalAccess().getGKeyword_5()); 
-            match(input,11,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getGlobalAccess().getGKeyword_5()); 
 
             }
@@ -2830,7 +2830,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==RULE_INT||(LA11_0>=RULE_HOLLERITH && LA11_0<=RULE_DOUBLE)||LA11_0==14) ) {
+                if ( (LA11_0==RULE_INT||(LA11_0>=RULE_DELIMITER && LA11_0<=RULE_DOUBLE)) ) {
                     alt11=1;
                 }
 
@@ -3019,7 +3019,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:949:2: 'G'
             {
              before(grammarAccess.getGlobalAccess().getGKeyword_1_2()); 
-            match(input,11,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getGlobalAccess().getGKeyword_1_2()); 
 
             }
@@ -4652,7 +4652,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             if ( (LA21_0==RULE_INT) ) {
                 int LA21_1 = input.LA(2);
 
-                if ( ((LA21_1>=RULE_WS && LA21_1<=RULE_INT)) ) {
+                if ( (LA21_1==RULE_WS||LA21_1==RULE_INT) ) {
                     alt21=1;
                 }
             }
@@ -4918,7 +4918,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:1543:2: 'D'
             {
              before(grammarAccess.getEntryAccess().getDKeyword_18()); 
-            match(input,12,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getEntryAccess().getDKeyword_18()); 
 
             }
@@ -6485,7 +6485,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:2029:2: 'D'
             {
              before(grammarAccess.getEntryAccess().getDKeyword_36()); 
-            match(input,12,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getEntryAccess().getDKeyword_36()); 
 
             }
@@ -6888,7 +6888,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==RULE_INT||(LA33_0>=RULE_HOLLERITH && LA33_0<=RULE_DOUBLE)||LA33_0==14) ) {
+                if ( (LA33_0==RULE_INT||(LA33_0>=RULE_DELIMITER && LA33_0<=RULE_DOUBLE)) ) {
                     alt33=1;
                 }
 
@@ -6972,21 +6972,21 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PEntry__Group__2__Impl"
-    // InternalIGES.g:2185:1: rule__PEntry__Group__2__Impl : ( ';' ) ;
+    // InternalIGES.g:2185:1: rule__PEntry__Group__2__Impl : ( RULE_SEPARATER ) ;
     public final void rule__PEntry__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2189:1: ( ( ';' ) )
-            // InternalIGES.g:2190:1: ( ';' )
+            // InternalIGES.g:2189:1: ( ( RULE_SEPARATER ) )
+            // InternalIGES.g:2190:1: ( RULE_SEPARATER )
             {
-            // InternalIGES.g:2190:1: ( ';' )
-            // InternalIGES.g:2191:2: ';'
+            // InternalIGES.g:2190:1: ( RULE_SEPARATER )
+            // InternalIGES.g:2191:2: RULE_SEPARATER
             {
-             before(grammarAccess.getPEntryAccess().getSemicolonKeyword_2()); 
-            match(input,10,FOLLOW_2); 
-             after(grammarAccess.getPEntryAccess().getSemicolonKeyword_2()); 
+             before(grammarAccess.getPEntryAccess().getSEPARATERTerminalRuleCall_2()); 
+            match(input,RULE_SEPARATER,FOLLOW_2); 
+             after(grammarAccess.getPEntryAccess().getSEPARATERTerminalRuleCall_2()); 
 
             }
 
@@ -7237,7 +7237,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:2272:2: 'P'
             {
              before(grammarAccess.getPEntryAccess().getPKeyword_5()); 
-            match(input,13,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getPEntryAccess().getPKeyword_5()); 
 
             }
@@ -7687,7 +7687,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 int alt37=2;
                 int LA37_0 = input.LA(1);
 
-                if ( (LA37_0==RULE_INT||(LA37_0>=RULE_HOLLERITH && LA37_0<=RULE_DOUBLE)||LA37_0==14) ) {
+                if ( (LA37_0==RULE_INT||(LA37_0>=RULE_DELIMITER && LA37_0<=RULE_DOUBLE)) ) {
                     alt37=1;
                 }
 
@@ -7771,21 +7771,21 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PMultiEntry__Group__2__Impl"
-    // InternalIGES.g:2435:1: rule__PMultiEntry__Group__2__Impl : ( ';' ) ;
+    // InternalIGES.g:2435:1: rule__PMultiEntry__Group__2__Impl : ( RULE_SEPARATER ) ;
     public final void rule__PMultiEntry__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2439:1: ( ( ';' ) )
-            // InternalIGES.g:2440:1: ( ';' )
+            // InternalIGES.g:2439:1: ( ( RULE_SEPARATER ) )
+            // InternalIGES.g:2440:1: ( RULE_SEPARATER )
             {
-            // InternalIGES.g:2440:1: ( ';' )
-            // InternalIGES.g:2441:2: ';'
+            // InternalIGES.g:2440:1: ( RULE_SEPARATER )
+            // InternalIGES.g:2441:2: RULE_SEPARATER
             {
-             before(grammarAccess.getPMultiEntryAccess().getSemicolonKeyword_2()); 
-            match(input,10,FOLLOW_2); 
-             after(grammarAccess.getPMultiEntryAccess().getSemicolonKeyword_2()); 
+             before(grammarAccess.getPMultiEntryAccess().getSEPARATERTerminalRuleCall_2()); 
+            match(input,RULE_SEPARATER,FOLLOW_2); 
+             after(grammarAccess.getPMultiEntryAccess().getSEPARATERTerminalRuleCall_2()); 
 
             }
 
@@ -8026,7 +8026,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:2522:2: 'P'
             {
              before(grammarAccess.getPMultiEntryAccess().getPKeyword_5()); 
-            match(input,13,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getPMultiEntryAccess().getPKeyword_5()); 
 
             }
@@ -8347,13 +8347,13 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
                 if ( (LA40_0==RULE_INT) ) {
                     int LA40_2 = input.LA(2);
 
-                    if ( ((LA40_2>=RULE_WS && LA40_2<=RULE_INT)||(LA40_2>=RULE_HOLLERITH && LA40_2<=RULE_DOUBLE)||LA40_2==14) ) {
+                    if ( (LA40_2==RULE_WS||LA40_2==RULE_INT||(LA40_2>=RULE_DELIMITER && LA40_2<=RULE_DOUBLE)) ) {
                         alt40=1;
                     }
 
 
                 }
-                else if ( ((LA40_0>=RULE_HOLLERITH && LA40_0<=RULE_DOUBLE)||LA40_0==14) ) {
+                else if ( ((LA40_0>=RULE_DELIMITER && LA40_0<=RULE_DOUBLE)) ) {
                     alt40=1;
                 }
 
@@ -8627,7 +8627,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:2711:2: 'P'
             {
              before(grammarAccess.getPMultiEntryAccess().getPKeyword_0_3()); 
-            match(input,13,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getPMultiEntryAccess().getPKeyword_0_3()); 
 
             }
@@ -8936,38 +8936,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HString__Group__0__Impl"
-    // InternalIGES.g:2813:1: rule__HString__Group__0__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:2813:1: rule__HString__Group__0__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__HString__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2817:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:2818:1: ( ( ',' )? )
+            // InternalIGES.g:2817:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:2818:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:2818:1: ( ( ',' )? )
-            // InternalIGES.g:2819:2: ( ',' )?
+            // InternalIGES.g:2818:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:2819:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getHStringAccess().getCommaKeyword_0()); 
-            // InternalIGES.g:2820:2: ( ',' )?
+             before(grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_0()); 
+            // InternalIGES.g:2820:2: ( RULE_DELIMITER )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==14) ) {
+            if ( (LA43_0==RULE_DELIMITER) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // InternalIGES.g:2820:3: ','
+                    // InternalIGES.g:2820:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getHStringAccess().getCommaKeyword_0()); 
+             after(grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_0()); 
 
             }
 
@@ -9108,38 +9108,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__HString__Group__2__Impl"
-    // InternalIGES.g:2866:1: rule__HString__Group__2__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:2866:1: rule__HString__Group__2__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__HString__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2870:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:2871:1: ( ( ',' )? )
+            // InternalIGES.g:2870:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:2871:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:2871:1: ( ( ',' )? )
-            // InternalIGES.g:2872:2: ( ',' )?
+            // InternalIGES.g:2871:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:2872:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getHStringAccess().getCommaKeyword_2()); 
-            // InternalIGES.g:2873:2: ( ',' )?
+             before(grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_2()); 
+            // InternalIGES.g:2873:2: ( RULE_DELIMITER )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==14) ) {
+            if ( (LA44_0==RULE_DELIMITER) ) {
                 alt44=1;
             }
             switch (alt44) {
                 case 1 :
-                    // InternalIGES.g:2873:3: ','
+                    // InternalIGES.g:2873:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getHStringAccess().getCommaKeyword_2()); 
+             after(grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_2()); 
 
             }
 
@@ -9200,38 +9200,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Param__Group__0__Impl"
-    // InternalIGES.g:2894:1: rule__Param__Group__0__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:2894:1: rule__Param__Group__0__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__Param__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2898:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:2899:1: ( ( ',' )? )
+            // InternalIGES.g:2898:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:2899:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:2899:1: ( ( ',' )? )
-            // InternalIGES.g:2900:2: ( ',' )?
+            // InternalIGES.g:2899:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:2900:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getParamAccess().getCommaKeyword_0()); 
-            // InternalIGES.g:2901:2: ( ',' )?
+             before(grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_0()); 
+            // InternalIGES.g:2901:2: ( RULE_DELIMITER )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==14) ) {
+            if ( (LA45_0==RULE_DELIMITER) ) {
                 alt45=1;
             }
             switch (alt45) {
                 case 1 :
-                    // InternalIGES.g:2901:3: ','
+                    // InternalIGES.g:2901:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getParamAccess().getCommaKeyword_0()); 
+             after(grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_0()); 
 
             }
 
@@ -9372,38 +9372,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Param__Group__2__Impl"
-    // InternalIGES.g:2947:1: rule__Param__Group__2__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:2947:1: rule__Param__Group__2__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__Param__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2951:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:2952:1: ( ( ',' )? )
+            // InternalIGES.g:2951:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:2952:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:2952:1: ( ( ',' )? )
-            // InternalIGES.g:2953:2: ( ',' )?
+            // InternalIGES.g:2952:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:2953:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getParamAccess().getCommaKeyword_2()); 
-            // InternalIGES.g:2954:2: ( ',' )?
+             before(grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_2()); 
+            // InternalIGES.g:2954:2: ( RULE_DELIMITER )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==14) ) {
+            if ( (LA46_0==RULE_DELIMITER) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
-                    // InternalIGES.g:2954:3: ','
+                    // InternalIGES.g:2954:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getParamAccess().getCommaKeyword_2()); 
+             after(grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_2()); 
 
             }
 
@@ -9464,38 +9464,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pointer__Group__0__Impl"
-    // InternalIGES.g:2975:1: rule__Pointer__Group__0__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:2975:1: rule__Pointer__Group__0__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__Pointer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:2979:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:2980:1: ( ( ',' )? )
+            // InternalIGES.g:2979:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:2980:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:2980:1: ( ( ',' )? )
-            // InternalIGES.g:2981:2: ( ',' )?
+            // InternalIGES.g:2980:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:2981:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getPointerAccess().getCommaKeyword_0()); 
-            // InternalIGES.g:2982:2: ( ',' )?
+             before(grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_0()); 
+            // InternalIGES.g:2982:2: ( RULE_DELIMITER )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==14) ) {
+            if ( (LA47_0==RULE_DELIMITER) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
-                    // InternalIGES.g:2982:3: ','
+                    // InternalIGES.g:2982:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getPointerAccess().getCommaKeyword_0()); 
+             after(grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_0()); 
 
             }
 
@@ -9636,38 +9636,38 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pointer__Group__2__Impl"
-    // InternalIGES.g:3028:1: rule__Pointer__Group__2__Impl : ( ( ',' )? ) ;
+    // InternalIGES.g:3028:1: rule__Pointer__Group__2__Impl : ( ( RULE_DELIMITER )? ) ;
     public final void rule__Pointer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIGES.g:3032:1: ( ( ( ',' )? ) )
-            // InternalIGES.g:3033:1: ( ( ',' )? )
+            // InternalIGES.g:3032:1: ( ( ( RULE_DELIMITER )? ) )
+            // InternalIGES.g:3033:1: ( ( RULE_DELIMITER )? )
             {
-            // InternalIGES.g:3033:1: ( ( ',' )? )
-            // InternalIGES.g:3034:2: ( ',' )?
+            // InternalIGES.g:3033:1: ( ( RULE_DELIMITER )? )
+            // InternalIGES.g:3034:2: ( RULE_DELIMITER )?
             {
-             before(grammarAccess.getPointerAccess().getCommaKeyword_2()); 
-            // InternalIGES.g:3035:2: ( ',' )?
+             before(grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_2()); 
+            // InternalIGES.g:3035:2: ( RULE_DELIMITER )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==14) ) {
+            if ( (LA48_0==RULE_DELIMITER) ) {
                 alt48=1;
             }
             switch (alt48) {
                 case 1 :
-                    // InternalIGES.g:3035:3: ','
+                    // InternalIGES.g:3035:3: RULE_DELIMITER
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,RULE_DELIMITER,FOLLOW_2); 
 
                     }
                     break;
 
             }
 
-             after(grammarAccess.getPointerAccess().getCommaKeyword_2()); 
+             after(grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_2()); 
 
             }
 
@@ -9993,7 +9993,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:3143:2: 'G'
             {
              before(grammarAccess.getEndAccess().getGKeyword_3()); 
-            match(input,11,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getEndAccess().getGKeyword_3()); 
 
             }
@@ -10245,7 +10245,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:3224:2: 'D'
             {
              before(grammarAccess.getEndAccess().getDKeyword_6()); 
-            match(input,12,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getEndAccess().getDKeyword_6()); 
 
             }
@@ -10497,7 +10497,7 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
             // InternalIGES.g:3305:2: 'P'
             {
              before(grammarAccess.getEndAccess().getPKeyword_9()); 
-            match(input,13,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getEndAccess().getPKeyword_9()); 
 
             }
@@ -13015,24 +13015,24 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
     protected DFA7 dfa7 = new DFA7(this);
     protected DFA36 dfa36 = new DFA36(this);
     static final String dfa_1s = "\15\uffff";
-    static final String dfa_2s = "\1\5\1\uffff\5\5\1\uffff\3\5\1\6\1\5";
-    static final String dfa_3s = "\1\16\1\uffff\5\16\1\uffff\3\16\1\11\1\16";
+    static final String dfa_2s = "\1\5\1\uffff\5\5\1\uffff\3\5\1\7\1\5";
+    static final String dfa_3s = "\1\13\1\uffff\1\16\2\13\1\16\1\13\1\uffff\5\13";
     static final String dfa_4s = "\1\uffff\1\1\5\uffff\1\2\5\uffff";
     static final String dfa_5s = "\15\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1\1\2\1\uffff\2\1\4\uffff\1\1",
+            "\1\1\1\uffff\1\2\1\uffff\3\1",
             "",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\2\uffff\1\1\1\3",
-            "\1\1\1\5\1\uffff\1\6\1\4\4\uffff\1\1",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\10",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\2\uffff\1\1\1\11",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\12",
+            "\1\1\1\7\1\5\1\uffff\1\3\1\6\1\4\2\uffff\1\1",
+            "\1\1\1\uffff\1\5\1\uffff\1\1\1\6\1\4",
+            "\1\1\1\7\1\5\1\uffff\1\10\1\6\1\4",
+            "\1\1\1\7\1\5\1\uffff\1\11\1\6\1\4\2\uffff\1\1",
+            "\1\1\1\7\1\5\1\uffff\1\12\1\6\1\4",
             "",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\13",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\13",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\13",
-            "\1\14\1\uffff\1\6\1\4",
-            "\1\1\1\5\1\uffff\1\6\1\4\1\7\3\uffff\1\11"
+            "\1\1\1\7\1\5\1\uffff\1\13\1\6\1\4",
+            "\1\1\1\7\1\5\1\uffff\1\13\1\6\1\4",
+            "\1\1\1\7\1\5\1\uffff\1\13\1\6\1\4",
+            "\1\14\2\uffff\1\6\1\4",
+            "\1\1\1\7\1\5\1\uffff\1\11\1\6\1\4"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -13060,21 +13060,21 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_7s = "\12\uffff";
-    static final String dfa_8s = "\1\5\1\6\3\5\2\uffff\3\5";
-    static final String dfa_9s = "\1\16\1\11\3\16\2\uffff\3\16";
+    static final String dfa_8s = "\1\5\1\7\3\5\2\uffff\3\5";
+    static final String dfa_9s = "\1\14\1\13\3\14\2\uffff\3\14";
     static final String dfa_10s = "\5\uffff\1\2\1\1\3\uffff";
     static final String dfa_11s = "\12\uffff}>";
     static final String[] dfa_12s = {
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\1",
-            "\1\3\1\uffff\1\4\1\2",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\7",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\10",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\11",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\3\2\uffff\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\7\1\4\1\2\1\6",
+            "\1\6\1\5\1\3\1\uffff\1\10\1\4\1\2\1\6",
+            "\1\6\1\5\1\3\1\uffff\1\11\1\4\1\2\1\6",
             "",
             "",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\1",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\1",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\1\6\2\uffff\1\1"
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2\1\6",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2\1\6"
     };
 
     static final short[] dfa_7 = DFA.unpackEncodedString(dfa_7s);
@@ -13102,22 +13102,22 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_13s = "\13\uffff";
-    static final String dfa_14s = "\1\5\1\6\3\5\2\uffff\4\5";
-    static final String dfa_15s = "\1\16\1\11\3\16\2\uffff\4\16";
+    static final String dfa_14s = "\1\5\1\7\3\5\2\uffff\4\5";
+    static final String dfa_15s = "\3\13\1\16\1\13\2\uffff\4\13";
     static final String dfa_16s = "\5\uffff\1\2\1\1\4\uffff";
     static final String dfa_17s = "\13\uffff}>";
     static final String[] dfa_18s = {
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\1",
-            "\1\7\1\uffff\1\4\1\2",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\10",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\2\uffff\1\6\1\11",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\12",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2",
+            "\1\7\2\uffff\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\10\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\11\1\4\1\2\2\uffff\1\6",
+            "\1\6\1\5\1\3\1\uffff\1\12\1\4\1\2",
             "",
             "",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\11",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\1",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\1",
-            "\1\6\1\3\1\uffff\1\4\1\2\1\5\3\uffff\1\1"
+            "\1\6\1\5\1\3\1\uffff\1\11\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2",
+            "\1\6\1\5\1\3\1\uffff\1\1\1\4\1\2"
     };
 
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
@@ -13150,26 +13150,26 @@ public class InternalIGESParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000008032L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004362L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004B60L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000EA2L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001EA0L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004360L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000EA0L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000004740L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000004B62L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000004342L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000820L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000004340L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000004200L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000004040L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000EC0L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001EA2L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000E82L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000001020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x00000000000000A0L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000000000000B0L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000E80L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000A00L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000280L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000008030L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000032L});

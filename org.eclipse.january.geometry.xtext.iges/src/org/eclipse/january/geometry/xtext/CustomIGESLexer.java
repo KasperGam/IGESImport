@@ -27,23 +27,24 @@ public class CustomIGESLexer extends InternalIGESLexer {
     }
     
     @Override 
-    public void mTokens(){
+    public void mTokens() throws RecognitionException{
     	if (isHollerith()){
-    		try {
+    		
     			if (DELIMITER == null) {
     				setDelimiter();
     			} else if (SEPARATER == null) {
     				setSeparater();
     			} 
     			RULE_HOLLERITH();
-			} catch (RecognitionException e) {
-				e.printStackTrace();
-			}
+    			
     	//} else if (isDelimiter()) {
     		
+		//		RULE_DELIMITER();
+				
     	//} else if (isSeparater()) {
     		
-    	} else {
+		//		RULE_SEPARATER();
+	 	} else {
     		if (isComma()){
         		if (DELIMITER == null) {
         			DELIMITER = ",";
@@ -51,15 +52,14 @@ public class CustomIGESLexer extends InternalIGESLexer {
         			SEPARATER = ";";
         		}
     		}
-    		try {
-				super.mTokens();
-			} catch (RecognitionException e) {
-				e.printStackTrace();
-			}
+			super.mTokens();	
     	}
     }
     
     private boolean isDelimiter() {
+    	if (DELIMITER == null) {
+    		return false;
+    	}
     	int index = 1;
     	
     	while((char)(input.LA(index))==DELIMITER.charAt(index-1) && index <= DELIMITER.length()){
@@ -69,6 +69,9 @@ public class CustomIGESLexer extends InternalIGESLexer {
     }
     
     private boolean isSeparater() {
+    	if (SEPARATER == null) {
+    		return false;
+    	}
     	int index = 1;
     	
     	while((char)(input.LA(index))==SEPARATER.charAt(index-1) && index <= SEPARATER.length()){
@@ -131,6 +134,49 @@ public class CustomIGESLexer extends InternalIGESLexer {
     	SEPARATER = "";
         for(int i=0; i<n; i++) {
         	SEPARATER += (char)input.LA(index);
+        }
+    }
+    
+    public final void RULE_DELIMITER() throws RecognitionException {
+        try {
+            int _type = RULE_DELIMITER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalIGES.g:1540:16: ( ',' )
+            // InternalIGES.g:1540:18: ','
+            {
+            	for(int i=0; i<DELIMITER.length(); i++) {
+            		match(String.valueOf(DELIMITER.charAt(i)));
+            	}
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_DELIMITER"
+
+    // $ANTLR start "RULE_SEPARATER"
+    public final void RULE_SEPARATER() throws RecognitionException {
+        try {
+            int _type = RULE_SEPARATER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalIGES.g:1542:16: ( ';' )
+            // InternalIGES.g:1542:18: ';'
+            {
+            
+            	for(int i=0; i<SEPARATER.length(); i++) {
+            		match(String.valueOf(SEPARATER.charAt(i)));
+            	}
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
         }
     }
     

@@ -297,9 +297,9 @@ ruleGlobal returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_8=';'
+		this_SEPARATER_8=RULE_SEPARATER
 		{
-			newLeafNode(otherlv_8, grammarAccess.getGlobalAccess().getSemicolonKeyword_3());
+			newLeafNode(this_SEPARATER_8, grammarAccess.getGlobalAccess().getSEPARATERTerminalRuleCall_3());
 		}
 		(
 			this_WS_9=RULE_WS
@@ -896,9 +896,9 @@ rulePEntry returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_2=';'
+		this_SEPARATER_2=RULE_SEPARATER
 		{
-			newLeafNode(otherlv_2, grammarAccess.getPEntryAccess().getSemicolonKeyword_2());
+			newLeafNode(this_SEPARATER_2, grammarAccess.getPEntryAccess().getSEPARATERTerminalRuleCall_2());
 		}
 		(
 			this_WS_3=RULE_WS
@@ -1071,9 +1071,9 @@ rulePMultiEntry returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_8=';'
+		this_SEPARATER_8=RULE_SEPARATER
 		{
-			newLeafNode(otherlv_8, grammarAccess.getPMultiEntryAccess().getSemicolonKeyword_2());
+			newLeafNode(this_SEPARATER_8, grammarAccess.getPMultiEntryAccess().getSEPARATERTerminalRuleCall_2());
 		}
 		(
 			this_WS_9=RULE_WS
@@ -1168,9 +1168,9 @@ ruleHString returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0=','
+			this_DELIMITER_0=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_0, grammarAccess.getHStringAccess().getCommaKeyword_0());
+				newLeafNode(this_DELIMITER_0, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_0());
 			}
 		)?
 		(
@@ -1192,9 +1192,9 @@ ruleHString returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2=','
+			this_DELIMITER_2=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_2, grammarAccess.getHStringAccess().getCommaKeyword_2());
+				newLeafNode(this_DELIMITER_2, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_2());
 			}
 		)?
 	)
@@ -1217,9 +1217,9 @@ ruleParam returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0=','
+			this_DELIMITER_0=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_0, grammarAccess.getParamAccess().getCommaKeyword_0());
+				newLeafNode(this_DELIMITER_0, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_0());
 			}
 		)?
 		(
@@ -1241,9 +1241,9 @@ ruleParam returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2=','
+			this_DELIMITER_2=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_2, grammarAccess.getParamAccess().getCommaKeyword_2());
+				newLeafNode(this_DELIMITER_2, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_2());
 			}
 		)?
 	)
@@ -1266,9 +1266,9 @@ rulePointer returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0=','
+			this_DELIMITER_0=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_0, grammarAccess.getPointerAccess().getCommaKeyword_0());
+				newLeafNode(this_DELIMITER_0, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_0());
 			}
 		)?
 		(
@@ -1290,9 +1290,9 @@ rulePointer returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2=','
+			this_DELIMITER_2=RULE_DELIMITER
 			{
-				newLeafNode(otherlv_2, grammarAccess.getPointerAccess().getCommaKeyword_2());
+				newLeafNode(this_DELIMITER_2, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_2());
 			}
 		)?
 	)
@@ -1536,3 +1536,7 @@ RULE_STRING : ('A..Z'|'a'..'z'|'0'..'9'|'"')+;
 RULE_WS : (' '|'\t'|'\r')+;
 
 RULE_ENDLINE : '\r'? '\n';
+
+RULE_DELIMITER : ',';
+
+RULE_SEPARATER : ';';
