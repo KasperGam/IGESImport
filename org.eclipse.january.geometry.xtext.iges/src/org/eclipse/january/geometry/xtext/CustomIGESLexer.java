@@ -30,17 +30,108 @@ public class CustomIGESLexer extends InternalIGESLexer {
     public void mTokens(){
     	if (isHollerith()){
     		try {
-				RULE_HOLLERITH();
+    			if (DELIMITER == null) {
+    				setDelimiter();
+    			} else if (SEPARATER == null) {
+    				setSeparater();
+    			} 
+    			RULE_HOLLERITH();
 			} catch (RecognitionException e) {
 				e.printStackTrace();
 			}
+    	//} else if (isDelimiter()) {
+    		
+    	//} else if (isSeparater()) {
+    		
     	} else {
+    		if (isComma()){
+        		if (DELIMITER == null) {
+        			DELIMITER = ",";
+        		} else if (SEPARATER == null) {
+        			SEPARATER = ";";
+        		}
+    		}
     		try {
 				super.mTokens();
 			} catch (RecognitionException e) {
 				e.printStackTrace();
 			}
     	}
+    }
+    
+    private boolean isDelimiter() {
+    	int index = 1;
+    	
+    	while((char)(input.LA(index))==DELIMITER.charAt(index-1) && index <= DELIMITER.length()){
+    		index++;
+    	}
+    	return index == DELIMITER.length()+1;
+    }
+    
+    private boolean isSeparater() {
+    	int index = 1;
+    	
+    	while((char)(input.LA(index))==SEPARATER.charAt(index-1) && index <= SEPARATER.length()){
+    		index++;
+    	}
+    	return index == SEPARATER.length()+1;
+    }
+    
+    
+    private void setDelimiter() {
+    	String curInt = "";
+    	int index = 1;
+    	int cur = input.LA(index);
+    	while(cur >= '0' && cur <='9') {
+    		curInt+= (char)cur;
+    		index ++;
+    		cur = input.LA(index);
+    	}
+    	int n;
+    	try {
+    		n = Integer.parseInt(curInt);
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    		return;
+    	}	
+        	
+    	if (input.LA(index) == 'H'){
+    		index ++;
+    	} else {
+    		return;
+    	}
+    	DELIMITER = "";
+        for(int i=0; i<n; i++) {
+        	DELIMITER += (char)input.LA(index);
+        }
+    }
+    
+    private void setSeparater() {
+    	String curInt = "";
+    	int index = 1;
+    	int cur = input.LA(index);
+    	while(cur >= '0' && cur <='9') {
+    		curInt+= (char)cur;
+    		index ++;
+    		cur = input.LA(index);
+    	}
+    	int n;
+    	try {
+    		n = Integer.parseInt(curInt);
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    		return;
+    	}	
+        	
+    	if (input.LA(index) == 'H'){
+    		index ++;
+    	} else {
+    		return;
+    	}
+    	SEPARATER = "";
+        for(int i=0; i<n; i++) {
+        	SEPARATER += (char)input.LA(index);
+        }
     }
     
     /**
@@ -73,10 +164,8 @@ public class CustomIGESLexer extends InternalIGESLexer {
             match('H');
             
             for(int i=0; i<n; i++) {
-            	System.out.print((char)input.LA(1));
             	matchAny(); 
             }
-            System.out.println();
             state.type = _type;
             state.channel = _channel;
         }
@@ -85,12 +174,9 @@ public class CustomIGESLexer extends InternalIGESLexer {
     }
     
     private boolean isHollerith() {
-    	    	    	
+    	
     	int index = isInt();
     	
-    	int mark = input.mark();
-    	
-   		input.rewind(mark);
     	if (index > 0) {
     		return true;
     	} else {
@@ -98,9 +184,7 @@ public class CustomIGESLexer extends InternalIGESLexer {
     	}
     }
     
-    private int isInt() {
-    	int mark = input.mark();
-    	
+    private int isInt() {  
     	int index = 1;
     	int cur = input.LA(index);
     	
@@ -108,12 +192,17 @@ public class CustomIGESLexer extends InternalIGESLexer {
     		index++;
     		cur = input.LA(index);
     	}
-    	input.rewind(mark);
     	if (index > 1 && cur == 'H'){
     		return index;
     	} else {
     		return -1;
     	}
+    }
+    
+    private boolean isComma() {
+    	
+    	return (input.LA(1) == ',');
+
     }
  
 
