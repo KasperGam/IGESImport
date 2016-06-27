@@ -141,6 +141,7 @@ public class CustomIGESLexer extends InternalIGESLexer {
         try {
             int _type = RULE_DELIMITER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            
             // InternalIGES.g:1540:16: ( ',' )
             // InternalIGES.g:1540:18: ','
             {
