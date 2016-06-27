@@ -779,6 +779,7 @@ public class IGESPackageImpl extends EPackageImpl implements IGESPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    hStringEClass.getESuperTypes().add(this.getGlobal());
     hStringEClass.getESuperTypes().add(this.getValue());
     paramEClass.getESuperTypes().add(this.getValue());
     pointerEClass.getESuperTypes().add(this.getValue());

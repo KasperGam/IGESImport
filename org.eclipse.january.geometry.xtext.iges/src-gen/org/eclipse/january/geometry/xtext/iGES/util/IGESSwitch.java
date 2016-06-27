@@ -133,6 +133,7 @@ public class IGESSwitch<T> extends Switch<T>
       {
         HString hString = (HString)theEObject;
         T result = caseHString(hString);
+        if (result == null) result = caseGlobal(hString);
         if (result == null) result = caseValue(hString);
         if (result == null) result = defaultCase(theEObject);
         return result;

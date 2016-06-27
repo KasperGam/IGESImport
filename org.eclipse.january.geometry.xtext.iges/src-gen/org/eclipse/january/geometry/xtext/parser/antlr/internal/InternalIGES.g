@@ -234,12 +234,34 @@ ruleGlobal returns [EObject current=null]
 			}
 		)
 		(
+			this_DELIMITER_1=RULE_DELIMITER
+			{
+				newLeafNode(this_DELIMITER_1, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_1());
+			}
+		)?
+		(
+			{
+				newCompositeNode(grammarAccess.getGlobalAccess().getHStringParserRuleCall_2());
+			}
+			this_HString_2=ruleHString
+			{
+				$current = $this_HString_2.current;
+				afterParserOrEnumRuleCall();
+			}
+		)?
+		(
+			this_DELIMITER_3=RULE_DELIMITER
+			{
+				newLeafNode(this_DELIMITER_3, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_3());
+			}
+		)?
+		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_1_0_0());
+						newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_4_0_0());
 					}
-					lv_values_1_0=ruleValue
+					lv_values_4_0=ruleValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGlobalRule());
@@ -247,43 +269,43 @@ ruleGlobal returns [EObject current=null]
 						add(
 							$current,
 							"values",
-							lv_values_1_0,
+							lv_values_4_0,
 							"org.eclipse.january.geometry.xtext.IGES.Value");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
 			(
-				this_WS_2=RULE_WS
+				this_WS_5=RULE_WS
 				{
-					newLeafNode(this_WS_2, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_1_1());
+					newLeafNode(this_WS_5, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_1());
 				}
 			)?
-			otherlv_3='G'
+			otherlv_6='G'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getGlobalAccess().getGKeyword_1_2());
+				newLeafNode(otherlv_6, grammarAccess.getGlobalAccess().getGKeyword_4_2());
 			}
 			(
-				this_WS_4=RULE_WS
+				this_WS_7=RULE_WS
 				{
-					newLeafNode(this_WS_4, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_1_3());
+					newLeafNode(this_WS_7, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_3());
 				}
 			)?
-			this_INT_5=RULE_INT
+			this_INT_8=RULE_INT
 			{
-				newLeafNode(this_INT_5, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_1_4());
+				newLeafNode(this_INT_8, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_4_4());
 			}
-			this_ENDLINE_6=RULE_ENDLINE
+			this_ENDLINE_9=RULE_ENDLINE
 			{
-				newLeafNode(this_ENDLINE_6, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_1_5());
+				newLeafNode(this_ENDLINE_9, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_4_5());
 			}
 		)+
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_5_0());
 				}
-				lv_values_7_0=ruleValue
+				lv_values_10_0=ruleValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGlobalRule());
@@ -291,39 +313,39 @@ ruleGlobal returns [EObject current=null]
 					add(
 						$current,
 						"values",
-						lv_values_7_0,
+						lv_values_10_0,
 						"org.eclipse.january.geometry.xtext.IGES.Value");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		this_SEPARATER_8=RULE_SEPARATER
+		this_SEPARATOR_11=RULE_SEPARATOR
 		{
-			newLeafNode(this_SEPARATER_8, grammarAccess.getGlobalAccess().getSEPARATERTerminalRuleCall_3());
+			newLeafNode(this_SEPARATOR_11, grammarAccess.getGlobalAccess().getSEPARATORTerminalRuleCall_6());
 		}
 		(
-			this_WS_9=RULE_WS
+			this_WS_12=RULE_WS
 			{
-				newLeafNode(this_WS_9, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4());
+				newLeafNode(this_WS_12, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_7());
 			}
 		)?
-		otherlv_10='G'
+		otherlv_13='G'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getGlobalAccess().getGKeyword_5());
+			newLeafNode(otherlv_13, grammarAccess.getGlobalAccess().getGKeyword_8());
 		}
 		(
-			this_WS_11=RULE_WS
+			this_WS_14=RULE_WS
 			{
-				newLeafNode(this_WS_11, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_6());
+				newLeafNode(this_WS_14, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_9());
 			}
 		)?
-		this_INT_12=RULE_INT
+		this_INT_15=RULE_INT
 		{
-			newLeafNode(this_INT_12, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_7());
+			newLeafNode(this_INT_15, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_10());
 		}
-		this_ENDLINE_13=RULE_ENDLINE
+		this_ENDLINE_16=RULE_ENDLINE
 		{
-			newLeafNode(this_ENDLINE_13, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_8());
+			newLeafNode(this_ENDLINE_16, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_11());
 		}
 	)
 ;
@@ -878,11 +900,17 @@ rulePEntry returns [EObject current=null]
 			)
 		)
 		(
+			this_DELIMITER_1=RULE_DELIMITER
+			{
+				newLeafNode(this_DELIMITER_1, grammarAccess.getPEntryAccess().getDELIMITERTerminalRuleCall_1());
+			}
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPEntryAccess().getValuesValueParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPEntryAccess().getValuesValueParserRuleCall_2_0());
 				}
-				lv_values_1_0=ruleValue
+				lv_values_2_0=ruleValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPEntryRule());
@@ -890,27 +918,27 @@ rulePEntry returns [EObject current=null]
 					add(
 						$current,
 						"values",
-						lv_values_1_0,
+						lv_values_2_0,
 						"org.eclipse.january.geometry.xtext.IGES.Value");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		this_SEPARATER_2=RULE_SEPARATER
+		this_SEPARATOR_3=RULE_SEPARATOR
 		{
-			newLeafNode(this_SEPARATER_2, grammarAccess.getPEntryAccess().getSEPARATERTerminalRuleCall_2());
+			newLeafNode(this_SEPARATOR_3, grammarAccess.getPEntryAccess().getSEPARATORTerminalRuleCall_3());
 		}
 		(
-			this_WS_3=RULE_WS
+			this_WS_4=RULE_WS
 			{
-				newLeafNode(this_WS_3, grammarAccess.getPEntryAccess().getWSTerminalRuleCall_3());
+				newLeafNode(this_WS_4, grammarAccess.getPEntryAccess().getWSTerminalRuleCall_4());
 			}
 		)?
 		(
 			(
-				lv_dIndex_4_0=RULE_INT
+				lv_dIndex_5_0=RULE_INT
 				{
-					newLeafNode(lv_dIndex_4_0, grammarAccess.getPEntryAccess().getDIndexINTTerminalRuleCall_4_0());
+					newLeafNode(lv_dIndex_5_0, grammarAccess.getPEntryAccess().getDIndexINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -919,26 +947,26 @@ rulePEntry returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"dIndex",
-						lv_dIndex_4_0,
+						lv_dIndex_5_0,
 						"org.eclipse.january.geometry.xtext.IGES.INT");
 				}
 			)
 		)
-		otherlv_5='P'
+		otherlv_6='P'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getPEntryAccess().getPKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getPEntryAccess().getPKeyword_6());
 		}
 		(
-			this_WS_6=RULE_WS
+			this_WS_7=RULE_WS
 			{
-				newLeafNode(this_WS_6, grammarAccess.getPEntryAccess().getWSTerminalRuleCall_6());
+				newLeafNode(this_WS_7, grammarAccess.getPEntryAccess().getWSTerminalRuleCall_7());
 			}
 		)?
 		(
 			(
-				lv_indicies_7_0=RULE_INT
+				lv_indicies_8_0=RULE_INT
 				{
-					newLeafNode(lv_indicies_7_0, grammarAccess.getPEntryAccess().getIndiciesINTTerminalRuleCall_7_0());
+					newLeafNode(lv_indicies_8_0, grammarAccess.getPEntryAccess().getIndiciesINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -947,14 +975,14 @@ rulePEntry returns [EObject current=null]
 					addWithLastConsumed(
 						$current,
 						"indicies",
-						lv_indicies_7_0,
+						lv_indicies_8_0,
 						"org.eclipse.january.geometry.xtext.IGES.INT");
 				}
 			)
 		)
-		this_ENDLINE_8=RULE_ENDLINE
+		this_ENDLINE_9=RULE_ENDLINE
 		{
-			newLeafNode(this_ENDLINE_8, grammarAccess.getPEntryAccess().getENDLINETerminalRuleCall_8());
+			newLeafNode(this_ENDLINE_9, grammarAccess.getPEntryAccess().getENDLINETerminalRuleCall_9());
 		}
 	)
 ;
@@ -977,11 +1005,35 @@ rulePMultiEntry returns [EObject current=null]
 	(
 		(
 			(
+				lv_type_0_0=RULE_INT
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getPMultiEntryAccess().getTypeINTTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPMultiEntryRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_0_0,
+						"org.eclipse.january.geometry.xtext.IGES.INT");
+				}
+			)
+		)
+		(
+			this_DELIMITER_1=RULE_DELIMITER
+			{
+				newLeafNode(this_DELIMITER_1, grammarAccess.getPMultiEntryAccess().getDELIMITERTerminalRuleCall_1());
+			}
+		)?
+		(
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPMultiEntryAccess().getValuesValueParserRuleCall_0_0_0());
+						newCompositeNode(grammarAccess.getPMultiEntryAccess().getValuesValueParserRuleCall_2_0_0());
 					}
-					lv_values_0_0=ruleValue
+					lv_values_2_0=ruleValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPMultiEntryRule());
@@ -989,23 +1041,23 @@ rulePMultiEntry returns [EObject current=null]
 						add(
 							$current,
 							"values",
-							lv_values_0_0,
+							lv_values_2_0,
 							"org.eclipse.january.geometry.xtext.IGES.Value");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
 			(
-				this_WS_1=RULE_WS
+				this_WS_3=RULE_WS
 				{
-					newLeafNode(this_WS_1, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_0_1());
+					newLeafNode(this_WS_3, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_2_1());
 				}
 			)?
 			(
 				(
-					lv_dIndex_2_0=RULE_INT
+					lv_dIndex_4_0=RULE_INT
 					{
-						newLeafNode(lv_dIndex_2_0, grammarAccess.getPMultiEntryAccess().getDIndexINTTerminalRuleCall_0_2_0());
+						newLeafNode(lv_dIndex_4_0, grammarAccess.getPMultiEntryAccess().getDIndexINTTerminalRuleCall_2_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1014,26 +1066,26 @@ rulePMultiEntry returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"dIndex",
-							lv_dIndex_2_0,
+							lv_dIndex_4_0,
 							"org.eclipse.january.geometry.xtext.IGES.INT");
 					}
 				)
 			)
-			otherlv_3='P'
+			otherlv_5='P'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getPMultiEntryAccess().getPKeyword_0_3());
+				newLeafNode(otherlv_5, grammarAccess.getPMultiEntryAccess().getPKeyword_2_3());
 			}
 			(
-				this_WS_4=RULE_WS
+				this_WS_6=RULE_WS
 				{
-					newLeafNode(this_WS_4, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_0_4());
+					newLeafNode(this_WS_6, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_2_4());
 				}
 			)?
 			(
 				(
-					lv_indicies_5_0=RULE_INT
+					lv_indicies_7_0=RULE_INT
 					{
-						newLeafNode(lv_indicies_5_0, grammarAccess.getPMultiEntryAccess().getIndiciesINTTerminalRuleCall_0_5_0());
+						newLeafNode(lv_indicies_7_0, grammarAccess.getPMultiEntryAccess().getIndiciesINTTerminalRuleCall_2_5_0());
 					}
 					{
 						if ($current==null) {
@@ -1042,22 +1094,22 @@ rulePMultiEntry returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"indicies",
-							lv_indicies_5_0,
+							lv_indicies_7_0,
 							"org.eclipse.january.geometry.xtext.IGES.INT");
 					}
 				)
 			)
-			this_ENDLINE_6=RULE_ENDLINE
+			this_ENDLINE_8=RULE_ENDLINE
 			{
-				newLeafNode(this_ENDLINE_6, grammarAccess.getPMultiEntryAccess().getENDLINETerminalRuleCall_0_6());
+				newLeafNode(this_ENDLINE_8, grammarAccess.getPMultiEntryAccess().getENDLINETerminalRuleCall_2_6());
 			}
 		)+
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPMultiEntryAccess().getValuesValueParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPMultiEntryAccess().getValuesValueParserRuleCall_3_0());
 				}
-				lv_values_7_0=ruleValue
+				lv_values_9_0=ruleValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPMultiEntryRule());
@@ -1065,43 +1117,43 @@ rulePMultiEntry returns [EObject current=null]
 					add(
 						$current,
 						"values",
-						lv_values_7_0,
+						lv_values_9_0,
 						"org.eclipse.january.geometry.xtext.IGES.Value");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		this_SEPARATER_8=RULE_SEPARATER
+		this_SEPARATOR_10=RULE_SEPARATOR
 		{
-			newLeafNode(this_SEPARATER_8, grammarAccess.getPMultiEntryAccess().getSEPARATERTerminalRuleCall_2());
+			newLeafNode(this_SEPARATOR_10, grammarAccess.getPMultiEntryAccess().getSEPARATORTerminalRuleCall_4());
 		}
 		(
-			this_WS_9=RULE_WS
+			this_WS_11=RULE_WS
 			{
-				newLeafNode(this_WS_9, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_3());
+				newLeafNode(this_WS_11, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_5());
 			}
 		)?
-		this_INT_10=RULE_INT
+		this_INT_12=RULE_INT
 		{
-			newLeafNode(this_INT_10, grammarAccess.getPMultiEntryAccess().getINTTerminalRuleCall_4());
+			newLeafNode(this_INT_12, grammarAccess.getPMultiEntryAccess().getINTTerminalRuleCall_6());
 		}
-		otherlv_11='P'
+		otherlv_13='P'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getPMultiEntryAccess().getPKeyword_5());
+			newLeafNode(otherlv_13, grammarAccess.getPMultiEntryAccess().getPKeyword_7());
 		}
 		(
-			this_WS_12=RULE_WS
+			this_WS_14=RULE_WS
 			{
-				newLeafNode(this_WS_12, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_6());
+				newLeafNode(this_WS_14, grammarAccess.getPMultiEntryAccess().getWSTerminalRuleCall_8());
 			}
 		)?
-		this_INT_13=RULE_INT
+		this_INT_15=RULE_INT
 		{
-			newLeafNode(this_INT_13, grammarAccess.getPMultiEntryAccess().getINTTerminalRuleCall_7());
+			newLeafNode(this_INT_15, grammarAccess.getPMultiEntryAccess().getINTTerminalRuleCall_9());
 		}
-		this_ENDLINE_14=RULE_ENDLINE
+		this_ENDLINE_16=RULE_ENDLINE
 		{
-			newLeafNode(this_ENDLINE_14, grammarAccess.getPMultiEntryAccess().getENDLINETerminalRuleCall_8());
+			newLeafNode(this_ENDLINE_16, grammarAccess.getPMultiEntryAccess().getENDLINETerminalRuleCall_10());
 		}
 	)
 ;
@@ -1168,16 +1220,10 @@ ruleHString returns [EObject current=null]
 }:
 	(
 		(
-			this_DELIMITER_0=RULE_DELIMITER
-			{
-				newLeafNode(this_DELIMITER_0, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_0());
-			}
-		)?
-		(
 			(
-				lv_val_1_0=RULE_HOLLERITH
+				lv_val_0_0=RULE_HOLLERITH
 				{
-					newLeafNode(lv_val_1_0, grammarAccess.getHStringAccess().getValHOLLERITHTerminalRuleCall_1_0());
+					newLeafNode(lv_val_0_0, grammarAccess.getHStringAccess().getValHOLLERITHTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -1186,15 +1232,15 @@ ruleHString returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"val",
-						lv_val_1_0,
+						lv_val_0_0,
 						"org.eclipse.january.geometry.xtext.IGES.HOLLERITH");
 				}
 			)
 		)
 		(
-			this_DELIMITER_2=RULE_DELIMITER
+			this_DELIMITER_1=RULE_DELIMITER
 			{
-				newLeafNode(this_DELIMITER_2, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_2());
+				newLeafNode(this_DELIMITER_1, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_1());
 			}
 		)?
 	)
@@ -1217,16 +1263,10 @@ ruleParam returns [EObject current=null]
 }:
 	(
 		(
-			this_DELIMITER_0=RULE_DELIMITER
-			{
-				newLeafNode(this_DELIMITER_0, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_0());
-			}
-		)?
-		(
 			(
-				lv_val_1_0=RULE_DOUBLE
+				lv_val_0_0=RULE_DOUBLE
 				{
-					newLeafNode(lv_val_1_0, grammarAccess.getParamAccess().getValDOUBLETerminalRuleCall_1_0());
+					newLeafNode(lv_val_0_0, grammarAccess.getParamAccess().getValDOUBLETerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -1235,15 +1275,15 @@ ruleParam returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"val",
-						lv_val_1_0,
+						lv_val_0_0,
 						"org.eclipse.january.geometry.xtext.IGES.DOUBLE");
 				}
 			)
 		)
 		(
-			this_DELIMITER_2=RULE_DELIMITER
+			this_DELIMITER_1=RULE_DELIMITER
 			{
-				newLeafNode(this_DELIMITER_2, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_2());
+				newLeafNode(this_DELIMITER_1, grammarAccess.getParamAccess().getDELIMITERTerminalRuleCall_1());
 			}
 		)?
 	)
@@ -1266,16 +1306,10 @@ rulePointer returns [EObject current=null]
 }:
 	(
 		(
-			this_DELIMITER_0=RULE_DELIMITER
-			{
-				newLeafNode(this_DELIMITER_0, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_0());
-			}
-		)?
-		(
 			(
-				lv_val_1_0=RULE_INT
+				lv_val_0_0=RULE_INT
 				{
-					newLeafNode(lv_val_1_0, grammarAccess.getPointerAccess().getValINTTerminalRuleCall_1_0());
+					newLeafNode(lv_val_0_0, grammarAccess.getPointerAccess().getValINTTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -1284,15 +1318,15 @@ rulePointer returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"val",
-						lv_val_1_0,
+						lv_val_0_0,
 						"org.eclipse.january.geometry.xtext.IGES.INT");
 				}
 			)
 		)
 		(
-			this_DELIMITER_2=RULE_DELIMITER
+			this_DELIMITER_1=RULE_DELIMITER
 			{
-				newLeafNode(this_DELIMITER_2, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_2());
+				newLeafNode(this_DELIMITER_1, grammarAccess.getPointerAccess().getDELIMITERTerminalRuleCall_1());
 			}
 		)?
 	)
@@ -1537,6 +1571,6 @@ RULE_WS : (' '|'\t'|'\r')+;
 
 RULE_ENDLINE : '\r'? '\n';
 
-RULE_DELIMITER : ',';
+RULE_DELIMITER : .;
 
-RULE_SEPARATER : ';';
+RULE_SEPARATOR : .;

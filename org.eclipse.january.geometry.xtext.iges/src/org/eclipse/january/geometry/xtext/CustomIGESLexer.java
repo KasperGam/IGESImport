@@ -15,7 +15,8 @@ import java.util.ArrayList;
 public class CustomIGESLexer extends InternalIGESLexer {
 
 	private String DELIMITER = null;
-	private String SEPARATER = null;
+	private String SEPARATOR = null;
+	boolean DELIM_SET = false;
 
     public CustomIGESLexer() {;} 
     public CustomIGESLexer(CharStream input) {
@@ -29,30 +30,28 @@ public class CustomIGESLexer extends InternalIGESLexer {
     @Override 
     public void mTokens() throws RecognitionException{
     	if (isHollerith()){
-    		
     			if (DELIMITER == null) {
     				setDelimiter();
-    			} else if (SEPARATER == null) {
-    				setSeparater();
+    				DELIM_SET = true;
+    			} else if (SEPARATOR == null) {
+    				setSEPARATOR();
     			} 
     			RULE_HOLLERITH();
     			
-    	//} else if (isDelimiter()) {
+    	} else if (isDelimiter()) {
     		
-		//		RULE_DELIMITER();
+				RULE_DELIMITER();
 				
-    	//} else if (isSeparater()) {
+    	} else if (isSEPARATOR()) {
     		
-		//		RULE_SEPARATER();
+				RULE_SEPARATOR();
 	 	} else {
-    		if (isComma()){
-        		if (DELIMITER == null) {
-        			DELIMITER = ",";
-        		} else if (SEPARATER == null) {
-        			SEPARATER = ";";
-        		}
+    		if (isComma() && DELIMITER == null){
+        		DELIMITER = ",";
+        		super.mRULE_DELIMITER();
+    		} else {
+    			super.mTokens();	
     		}
-			super.mTokens();	
     	}
     }
     
@@ -60,24 +59,24 @@ public class CustomIGESLexer extends InternalIGESLexer {
     	if (DELIMITER == null) {
     		return false;
     	}
-    	int index = 1;
+    	int index = 0;
     	
-    	while((char)(input.LA(index))==DELIMITER.charAt(index-1) && index <= DELIMITER.length()){
+    	while(index < DELIMITER.length() && (input.LA(index + 1))==DELIMITER.charAt(index)){
     		index++;
     	}
-    	return index == DELIMITER.length()+1;
+    	return index == DELIMITER.length();
     }
     
-    private boolean isSeparater() {
-    	if (SEPARATER == null) {
+    private boolean isSEPARATOR() {
+    	if (SEPARATOR == null) {
     		return false;
     	}
-    	int index = 1;
+    	int index = 0;
     	
-    	while((char)(input.LA(index))==SEPARATER.charAt(index-1) && index <= SEPARATER.length()){
+    	while(index < SEPARATOR.length() && (input.LA(index + 1))==SEPARATOR.charAt(index)){
     		index++;
     	}
-    	return index == SEPARATER.length()+1;
+    	return index == SEPARATOR.length();
     }
     
     
@@ -105,11 +104,11 @@ public class CustomIGESLexer extends InternalIGESLexer {
     	}
     	DELIMITER = "";
         for(int i=0; i<n; i++) {
-        	DELIMITER += (char)input.LA(index);
+        	DELIMITER += (char)input.LA(index+i);
         }
     }
     
-    private void setSeparater() {
+    private void setSEPARATOR() {
     	String curInt = "";
     	int index = 1;
     	int cur = input.LA(index);
@@ -131,10 +130,11 @@ public class CustomIGESLexer extends InternalIGESLexer {
     	} else {
     		return;
     	}
-    	SEPARATER = "";
+    	SEPARATOR = "";
         for(int i=0; i<n; i++) {
-        	SEPARATER += (char)input.LA(index);
+        	SEPARATOR += (char)input.LA(index+i);
         }
+
     }
     
     public final void RULE_DELIMITER() throws RecognitionException {
@@ -147,6 +147,10 @@ public class CustomIGESLexer extends InternalIGESLexer {
             	for(int i=0; i<DELIMITER.length(); i++) {
             		match(String.valueOf(DELIMITER.charAt(i)));
             	}
+            	
+            	if (SEPARATOR == null && !DELIM_SET) {
+            		SEPARATOR = ";";
+            	}
 
             }
 
@@ -158,17 +162,17 @@ public class CustomIGESLexer extends InternalIGESLexer {
     }
     // $ANTLR end "RULE_DELIMITER"
 
-    // $ANTLR start "RULE_SEPARATER"
-    public final void RULE_SEPARATER() throws RecognitionException {
+    // $ANTLR start "RULE_SEPARATOR"
+    public final void RULE_SEPARATOR() throws RecognitionException {
         try {
-            int _type = RULE_SEPARATER;
+            int _type = RULE_SEPARATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // InternalIGES.g:1542:16: ( ';' )
             // InternalIGES.g:1542:18: ';'
             {
             
-            	for(int i=0; i<SEPARATER.length(); i++) {
-            		match(String.valueOf(SEPARATER.charAt(i)));
+            	for(int i=0; i<SEPARATOR.length(); i++) {
+            		match(String.valueOf(SEPARATOR.charAt(i)));
             	}
 
             }

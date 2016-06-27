@@ -38,9 +38,6 @@ public class IGESTester {
 		
 		List<Value> values = data.getGlobal().getValues();
 		
-		//System.out.println(" delim: "+data.getGlobal().getDelim()+" paramDelim: "+data.getGlobal().getParamEnd());
-		System.out.println(data.getGlobal());
-		System.out.println(data.getGlobal().getValues());
 		for(Value v: values) {
 			if (v instanceof HString) {
 				System.out.print(((HString)v).getVal()+",");

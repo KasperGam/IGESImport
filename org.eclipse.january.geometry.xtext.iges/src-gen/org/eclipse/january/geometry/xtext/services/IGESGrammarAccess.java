@@ -96,81 +96,94 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Global");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGlobalAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cValuesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cValuesValueParserRuleCall_1_0_0 = (RuleCall)cValuesAssignment_1_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cGKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
-		private final RuleCall cENDLINETerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
-		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuesValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final RuleCall cSEPARATERTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Keyword cGKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cWSTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final RuleCall cINTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final RuleCall cENDLINETerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cHStringParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cDELIMITERTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cValuesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cValuesValueParserRuleCall_4_0_0 = (RuleCall)cValuesAssignment_4_0.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cGKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
+		private final RuleCall cINTTerminalRuleCall_4_4 = (RuleCall)cGroup_4.eContents().get(4);
+		private final RuleCall cENDLINETerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
+		private final Assignment cValuesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValuesValueParserRuleCall_5_0 = (RuleCall)cValuesAssignment_5.eContents().get(0);
+		private final RuleCall cSEPARATORTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final RuleCall cWSTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Keyword cGKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final RuleCall cWSTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
+		private final RuleCall cINTTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
+		private final RuleCall cENDLINETerminalRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
 		
 		//Global:
-		//	{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+
-		//	values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE;
+		//	{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+
+		//	values+=Value* SEPARATOR WS? 'G' WS? INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+ values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE
+		//{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+ values+=Value* SEPARATOR WS? 'G' WS?
+		//INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//{Global}
 		public Action getGlobalAction_0() { return cGlobalAction_0; }
 		
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
+		
+		//HString?
+		public RuleCall getHStringParserRuleCall_2() { return cHStringParserRuleCall_2; }
+		
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_3() { return cDELIMITERTerminalRuleCall_3; }
+		
 		//(values+=Value* WS? 'G' WS? INT ENDLINE)+
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//values+=Value*
-		public Assignment getValuesAssignment_1_0() { return cValuesAssignment_1_0; }
+		public Assignment getValuesAssignment_4_0() { return cValuesAssignment_4_0; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_1_0_0() { return cValuesValueParserRuleCall_1_0_0; }
+		public RuleCall getValuesValueParserRuleCall_4_0_0() { return cValuesValueParserRuleCall_4_0_0; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
+		public RuleCall getWSTerminalRuleCall_4_1() { return cWSTerminalRuleCall_4_1; }
 		
 		//'G'
-		public Keyword getGKeyword_1_2() { return cGKeyword_1_2; }
+		public Keyword getGKeyword_4_2() { return cGKeyword_4_2; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
+		public RuleCall getWSTerminalRuleCall_4_3() { return cWSTerminalRuleCall_4_3; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_1_4() { return cINTTerminalRuleCall_1_4; }
+		public RuleCall getINTTerminalRuleCall_4_4() { return cINTTerminalRuleCall_4_4; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_1_5() { return cENDLINETerminalRuleCall_1_5; }
+		public RuleCall getENDLINETerminalRuleCall_4_5() { return cENDLINETerminalRuleCall_4_5; }
 		
 		//values+=Value*
-		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
+		public Assignment getValuesAssignment_5() { return cValuesAssignment_5; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_2_0() { return cValuesValueParserRuleCall_2_0; }
+		public RuleCall getValuesValueParserRuleCall_5_0() { return cValuesValueParserRuleCall_5_0; }
 		
-		//SEPARATER
-		public RuleCall getSEPARATERTerminalRuleCall_3() { return cSEPARATERTerminalRuleCall_3; }
+		//SEPARATOR
+		public RuleCall getSEPARATORTerminalRuleCall_6() { return cSEPARATORTerminalRuleCall_6; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
+		public RuleCall getWSTerminalRuleCall_7() { return cWSTerminalRuleCall_7; }
 		
 		//'G'
-		public Keyword getGKeyword_5() { return cGKeyword_5; }
+		public Keyword getGKeyword_8() { return cGKeyword_8; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_6() { return cWSTerminalRuleCall_6; }
+		public RuleCall getWSTerminalRuleCall_9() { return cWSTerminalRuleCall_9; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_7() { return cINTTerminalRuleCall_7; }
+		public RuleCall getINTTerminalRuleCall_10() { return cINTTerminalRuleCall_10; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_8() { return cENDLINETerminalRuleCall_8; }
+		public RuleCall getENDLINETerminalRuleCall_11() { return cENDLINETerminalRuleCall_11; }
 	}
 	public class DataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Data");
@@ -451,24 +464,25 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeINTTerminalRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValuesValueParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
-		private final RuleCall cSEPARATERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cDIndexAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDIndexINTTerminalRuleCall_4_0 = (RuleCall)cDIndexAssignment_4.eContents().get(0);
-		private final Keyword cPKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cWSTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final Assignment cIndiciesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cIndiciesINTTerminalRuleCall_7_0 = (RuleCall)cIndiciesAssignment_7.eContents().get(0);
-		private final RuleCall cENDLINETerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValuesValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
+		private final RuleCall cSEPARATORTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cDIndexAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDIndexINTTerminalRuleCall_5_0 = (RuleCall)cDIndexAssignment_5.eContents().get(0);
+		private final Keyword cPKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final RuleCall cWSTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Assignment cIndiciesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cIndiciesINTTerminalRuleCall_8_0 = (RuleCall)cIndiciesAssignment_8.eContents().get(0);
+		private final RuleCall cENDLINETerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 		
 		//PEntry:
-		//	type=INT
-		//	values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
+		//	type=INT DELIMITER?
+		//	values+=Value* SEPARATOR WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=INT values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE
+		//type=INT DELIMITER? values+=Value* SEPARATOR WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//type=INT
@@ -477,130 +491,146 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getTypeINTTerminalRuleCall_0_0() { return cTypeINTTerminalRuleCall_0_0; }
 		
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
+		
 		//values+=Value*
-		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_1_0() { return cValuesValueParserRuleCall_1_0; }
+		public RuleCall getValuesValueParserRuleCall_2_0() { return cValuesValueParserRuleCall_2_0; }
 		
-		//SEPARATER
-		public RuleCall getSEPARATERTerminalRuleCall_2() { return cSEPARATERTerminalRuleCall_2; }
+		//SEPARATOR
+		public RuleCall getSEPARATORTerminalRuleCall_3() { return cSEPARATORTerminalRuleCall_3; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
 		
 		//dIndex=INT
-		public Assignment getDIndexAssignment_4() { return cDIndexAssignment_4; }
+		public Assignment getDIndexAssignment_5() { return cDIndexAssignment_5; }
 		
 		//INT
-		public RuleCall getDIndexINTTerminalRuleCall_4_0() { return cDIndexINTTerminalRuleCall_4_0; }
+		public RuleCall getDIndexINTTerminalRuleCall_5_0() { return cDIndexINTTerminalRuleCall_5_0; }
 		
 		//'P'
-		public Keyword getPKeyword_5() { return cPKeyword_5; }
+		public Keyword getPKeyword_6() { return cPKeyword_6; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_6() { return cWSTerminalRuleCall_6; }
+		public RuleCall getWSTerminalRuleCall_7() { return cWSTerminalRuleCall_7; }
 		
 		//indicies+=INT
-		public Assignment getIndiciesAssignment_7() { return cIndiciesAssignment_7; }
+		public Assignment getIndiciesAssignment_8() { return cIndiciesAssignment_8; }
 		
 		//INT
-		public RuleCall getIndiciesINTTerminalRuleCall_7_0() { return cIndiciesINTTerminalRuleCall_7_0; }
+		public RuleCall getIndiciesINTTerminalRuleCall_8_0() { return cIndiciesINTTerminalRuleCall_8_0; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_8() { return cENDLINETerminalRuleCall_8; }
+		public RuleCall getENDLINETerminalRuleCall_9() { return cENDLINETerminalRuleCall_9; }
 	}
 	public class PMultiEntryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.PMultiEntry");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cValuesAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cValuesValueParserRuleCall_0_0_0 = (RuleCall)cValuesAssignment_0_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Assignment cDIndexAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cDIndexINTTerminalRuleCall_0_2_0 = (RuleCall)cDIndexAssignment_0_2.eContents().get(0);
-		private final Keyword cPKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final RuleCall cWSTerminalRuleCall_0_4 = (RuleCall)cGroup_0.eContents().get(4);
-		private final Assignment cIndiciesAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
-		private final RuleCall cIndiciesINTTerminalRuleCall_0_5_0 = (RuleCall)cIndiciesAssignment_0_5.eContents().get(0);
-		private final RuleCall cENDLINETerminalRuleCall_0_6 = (RuleCall)cGroup_0.eContents().get(6);
-		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValuesValueParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
-		private final RuleCall cSEPARATERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Keyword cPKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cWSTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final RuleCall cINTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final RuleCall cENDLINETerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypeINTTerminalRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cValuesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cValuesValueParserRuleCall_2_0_0 = (RuleCall)cValuesAssignment_2_0.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cDIndexAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cDIndexINTTerminalRuleCall_2_2_0 = (RuleCall)cDIndexAssignment_2_2.eContents().get(0);
+		private final Keyword cPKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final RuleCall cWSTerminalRuleCall_2_4 = (RuleCall)cGroup_2.eContents().get(4);
+		private final Assignment cIndiciesAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cIndiciesINTTerminalRuleCall_2_5_0 = (RuleCall)cIndiciesAssignment_2_5.eContents().get(0);
+		private final RuleCall cENDLINETerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
+		private final Assignment cValuesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValuesValueParserRuleCall_3_0 = (RuleCall)cValuesAssignment_3.eContents().get(0);
+		private final RuleCall cSEPARATORTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cWSTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final RuleCall cINTTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Keyword cPKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final RuleCall cWSTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final RuleCall cINTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
+		private final RuleCall cENDLINETerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
 		
 		//PMultiEntry PEntry:
-		//	(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-		//	values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
+		//	type=INT DELIMITER? (values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
+		//	values+=Value* SEPARATOR WS? INT 'P' WS? INT ENDLINE
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+ values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
+		//type=INT DELIMITER? (values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+ values+=Value* SEPARATOR WS? INT 'P'
+		//WS? INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
+		//type=INT
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//INT
+		public RuleCall getTypeINTTerminalRuleCall_0_0() { return cTypeINTTerminalRuleCall_0_0; }
+		
+		//DELIMITER?
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
+		
 		//(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//values+=Value*
-		public Assignment getValuesAssignment_0_0() { return cValuesAssignment_0_0; }
+		public Assignment getValuesAssignment_2_0() { return cValuesAssignment_2_0; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_0_0_0() { return cValuesValueParserRuleCall_0_0_0; }
+		public RuleCall getValuesValueParserRuleCall_2_0_0() { return cValuesValueParserRuleCall_2_0_0; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_0_1() { return cWSTerminalRuleCall_0_1; }
+		public RuleCall getWSTerminalRuleCall_2_1() { return cWSTerminalRuleCall_2_1; }
 		
 		//dIndex=INT
-		public Assignment getDIndexAssignment_0_2() { return cDIndexAssignment_0_2; }
+		public Assignment getDIndexAssignment_2_2() { return cDIndexAssignment_2_2; }
 		
 		//INT
-		public RuleCall getDIndexINTTerminalRuleCall_0_2_0() { return cDIndexINTTerminalRuleCall_0_2_0; }
+		public RuleCall getDIndexINTTerminalRuleCall_2_2_0() { return cDIndexINTTerminalRuleCall_2_2_0; }
 		
 		//'P'
-		public Keyword getPKeyword_0_3() { return cPKeyword_0_3; }
+		public Keyword getPKeyword_2_3() { return cPKeyword_2_3; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_0_4() { return cWSTerminalRuleCall_0_4; }
+		public RuleCall getWSTerminalRuleCall_2_4() { return cWSTerminalRuleCall_2_4; }
 		
 		//indicies+=INT
-		public Assignment getIndiciesAssignment_0_5() { return cIndiciesAssignment_0_5; }
+		public Assignment getIndiciesAssignment_2_5() { return cIndiciesAssignment_2_5; }
 		
 		//INT
-		public RuleCall getIndiciesINTTerminalRuleCall_0_5_0() { return cIndiciesINTTerminalRuleCall_0_5_0; }
+		public RuleCall getIndiciesINTTerminalRuleCall_2_5_0() { return cIndiciesINTTerminalRuleCall_2_5_0; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_0_6() { return cENDLINETerminalRuleCall_0_6; }
+		public RuleCall getENDLINETerminalRuleCall_2_6() { return cENDLINETerminalRuleCall_2_6; }
 		
 		//values+=Value*
-		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+		public Assignment getValuesAssignment_3() { return cValuesAssignment_3; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_1_0() { return cValuesValueParserRuleCall_1_0; }
+		public RuleCall getValuesValueParserRuleCall_3_0() { return cValuesValueParserRuleCall_3_0; }
 		
-		//SEPARATER
-		public RuleCall getSEPARATERTerminalRuleCall_2() { return cSEPARATERTerminalRuleCall_2; }
+		//SEPARATOR
+		public RuleCall getSEPARATORTerminalRuleCall_4() { return cSEPARATORTerminalRuleCall_4; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public RuleCall getWSTerminalRuleCall_5() { return cWSTerminalRuleCall_5; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_4() { return cINTTerminalRuleCall_4; }
+		public RuleCall getINTTerminalRuleCall_6() { return cINTTerminalRuleCall_6; }
 		
 		//'P'
-		public Keyword getPKeyword_5() { return cPKeyword_5; }
+		public Keyword getPKeyword_7() { return cPKeyword_7; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_6() { return cWSTerminalRuleCall_6; }
+		public RuleCall getWSTerminalRuleCall_8() { return cWSTerminalRuleCall_8; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_7() { return cINTTerminalRuleCall_7; }
+		public RuleCall getINTTerminalRuleCall_9() { return cINTTerminalRuleCall_9; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_8() { return cENDLINETerminalRuleCall_8; }
+		public RuleCall getENDLINETerminalRuleCall_10() { return cENDLINETerminalRuleCall_10; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Value");
@@ -628,83 +658,71 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	public class HStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.HString");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValHOLLERITHTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cValAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValHOLLERITHTerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//HString:
-		//	DELIMITER? val=HOLLERITH DELIMITER?;
+		//	val=HOLLERITH DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DELIMITER? val=HOLLERITH DELIMITER?
+		//val=HOLLERITH DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
-		
 		//val=HOLLERITH
-		public Assignment getValAssignment_1() { return cValAssignment_1; }
+		public Assignment getValAssignment_0() { return cValAssignment_0; }
 		
 		//HOLLERITH
-		public RuleCall getValHOLLERITHTerminalRuleCall_1_0() { return cValHOLLERITHTerminalRuleCall_1_0; }
+		public RuleCall getValHOLLERITHTerminalRuleCall_0_0() { return cValHOLLERITHTerminalRuleCall_0_0; }
 		
 		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
 	}
 	public class ParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Param");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValDOUBLETerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cValAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValDOUBLETerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Param:
-		//	DELIMITER? val=DOUBLE DELIMITER?;
+		//	val=DOUBLE DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DELIMITER? val=DOUBLE DELIMITER?
+		//val=DOUBLE DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
-		
 		//val=DOUBLE
-		public Assignment getValAssignment_1() { return cValAssignment_1; }
+		public Assignment getValAssignment_0() { return cValAssignment_0; }
 		
 		//DOUBLE
-		public RuleCall getValDOUBLETerminalRuleCall_1_0() { return cValDOUBLETerminalRuleCall_1_0; }
+		public RuleCall getValDOUBLETerminalRuleCall_0_0() { return cValDOUBLETerminalRuleCall_0_0; }
 		
 		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
 	}
 	public class PointerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Pointer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
-		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cValAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValINTTerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
+		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Pointer:
-		//	DELIMITER? val=INT DELIMITER?;
+		//	val=INT DELIMITER?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DELIMITER? val=INT DELIMITER?
+		//val=INT DELIMITER?
 		public Group getGroup() { return cGroup; }
 		
-		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
-		
 		//val=INT
-		public Assignment getValAssignment_1() { return cValAssignment_1; }
+		public Assignment getValAssignment_0() { return cValAssignment_0; }
 		
 		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		public RuleCall getValINTTerminalRuleCall_0_0() { return cValINTTerminalRuleCall_0_0; }
 		
 		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
+		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
 	}
 	public class EndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.End");
@@ -863,7 +881,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tWS;
 	private final TerminalRule tENDLINE;
 	private final TerminalRule tDELIMITER;
-	private final TerminalRule tSEPARATER;
+	private final TerminalRule tSEPARATOR;
 	
 	private final Grammar grammar;
 
@@ -891,7 +909,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.WS");
 		this.tENDLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.ENDLINE");
 		this.tDELIMITER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.DELIMITER");
-		this.tSEPARATER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.SEPARATER");
+		this.tSEPARATOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.SEPARATOR");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -942,8 +960,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Global:
-	//	{Global} (values+=Value* WS? 'G' WS? INT ENDLINE)+
-	//	values+=Value* SEPARATER WS? 'G' WS? INT ENDLINE;
+	//	{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+
+	//	values+=Value* SEPARATOR WS? 'G' WS? INT ENDLINE;
 	public GlobalElements getGlobalAccess() {
 		return pGlobal;
 	}
@@ -986,8 +1004,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PEntry:
-	//	type=INT
-	//	values+=Value* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
+	//	type=INT DELIMITER?
+	//	values+=Value* SEPARATOR WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
 	public PEntryElements getPEntryAccess() {
 		return pPEntry;
 	}
@@ -997,8 +1015,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PMultiEntry PEntry:
-	//	(values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-	//	values+=Value* SEPARATER WS? INT 'P' WS? INT ENDLINE
+	//	type=INT DELIMITER? (values+=Value* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
+	//	values+=Value* SEPARATOR WS? INT 'P' WS? INT ENDLINE
 	public PMultiEntryElements getPMultiEntryAccess() {
 		return pPMultiEntry;
 	}
@@ -1018,7 +1036,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//HString:
-	//	DELIMITER? val=HOLLERITH DELIMITER?;
+	//	val=HOLLERITH DELIMITER?;
 	public HStringElements getHStringAccess() {
 		return pHString;
 	}
@@ -1028,7 +1046,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Param:
-	//	DELIMITER? val=DOUBLE DELIMITER?;
+	//	val=DOUBLE DELIMITER?;
 	public ParamElements getParamAccess() {
 		return pParam;
 	}
@@ -1038,7 +1056,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Pointer:
-	//	DELIMITER? val=INT DELIMITER?;
+	//	val=INT DELIMITER?;
 	public PointerElements getPointerAccess() {
 		return pPointer;
 	}
@@ -1104,14 +1122,14 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal DELIMITER:
-	//	',';
+	//	.;
 	public TerminalRule getDELIMITERRule() {
 		return tDELIMITER;
 	}
 	
-	//terminal SEPARATER:
-	//	';';
-	public TerminalRule getSEPARATERRule() {
-		return tSEPARATER;
+	//terminal SEPARATOR:
+	//	.;
+	public TerminalRule getSEPARATORRule() {
+		return tSEPARATOR;
 	}
 }

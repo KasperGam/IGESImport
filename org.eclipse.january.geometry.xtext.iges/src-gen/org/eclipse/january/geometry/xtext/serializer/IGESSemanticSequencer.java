@@ -52,7 +52,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Entry(context, (Entry) semanticObject); 
 				return; 
 			case IGESPackage.GLOBAL:
-				sequence_Global(context, (Global) semanticObject); 
+				sequence_Global_HString(context, (Global) semanticObject); 
 				return; 
 			case IGESPackage.HSTRING:
 				sequence_HString(context, (HString) semanticObject); 
@@ -162,9 +162,9 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Global returns Global
 	 *
 	 * Constraint:
-	 *     (values+=Value* values+=Value*)
+	 *     (val=HOLLERITH? values+=Value* values+=Value*)
 	 */
-	protected void sequence_Global(ISerializationContext context, Global semanticObject) {
+	protected void sequence_Global_HString(ISerializationContext context, Global semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -183,7 +183,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IGESPackage.Literals.HSTRING__VAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHStringAccess().getValHOLLERITHTerminalRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getHStringAccess().getValHOLLERITHTerminalRuleCall_0_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 	
@@ -235,7 +235,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PMultiEntry returns PEntry
 	 *
 	 * Constraint:
-	 *     ((values+=Value* dIndex=INT indicies+=INT)+ values+=Value*)
+	 *     (type=INT (values+=Value* dIndex=INT indicies+=INT)+ values+=Value*)
 	 */
 	protected void sequence_PMultiEntry(ISerializationContext context, PEntry semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -256,7 +256,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IGESPackage.Literals.PARAM__VAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParamAccess().getValDOUBLETerminalRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getParamAccess().getValDOUBLETerminalRuleCall_0_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 	
@@ -287,7 +287,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IGESPackage.Literals.POINTER__VAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPointerAccess().getValINTTerminalRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getPointerAccess().getValINTTerminalRuleCall_0_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 	

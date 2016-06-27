@@ -15,8 +15,9 @@ Start:
 
 Global:
 	{Global}
+	DELIMITER? HString? DELIMITER?
 	((values+=Value)*  WS? 'G' WS? INT ENDLINE)+
-	(values+=Value)* SEPARATER WS? 'G' WS? INT ENDLINE;
+	(values+=Value)* SEPARATOR WS? 'G' WS? INT ENDLINE;
 
 Data:
 	(entries+=Entry)+;
@@ -31,24 +32,25 @@ Parameters:
 	(entries+=(PMultiEntry | PEntry))+;
 
 PEntry:
-	type=INT
-	(values+=Value)* SEPARATER WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
+	type=INT DELIMITER?
+	(values+=Value)* SEPARATOR WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE;
 
 PMultiEntry returns PEntry:
+	type=INT DELIMITER?
 	((values+=Value)* WS? dIndex=INT 'P' WS? indicies+=INT ENDLINE)+
-	(values+=Value)* SEPARATER WS? INT 'P' WS? INT ENDLINE;
+	(values+=Value)* SEPARATOR WS? INT 'P' WS? INT ENDLINE;
 
 Value:
 	Param | Pointer | HString;
 
 HString:
-	DELIMITER? val=HOLLERITH DELIMITER?;
+	val=HOLLERITH DELIMITER?;
 
 Param:
-	DELIMITER? val=DOUBLE DELIMITER?;
+	val=DOUBLE DELIMITER?;
 
 Pointer:
-	DELIMITER? val=INT DELIMITER?;
+    val=INT DELIMITER?;
 
 End:
 	'S' WS? sval=INT 'G' WS? gval=INT 'D' WS? dval=INT 'P' WS? pval=INT WS 'T' WS? tval=INT;
@@ -76,9 +78,9 @@ terminal ENDLINE:
 	'\r'? '\n';
 	
 terminal DELIMITER:
-	','	;
+	.	;
 
-terminal SEPARATER:
-	';' ;
+terminal SEPARATOR:
+	. ;
 
 

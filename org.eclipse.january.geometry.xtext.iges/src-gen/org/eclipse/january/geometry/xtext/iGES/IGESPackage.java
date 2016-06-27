@@ -472,13 +472,22 @@ public interface IGESPackage extends EPackage
   int HSTRING = 8;
 
   /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HSTRING__VALUES = GLOBAL__VALUES;
+
+  /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HSTRING__VAL = VALUE_FEATURE_COUNT + 0;
+  int HSTRING__VAL = GLOBAL_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>HString</em>' class.
@@ -487,7 +496,7 @@ public interface IGESPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HSTRING_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+  int HSTRING_FEATURE_COUNT = GLOBAL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.eclipse.january.geometry.xtext.iGES.impl.ParamImpl <em>Param</em>}' class.

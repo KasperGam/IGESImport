@@ -20,7 +20,7 @@ package org.eclipse.january.geometry.xtext.iGES;
  * @model
  * @generated
  */
-public interface HString extends Value
+public interface HString extends Global, Value
 {
   /**
    * Returns the value of the '<em><b>Val</b></em>' attribute.

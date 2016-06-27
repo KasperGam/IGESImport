@@ -25,7 +25,7 @@ import org.eclipse.january.geometry.xtext.iGES.IGESPackage;
  *
  * @generated
  */
-public class HStringImpl extends ValueImpl implements HString
+public class HStringImpl extends GlobalImpl implements HString
 {
   /**
    * The default value of the '{@link #getVal() <em>Val</em>}' attribute.

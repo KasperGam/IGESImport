@@ -13,15 +13,15 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIGESLexer extends Lexer {
     public static final int RULE_HOLLERITH=10;
-    public static final int RULE_SEPARATER=6;
-    public static final int RULE_ENDLINE=8;
+    public static final int RULE_ENDLINE=9;
     public static final int RULE_WS=5;
     public static final int RULE_STRING=4;
-    public static final int RULE_DELIMITER=9;
+    public static final int RULE_SEPARATOR=7;
+    public static final int RULE_DELIMITER=6;
     public static final int T__15=15;
     public static final int RULE_DOUBLE=11;
     public static final int T__16=16;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=8;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -145,10 +145,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4226:10: ( ( '0' .. '9' )+ )
-            // InternalIGES.g:4226:12: ( '0' .. '9' )+
+            // InternalIGES.g:4322:10: ( ( '0' .. '9' )+ )
+            // InternalIGES.g:4322:12: ( '0' .. '9' )+
             {
-            // InternalIGES.g:4226:12: ( '0' .. '9' )+
+            // InternalIGES.g:4322:12: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -162,7 +162,7 @@ public class InternalIGESLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalIGES.g:4226:13: '0' .. '9'
+            	    // InternalIGES.g:4322:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -194,10 +194,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4228:13: ( ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? )
-            // InternalIGES.g:4228:15: ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalIGES.g:4324:13: ( ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? )
+            // InternalIGES.g:4324:15: ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             {
-            // InternalIGES.g:4228:15: ( '+' | '-' )?
+            // InternalIGES.g:4324:15: ( '+' | '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -225,7 +225,7 @@ public class InternalIGESLexer extends Lexer {
 
             mRULE_INT(); 
             match('.'); 
-            // InternalIGES.g:4228:39: ( RULE_INT )?
+            // InternalIGES.g:4324:39: ( RULE_INT )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -234,7 +234,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalIGES.g:4228:39: RULE_INT
+                    // InternalIGES.g:4324:39: RULE_INT
                     {
                     mRULE_INT(); 
 
@@ -243,7 +243,7 @@ public class InternalIGESLexer extends Lexer {
 
             }
 
-            // InternalIGES.g:4228:49: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalIGES.g:4324:49: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -252,7 +252,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalIGES.g:4228:50: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalIGES.g:4324:50: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -263,7 +263,7 @@ public class InternalIGESLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalIGES.g:4228:60: ( '+' | '-' )?
+                    // InternalIGES.g:4324:60: ( '+' | '-' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -312,8 +312,8 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_HOLLERITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4230:16: ( RULE_INT 'H' . )
-            // InternalIGES.g:4230:18: RULE_INT 'H' .
+            // InternalIGES.g:4326:16: ( RULE_INT 'H' . )
+            // InternalIGES.g:4326:18: RULE_INT 'H' .
             {
             mRULE_INT(); 
             match('H'); 
@@ -334,10 +334,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4232:13: ( ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+ )
-            // InternalIGES.g:4232:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
+            // InternalIGES.g:4328:13: ( ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+ )
+            // InternalIGES.g:4328:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
             {
-            // InternalIGES.g:4232:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
+            // InternalIGES.g:4328:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
             int cnt6=0;
             loop6:
             do {
@@ -402,7 +402,7 @@ public class InternalIGESLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalIGES.g:4232:16: 'A..Z'
+            	    // InternalIGES.g:4328:16: 'A..Z'
             	    {
             	    match("A..Z"); 
 
@@ -410,21 +410,21 @@ public class InternalIGESLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalIGES.g:4232:23: 'a' .. 'z'
+            	    // InternalIGES.g:4328:23: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // InternalIGES.g:4232:32: '0' .. '9'
+            	    // InternalIGES.g:4328:32: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
             	    }
             	    break;
             	case 4 :
-            	    // InternalIGES.g:4232:41: '\"'
+            	    // InternalIGES.g:4328:41: '\"'
             	    {
             	    match('\"'); 
 
@@ -456,10 +456,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4234:9: ( ( ' ' | '\\t' | '\\r' )+ )
-            // InternalIGES.g:4234:11: ( ' ' | '\\t' | '\\r' )+
+            // InternalIGES.g:4330:9: ( ( ' ' | '\\t' | '\\r' )+ )
+            // InternalIGES.g:4330:11: ( ' ' | '\\t' | '\\r' )+
             {
-            // InternalIGES.g:4234:11: ( ' ' | '\\t' | '\\r' )+
+            // InternalIGES.g:4330:11: ( ' ' | '\\t' | '\\r' )+
             int cnt7=0;
             loop7:
             do {
@@ -513,10 +513,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_ENDLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4236:14: ( ( '\\r' )? '\\n' )
-            // InternalIGES.g:4236:16: ( '\\r' )? '\\n'
+            // InternalIGES.g:4332:14: ( ( '\\r' )? '\\n' )
+            // InternalIGES.g:4332:16: ( '\\r' )? '\\n'
             {
-            // InternalIGES.g:4236:16: ( '\\r' )?
+            // InternalIGES.g:4332:16: ( '\\r' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -525,7 +525,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalIGES.g:4236:16: '\\r'
+                    // InternalIGES.g:4332:16: '\\r'
                     {
                     match('\r'); 
 
@@ -551,10 +551,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_DELIMITER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4238:16: ( ',' )
-            // InternalIGES.g:4238:18: ','
+            // InternalIGES.g:4334:16: ( . )
+            // InternalIGES.g:4334:18: .
             {
-            match(','); 
+            matchAny(); 
 
             }
 
@@ -566,15 +566,15 @@ public class InternalIGESLexer extends Lexer {
     }
     // $ANTLR end "RULE_DELIMITER"
 
-    // $ANTLR start "RULE_SEPARATER"
-    public final void mRULE_SEPARATER() throws RecognitionException {
+    // $ANTLR start "RULE_SEPARATOR"
+    public final void mRULE_SEPARATOR() throws RecognitionException {
         try {
-            int _type = RULE_SEPARATER;
+            int _type = RULE_SEPARATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:4240:16: ( ';' )
-            // InternalIGES.g:4240:18: ';'
+            // InternalIGES.g:4336:16: ( . )
+            // InternalIGES.g:4336:18: .
             {
-            match(';'); 
+            matchAny(); 
 
             }
 
@@ -584,10 +584,10 @@ public class InternalIGESLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_SEPARATER"
+    // $ANTLR end "RULE_SEPARATOR"
 
     public void mTokens() throws RecognitionException {
-        // InternalIGES.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_INT | RULE_DOUBLE | RULE_HOLLERITH | RULE_STRING | RULE_WS | RULE_ENDLINE | RULE_DELIMITER | RULE_SEPARATER )
+        // InternalIGES.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_INT | RULE_DOUBLE | RULE_HOLLERITH | RULE_STRING | RULE_WS | RULE_ENDLINE | RULE_DELIMITER | RULE_SEPARATOR )
         int alt9=13;
         alt9 = dfa9.predict(input);
         switch (alt9) {
@@ -676,9 +676,9 @@ public class InternalIGESLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // InternalIGES.g:1:124: RULE_SEPARATER
+                // InternalIGES.g:1:124: RULE_SEPARATOR
                 {
-                mRULE_SEPARATER(); 
+                mRULE_SEPARATOR(); 
 
                 }
                 break;
@@ -690,28 +690,40 @@ public class InternalIGESLexer extends Lexer {
 
     protected DFA9 dfa9 = new DFA9(this);
     static final String DFA9_eotS =
-        "\6\uffff\1\16\2\uffff\1\12\6\uffff";
+        "\6\uffff\1\24\2\31\2\uffff\1\32\11\uffff\1\24\6\uffff";
     static final String DFA9_eofS =
-        "\20\uffff";
+        "\34\uffff";
     static final String DFA9_minS =
-        "\1\11\5\uffff\1\42\2\uffff\1\12\6\uffff";
+        "\1\0\5\uffff\1\42\1\60\1\56\2\uffff\1\12\11\uffff\1\42\6\uffff";
     static final String DFA9_maxS =
-        "\1\172\5\uffff\1\172\2\uffff\1\12\6\uffff";
+        "\1\uffff\5\uffff\1\172\1\71\1\56\2\uffff\1\12\11\uffff\1\172\6\uffff";
     static final String DFA9_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\7\1\11\1\uffff\1\12\1\13\1\14\1\15\1\6\1\10";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\3\uffff\2\11\1\uffff\1\12\1\13\1\14\1\1\1\2\1\3\1\4\1\5\1\6\1\uffff\1\10\1\7\1\11\1\14\1\12\1\13";
     static final String DFA9_specialS =
-        "\20\uffff}>";
+        "\1\0\33\uffff}>";
     static final String[] DFA9_transitionS = {
-            "\1\12\1\13\2\uffff\1\11\22\uffff\1\12\1\uffff\1\10\10\uffff\1\7\1\14\1\7\2\uffff\12\6\1\uffff\1\15\5\uffff\1\10\2\uffff\1\2\2\uffff\1\1\10\uffff\1\3\2\uffff\1\4\1\5\14\uffff\32\10",
+            "\11\16\1\14\1\15\2\16\1\13\22\16\1\14\1\16\1\12\10\16\1\7\1\16\1\7\2\16\12\6\7\16\1\10\2\16\1\2\2\16\1\1\10\16\1\3\2\16\1\4\1\5\14\16\32\11\uff85\16",
             "",
             "",
             "",
             "",
             "",
-            "\1\10\13\uffff\1\7\1\uffff\12\6\7\uffff\1\10\6\uffff\1\17\30\uffff\32\10",
+            "\1\30\13\uffff\1\27\1\uffff\12\25\7\uffff\1\30\6\uffff\1\26\30\uffff\32\30",
+            "\12\27",
+            "\1\30",
             "",
             "",
-            "\1\13",
+            "\1\33",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\30\13\uffff\1\27\1\uffff\12\25\7\uffff\1\30\6\uffff\1\26\30\uffff\32\30",
             "",
             "",
             "",
@@ -750,7 +762,51 @@ public class InternalIGESLexer extends Lexer {
             this.transition = DFA9_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_INT | RULE_DOUBLE | RULE_HOLLERITH | RULE_STRING | RULE_WS | RULE_ENDLINE | RULE_DELIMITER | RULE_SEPARATER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | RULE_INT | RULE_DOUBLE | RULE_HOLLERITH | RULE_STRING | RULE_WS | RULE_ENDLINE | RULE_DELIMITER | RULE_SEPARATOR );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA9_0 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA9_0=='G') ) {s = 1;}
+
+                        else if ( (LA9_0=='D') ) {s = 2;}
+
+                        else if ( (LA9_0=='P') ) {s = 3;}
+
+                        else if ( (LA9_0=='S') ) {s = 4;}
+
+                        else if ( (LA9_0=='T') ) {s = 5;}
+
+                        else if ( ((LA9_0>='0' && LA9_0<='9')) ) {s = 6;}
+
+                        else if ( (LA9_0=='+'||LA9_0=='-') ) {s = 7;}
+
+                        else if ( (LA9_0=='A') ) {s = 8;}
+
+                        else if ( ((LA9_0>='a' && LA9_0<='z')) ) {s = 9;}
+
+                        else if ( (LA9_0=='\"') ) {s = 10;}
+
+                        else if ( (LA9_0=='\r') ) {s = 11;}
+
+                        else if ( (LA9_0=='\t'||LA9_0==' ') ) {s = 12;}
+
+                        else if ( (LA9_0=='\n') ) {s = 13;}
+
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='\b')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\u001F')||LA9_0=='!'||(LA9_0>='#' && LA9_0<='*')||LA9_0==','||(LA9_0>='.' && LA9_0<='/')||(LA9_0>=':' && LA9_0<='@')||(LA9_0>='B' && LA9_0<='C')||(LA9_0>='E' && LA9_0<='F')||(LA9_0>='H' && LA9_0<='O')||(LA9_0>='Q' && LA9_0<='R')||(LA9_0>='U' && LA9_0<='`')||(LA9_0>='{' && LA9_0<='\uFFFF')) ) {s = 14;}
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 9, _s, input);
+            error(nvae);
+            throw nvae;
         }
     }
  

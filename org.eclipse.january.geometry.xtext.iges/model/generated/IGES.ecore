@@ -54,7 +54,7 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Value"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HString" eSuperTypes="#//Value">
+  <eClassifiers xsi:type="ecore:EClass" name="HString" eSuperTypes="#//Global #//Value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Param" eSuperTypes="#//Value">
