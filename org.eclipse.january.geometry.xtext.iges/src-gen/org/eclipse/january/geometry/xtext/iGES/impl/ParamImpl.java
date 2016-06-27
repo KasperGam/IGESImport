@@ -35,7 +35,7 @@ public class ParamImpl extends ValueImpl implements Param
    * @generated
    * @ordered
    */
-  protected static final String VAL_EDEFAULT = null;
+  protected static final double VAL_EDEFAULT = 0.0;
 
   /**
    * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
@@ -45,7 +45,7 @@ public class ParamImpl extends ValueImpl implements Param
    * @generated
    * @ordered
    */
-  protected String val = VAL_EDEFAULT;
+  protected double val = VAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public class ParamImpl extends ValueImpl implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVal()
+  public double getVal()
   {
     return val;
   }
@@ -83,9 +83,9 @@ public class ParamImpl extends ValueImpl implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(String newVal)
+  public void setVal(double newVal)
   {
-    String oldVal = val;
+    double oldVal = val;
     val = newVal;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, IGESPackage.PARAM__VAL, oldVal, val));
@@ -118,7 +118,7 @@ public class ParamImpl extends ValueImpl implements Param
     switch (featureID)
     {
       case IGESPackage.PARAM__VAL:
-        setVal((String)newValue);
+        setVal((Double)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -152,7 +152,7 @@ public class ParamImpl extends ValueImpl implements Param
     switch (featureID)
     {
       case IGESPackage.PARAM__VAL:
-        return VAL_EDEFAULT == null ? val != null : !VAL_EDEFAULT.equals(val);
+        return val != VAL_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

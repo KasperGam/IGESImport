@@ -31,12 +31,12 @@ public interface Param extends Value
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(String)
+   * @see #setVal(double)
    * @see org.eclipse.january.geometry.xtext.iGES.IGESPackage#getParam_Val()
    * @model
    * @generated
    */
-  String getVal();
+  double getVal();
 
   /**
    * Sets the value of the '{@link org.eclipse.january.geometry.xtext.iGES.Param#getVal <em>Val</em>}' attribute.
@@ -46,6 +46,6 @@ public interface Param extends Value
    * @see #getVal()
    * @generated
    */
-  void setVal(String value);
+  void setVal(double value);
 
 } // Param

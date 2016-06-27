@@ -1091,7 +1091,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		return tINT;
 	}
 	
-	//terminal DOUBLE:
+	//terminal DOUBLE returns ecore::EDouble:
 	//	('+' | '-')? INT '.' INT? (('e' | 'E') ('+' | '-')? INT)?;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;

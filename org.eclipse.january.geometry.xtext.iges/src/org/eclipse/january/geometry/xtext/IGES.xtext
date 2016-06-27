@@ -61,7 +61,7 @@ startLine returns ecore::EString:
 terminal INT returns ecore::EInt:
 	('0'..'9')+;
 
-terminal DOUBLE:
+terminal DOUBLE returns ecore::EDouble:
 	('+' | '-')? INT '.' INT? (('e' | 'E') ('+' | '-')? INT)?;
 
 	// Is implemented in CustomIGESLexer properly',' this is just declarative
