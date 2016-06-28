@@ -64,7 +64,6 @@ terminal INT returns ecore::EInt:
 terminal DOUBLE returns ecore::EDouble:
 	('+' | '-')? INT '.' INT? (('e' | 'E') ('+' | '-')? INT)?;
 
-	// Is implemented in CustomIGESLexer properly',' this is just declarative
 terminal HOLLERITH:
 	INT 'H' .;
 
@@ -82,5 +81,3 @@ terminal DELIMITER:
 
 terminal SEPARATOR:
 	. ;
-
-

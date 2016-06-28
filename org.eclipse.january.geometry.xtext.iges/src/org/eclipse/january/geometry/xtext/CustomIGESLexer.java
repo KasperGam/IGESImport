@@ -1,260 +1,336 @@
 package org.eclipse.january.geometry.xtext;
 
 import org.eclipse.january.geometry.xtext.parser.antlr.internal.InternalIGESLexer;
-// Hack: Use our own Lexer superclass by means of import. 
-// Currently there is no other way to specify the superclass for the lexer.
-import org.eclipse.xtext.parser.antlr.Lexer;
-
 
 import org.antlr.runtime.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
 
-@SuppressWarnings("all")
+
+/**
+ * This class provides custom functions for properly lexing IGES files. The Hollerith,
+ * Delimiter, and Separator terminal functions are implemented here, but there definitions
+ * in the grammar are important to match for the parser. 
+ * @author Kasper Gammeltoft
+ *
+ */
 public class CustomIGESLexer extends InternalIGESLexer {
 
-	private String DELIMITER = null;
-	private String SEPARATOR = null;
-	boolean DELIM_SET = false;
+	/** The delimiter for the lexer */
+	private String DELIMITER;
+	/** The entry separator for the lexer */
+	private String SEPARATOR;
+	/**
+	 * Flag indicating if the delimiter was specified in the file. This
+	 * determines if the separator needs to be set to default ';' when the
+	 * delimiter is called again.
+	 */
+	boolean DELIM_SET;
+	
+	public CustomIGESLexer() {
+		DELIMITER = null;
+		SEPARATOR = null;
+		DELIM_SET = false;
+	}
 
-    public CustomIGESLexer() {;} 
-    public CustomIGESLexer(CharStream input) {
-        this(input, new RecognizerSharedState());
-    }
-    public CustomIGESLexer(CharStream input, RecognizerSharedState state) {
-        super(input,state);
+	public CustomIGESLexer(CharStream input) {
+		this(input, new RecognizerSharedState());
+	}
 
-    }
-    
-    @Override 
-    public void mTokens() throws RecognitionException{
-    	if (isHollerith()){
-    			if (DELIMITER == null) {
-    				setDelimiter();
-    				DELIM_SET = true;
-    			} else if (SEPARATOR == null) {
-    				setSEPARATOR();
-    			} 
-    			RULE_HOLLERITH();
-    			
-    	} else if (isDelimiter()) {
-    		
-				RULE_DELIMITER();
+	public CustomIGESLexer(CharStream input, RecognizerSharedState state) {
+		super(input, state);
+		DELIMITER = null;
+		SEPARATOR = null;
+		DELIM_SET = false;
+	}
+
+	@Override
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.january.geometry.xtext.parser.antlr.internal.
+	 * InternalIGESLexer#mTokens()
+	 */
+	public void mTokens() throws RecognitionException {
+		// Handle hollerith string
+		if (isHollerith()) {
+			
+			// Delimiter needs to be set first
+			if (DELIMITER == null) {
+				setDelimiter();
 				
-    	} else if (isSEPARATOR()) {
-    		
-				RULE_SEPARATOR();
-	 	} else {
-    		if (isComma() && DELIMITER == null){
-        		DELIMITER = ",";
-        		super.mRULE_DELIMITER();
-    		} else {
-    			super.mTokens();	
-    		}
-    	}
-    }
-    
-    private boolean isDelimiter() {
-    	if (DELIMITER == null) {
-    		return false;
-    	}
-    	int index = 0;
-    	
-    	while(index < DELIMITER.length() && (input.LA(index + 1))==DELIMITER.charAt(index)){
-    		index++;
-    	}
-    	return index == DELIMITER.length();
-    }
-    
-    private boolean isSEPARATOR() {
-    	if (SEPARATOR == null) {
-    		return false;
-    	}
-    	int index = 0;
-    	
-    	while(index < SEPARATOR.length() && (input.LA(index + 1))==SEPARATOR.charAt(index)){
-    		index++;
-    	}
-    	return index == SEPARATOR.length();
-    }
-    
-    
-    private void setDelimiter() {
-    	String curInt = "";
-    	int index = 1;
-    	int cur = input.LA(index);
-    	while(cur >= '0' && cur <='9') {
-    		curInt+= (char)cur;
-    		index ++;
-    		cur = input.LA(index);
-    	}
-    	int n;
-    	try {
-    		n = Integer.parseInt(curInt);
-    	} catch(Exception e) {
-    		e.printStackTrace();
-    		return;
-    	}	
-        	
-    	if (input.LA(index) == 'H'){
-    		index ++;
-    	} else {
-    		return;
-    	}
-    	DELIMITER = "";
-        for(int i=0; i<n; i++) {
-        	DELIMITER += (char)input.LA(index+i);
-        }
-    }
-    
-    private void setSEPARATOR() {
-    	String curInt = "";
-    	int index = 1;
-    	int cur = input.LA(index);
-    	while(cur >= '0' && cur <='9') {
-    		curInt+= (char)cur;
-    		index ++;
-    		cur = input.LA(index);
-    	}
-    	int n;
-    	try {
-    		n = Integer.parseInt(curInt);
-    	} catch(Exception e) {
-    		e.printStackTrace();
-    		return;
-    	}	
-        	
-    	if (input.LA(index) == 'H'){
-    		index ++;
-    	} else {
-    		return;
-    	}
-    	SEPARATOR = "";
-        for(int i=0; i<n; i++) {
-        	SEPARATOR += (char)input.LA(index+i);
-        }
+				// Set flag to true
+				DELIM_SET = true;
+				
+			// Separator is second
+			} else if (SEPARATOR == null) {
+				setSEPARATOR();
+			}
+			// Call the new Hollerith rule
+			RULE_HOLLERITH();
+			
+		// process the delimiter
+		} else if (isDelimiter()) {
+			RULE_DELIMITER();
+			
+		// process the separator
+		} else if (isSEPARATOR()) {
+			RULE_SEPARATOR();
+		// Other token
+		} else {
+			// If comma, then check delimiter
+			if (isComma() && DELIMITER == null) {
+				// Set the delimiter as default
+				DELIMITER = ",";
+				super.mRULE_DELIMITER();
+				// Let all other tokens be handled
+				// by internal lexer
+			} else {
+				super.mTokens();
+			}
+		}
+	}
 
-    }
-    
-    public final void RULE_DELIMITER() throws RecognitionException {
-        try {
-            int _type = RULE_DELIMITER;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            
-            // InternalIGES.g:1540:16: ( ',' )
-            // InternalIGES.g:1540:18: ','
-            {
-            	for(int i=0; i<DELIMITER.length(); i++) {
-            		match(String.valueOf(DELIMITER.charAt(i)));
-            	}
-            	
-            	if (SEPARATOR == null && !DELIM_SET) {
-            		SEPARATOR = ";";
-            	}
+	/**
+	 * Determines if the current token on the stream is the delimiter for the
+	 * current file
+	 * 
+	 * @return Returns true if the token is the delimiter, false if otherwise
+	 */
+	private boolean isDelimiter() {
+		// Cannot be if delimiter is null
+		if (DELIMITER == null) {
+			return false;
+		}
+		
+		int index = 0;
+		// Check each character
+		while (index < DELIMITER.length() && (input.LA(index + 1)) == DELIMITER.charAt(index)) {
+			index++;
+		}
+		// Return if index got to end or not
+		return index == DELIMITER.length();
+	}
 
-            }
+	/**
+	 * Determines if the current token on the stream is the separator for the
+	 * current file
+	 * 
+	 * @return Returns true if the token is the separator, false if otherwise
+	 */
+	private boolean isSEPARATOR() {
+		// Cannot be if separator is null
+		if (SEPARATOR == null) {
+			return false;
+		}
+		int index = 0;
+		// Check each character
+		while (index < SEPARATOR.length() && (input.LA(index + 1)) == SEPARATOR.charAt(index)) {
+			index++;
+		}
+		// Return if index got to the end or not
+		return index == SEPARATOR.length();
+	}
 
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_DELIMITER"
+	/**
+	 * Sets the delimiter for the current file.
+	 */
+	private void setDelimiter() {
+		// Setup temp string
+		String curInt = "";
+		int index = 1;
+		int cur = input.LA(index);
+		// get hollerith string length
+		while (cur >= '0' && cur <= '9') {
+			curInt += (char) cur;
+			index++;
+			cur = input.LA(index);
+		}
+		// Get int value
+		int n;
+		try {
+			n = Integer.parseInt(curInt);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+		// Make sure it is a hollerith
+		if (input.LA(index) == 'H') {
+			index++;
+		} else {
+			return;
+		}
+		// Set the delimiter
+		DELIMITER = "";
+		for (int i = 0; i < n; i++) {
+			DELIMITER += (char) input.LA(index + i);
+		}
+	}
 
-    // $ANTLR start "RULE_SEPARATOR"
-    public final void RULE_SEPARATOR() throws RecognitionException {
-        try {
-            int _type = RULE_SEPARATOR;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1542:16: ( ';' )
-            // InternalIGES.g:1542:18: ';'
-            {
-            
-            	for(int i=0; i<SEPARATOR.length(); i++) {
-            		match(String.valueOf(SEPARATOR.charAt(i)));
-            	}
+	/**
+	 * Sets the separator for the current file.
+	 */
+	private void setSEPARATOR() {
+		// Setup temp string
+		String curInt = "";
+		int index = 1;
+		int cur = input.LA(index);
+		// Get hollerith string length
+		while (cur >= '0' && cur <= '9') {
+			curInt += (char) cur;
+			index++;
+			cur = input.LA(index);
+		}
+		// Get int value
+		int n;
+		try {
+			n = Integer.parseInt(curInt);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}
+		
+		// Make sure it is a hollerith string
+		if (input.LA(index) == 'H') {
+			index++;
+		} else {
+			return;
+		}
+		// Set the separator
+		SEPARATOR = "";
+		for (int i = 0; i < n; i++) {
+			SEPARATOR += (char) input.LA(index + i);
+		}
 
-            }
+	}
 
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    
-    /**
-     * Custom lexer rule for getting Hollerith strings. Is not dictated by the grammar!
-     * @author Kasper Gammeltoft
-     * @throws RecognitionException
-     */
-    public final void RULE_HOLLERITH() throws RecognitionException {
-        try {
-            int _type = RULE_HOLLERITH;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1571:16: ( RULE_INT 'H' . . . )
-            // InternalIGES.g:1571:18: RULE_INT 'H' . . .
-            
-            
-	    	String curInt = "";
-	    	int cur = input.LA(1);
-	    	while(cur >= '0' && cur <='9') {
-	    		curInt+= (char)cur;
-	    		matchRange('0','9');
-	    		cur = input.LA(1);
-	    	}
-	    	int n;
-	    	try {
-	    		n = Integer.parseInt(curInt);
-	    	} catch(Exception e) {
-	    		throw new EarlyExitException(1, input);
-	    	}	
-            	
-            match('H');
-            
-            for(int i=0; i<n; i++) {
-            	matchAny(); 
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    
-    private boolean isHollerith() {
-    	
-    	int index = isInt();
-    	
-    	if (index > 0) {
-    		return true;
-    	} else {
-    		return false;
-    	}
-    }
-    
-    private int isInt() {  
-    	int index = 1;
-    	int cur = input.LA(index);
-    	
-    	while(cur >= '0' && cur <='9'){
-    		index++;
-    		cur = input.LA(index);
-    	}
-    	if (index > 1 && cur == 'H'){
-    		return index;
-    	} else {
-    		return -1;
-    	}
-    }
-    
-    private boolean isComma() {
-    	
-    	return (input.LA(1) == ',');
+	/**
+	 * Custom lexer rule for the delimiter token. Matches the file specified
+	 * entry delimiter.
+	 * 
+	 * @throws RecognitionException
+	 */
+	public final void RULE_DELIMITER() throws RecognitionException {
+		try {
+			int _type = RULE_DELIMITER;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
 
-    }
- 
+			{	
+				// Match the delimiter in the token stream
+				for (int i = 0; i < DELIMITER.length(); i++) {
+					match(String.valueOf(DELIMITER.charAt(i)));
+				}
+				// If the separator is not set, and needs to be, then set it
+				if (SEPARATOR == null && !DELIM_SET) {
+					SEPARATOR = ";";
+				}
+				// Delimiter has already been set
+				DELIM_SET = false;
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		} finally {
+		}
+	}
+
+	/**
+	 * Custom lexer rule for the separator token. Matches the file specified
+	 * entry separator.
+	 * 
+	 * @throws RecognitionException
+	 */
+	public final void RULE_SEPARATOR() throws RecognitionException {
+		try {
+			int _type = RULE_SEPARATOR;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+
+			{
+				// Match the separator in the token stream
+				for (int i = 0; i < SEPARATOR.length(); i++) {
+					match(String.valueOf(SEPARATOR.charAt(i)));
+				}
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		} finally {
+		}
+	}
+
+	/**
+	 * Custom lexer rule for getting Hollerith strings. Is not dictated by the
+	 * grammar! Will return the entire Hollerith string, including the int 'H'
+	 * prefix.
+	 * 
+	 * @throws RecognitionException
+	 */
+	public final void RULE_HOLLERITH() throws RecognitionException {
+		try {
+			// Follow style and conventions of internal lexer
+			int _type = RULE_HOLLERITH;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+
+			// Read in the int at the beginning of the string
+			String curInt = "";
+			// Get the next character
+			int cur = input.LA(1);
+			// While it is a digit add it to cur
+			while (cur >= '0' && cur <= '9') {
+				curInt += (char) cur;
+				matchRange('0', '9');
+				cur = input.LA(1);
+			}
+			// Try to read the integer. Should be successful. Otherwise there
+			// was an error
+			int n;
+			try {
+				n = Integer.parseInt(curInt);
+			} catch (Exception e) {
+				throw new EarlyExitException(1, input);
+			}
+
+			// Match the H
+			match('H');
+
+			// Match the n number of characters in the stream
+			for (int i = 0; i < n; i++) {
+				matchAny();
+			}
+			// Set the type and channel, as the internal lexer does
+			state.type = _type;
+			state.channel = _channel;
+		} finally {
+		}
+	}
+
+	/**
+	 * Checks if the current token is a Hollerith String
+	 * 
+	 * @return Returns true if the current token is a Hollerith string, false if
+	 *         otherwise
+	 */
+	private boolean isHollerith() {
+		int index = 1;
+		int cur = input.LA(index);
+		// See if an int starts the string
+		while (cur >= '0' && cur <= '9') {
+			index++;
+			cur = input.LA(index);
+		}
+		// Followed by an 'H'
+		return index > 1 && cur == 'H';
+	}
+
+	/**
+	 * Checks if the current character in the stream is a comma
+	 * 
+	 * @return Returns true if it is a comma, false if otherwise
+	 */
+	private boolean isComma() {
+
+		return (input.LA(1) == ',');
+
+	}
 
 }
