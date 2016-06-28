@@ -3,10 +3,34 @@
  */
 package org.eclipse.january.geometry.xtext.ui.contentassist
 
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import org.eclipse.xtext.Assignment
+import org.apache.commons.lang.StringUtils
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class IGESProposalProvider extends AbstractIGESProposalProvider {
+	
+	
+	override public void completeIGES_Start(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		var int offset = context.getOffset();		
+		var String proposal = StringUtils.leftPad('S      ' + (offset/80 + 1), 80, ' ') + '\n'
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	
+	override public void completeGlobal_Values(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		acceptor.accept(createCompletionProposal('1H,,', 'Delimiter', null, context));
+		acceptor.accept(createCompletionProposal('1H;,', 'Separator', null, context));
+		
+		var String toEnd = StringUtils.leftPad('G      1', 80-context.getOffset(), ' ');
+		acceptor.accept(createCompletionProposal(toEnd, 'End of line', null, context));
+		acceptor.accept(createCompletionProposal('; '+toEnd, 'End of Section', null, context));
+	}
+	
 }

@@ -4,6 +4,8 @@
 package org.eclipse.january.geometry.xtext.ui.labeling
 
 import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+import org.eclipse.january.geometry.xtext.iGES.Entry
+import org.eclipse.january.geometry.xtext.iGES.End
 
 /**
  * Provides labels for IEObjectDescriptions and IResourceDescriptions.
@@ -21,4 +23,41 @@ class IGESDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
 //	override image(IEObjectDescription ele) {
 //		ele.EClass.name + '.gif'
 //	}
+
+	def text(Entry e) {
+		'Entity ' + e.getType() + ', data on line ' + e.getParamData() + ', ' + 'structure: ' + e.getStructure() + 
+		', line font: ' + 
+		switch(e.getLineFont()){
+			case 0: 'none' 
+			case 1: 'solid'
+			case 2: 'dashed'
+			case 3: 'phantom'
+			case 4: 'centerline'
+			case 5: 'dotted'
+			default: 'none'
+		}
+		+ ', level: ' e.getLevel() + ', view: '+ e.getView() + ', Transformation matrix pointer: ' + e.getTransformMatrix()
+		+ ', status number: ' + e.getStatus() + ', index = ' + e.getIndex() + ', line weight: ' + e.getLineWeight() 
+		+ ', color: ' +
+		switch(e.getColor()) {
+			case 0: 'none'
+			case 1: 'black'
+			case 2: 'red'
+			case 3: 'green'
+			case 4: 'blue'
+			case 5: 'yellow'
+			case 6: 'magenta'
+			case 7: 'cyan'
+			case 8: 'white'
+			default: 'none'
+		}
+		+ ', number of parameter data lines: ' + e.getParamLines() + ', form: ' + e.getForm() + ', sub number: ' + e.getSubNum()
+			
+	}
+	
+	def text(End end) {
+		'File records: ' + end.getSval() + ' Start lines, ' + end.getGval() + ' Global lines, ' + end.getDval() + 
+		' Data entry lines, ' + end.getPval() +' parameter data lines, and ' + end.getTval() + 'terminal lines.'
+	}
+
 }
