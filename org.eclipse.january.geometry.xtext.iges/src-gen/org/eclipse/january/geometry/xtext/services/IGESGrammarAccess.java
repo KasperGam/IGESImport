@@ -249,26 +249,35 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFormAssignment_31 = (Assignment)cGroup.eContents().get(31);
 		private final RuleCall cFormINTTerminalRuleCall_31_0 = (RuleCall)cFormAssignment_31.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_32 = (RuleCall)cGroup.eContents().get(32);
-		private final Assignment cEntityLabelAssignment_33 = (Assignment)cGroup.eContents().get(33);
-		private final RuleCall cEntityLabelSTRINGTerminalRuleCall_33_0 = (RuleCall)cEntityLabelAssignment_33.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_34 = (RuleCall)cGroup.eContents().get(34);
-		private final Assignment cSubNumAssignment_35 = (Assignment)cGroup.eContents().get(35);
-		private final RuleCall cSubNumINTTerminalRuleCall_35_0 = (RuleCall)cSubNumAssignment_35.eContents().get(0);
-		private final Keyword cDKeyword_36 = (Keyword)cGroup.eContents().get(36);
-		private final RuleCall cWSTerminalRuleCall_37 = (RuleCall)cGroup.eContents().get(37);
-		private final RuleCall cINTTerminalRuleCall_38 = (RuleCall)cGroup.eContents().get(38);
-		private final RuleCall cENDLINETerminalRuleCall_39 = (RuleCall)cGroup.eContents().get(39);
+		private final Group cGroup_33 = (Group)cGroup.eContents().get(33);
+		private final RuleCall cINTTerminalRuleCall_33_0 = (RuleCall)cGroup_33.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_33_1 = (RuleCall)cGroup_33.eContents().get(1);
+		private final Group cGroup_34 = (Group)cGroup.eContents().get(34);
+		private final RuleCall cINTTerminalRuleCall_34_0 = (RuleCall)cGroup_34.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_34_1 = (RuleCall)cGroup_34.eContents().get(1);
+		private final Alternatives cAlternatives_35 = (Alternatives)cGroup.eContents().get(35);
+		private final Assignment cEntityLabelAssignment_35_0 = (Assignment)cAlternatives_35.eContents().get(0);
+		private final RuleCall cEntityLabelSTRINGTerminalRuleCall_35_0_0 = (RuleCall)cEntityLabelAssignment_35_0.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_35_1 = (RuleCall)cAlternatives_35.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_36 = (RuleCall)cGroup.eContents().get(36);
+		private final Assignment cSubNumAssignment_37 = (Assignment)cGroup.eContents().get(37);
+		private final RuleCall cSubNumINTTerminalRuleCall_37_0 = (RuleCall)cSubNumAssignment_37.eContents().get(0);
+		private final Keyword cDKeyword_38 = (Keyword)cGroup.eContents().get(38);
+		private final RuleCall cWSTerminalRuleCall_39 = (RuleCall)cGroup.eContents().get(39);
+		private final RuleCall cINTTerminalRuleCall_40 = (RuleCall)cGroup.eContents().get(40);
+		private final RuleCall cENDLINETerminalRuleCall_41 = (RuleCall)cGroup.eContents().get(41);
 		
 		//Entry:
 		//	WS type=INT WS? paramData=INT WS? structure=INT WS? lineFont=INT WS? level=INT WS? view=INT WS? TransformMatrix=INT
 		//	WS? INT? WS? status=INT 'D' WS? index=INT ENDLINE
-		//	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? entityLabel=STRING? WS? subNum=INT 'D'
+		//	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? (INT WS?)? (INT WS?)? (entityLabel=STRING
+		//	| INT)? WS? subNum=INT? 'D'
 		//	WS? INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//WS type=INT WS? paramData=INT WS? structure=INT WS? lineFont=INT WS? level=INT WS? view=INT WS? TransformMatrix=INT WS?
 		//INT? WS? status=INT 'D' WS? index=INT ENDLINE WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT
-		//WS? entityLabel=STRING? WS? subNum=INT 'D' WS? INT ENDLINE
+		//WS? (INT WS?)? (INT WS?)? (entityLabel=STRING | INT)? WS? subNum=INT? 'D' WS? INT ENDLINE
 		public Group getGroup() { return cGroup; }
 		
 		//WS
@@ -409,32 +418,56 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 		//WS?
 		public RuleCall getWSTerminalRuleCall_32() { return cWSTerminalRuleCall_32; }
 		
-		//entityLabel=STRING?
-		public Assignment getEntityLabelAssignment_33() { return cEntityLabelAssignment_33; }
+		//(INT WS?)?
+		public Group getGroup_33() { return cGroup_33; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_33_0() { return cINTTerminalRuleCall_33_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_33_1() { return cWSTerminalRuleCall_33_1; }
+		
+		//(INT WS?)?
+		public Group getGroup_34() { return cGroup_34; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_34_0() { return cINTTerminalRuleCall_34_0; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_34_1() { return cWSTerminalRuleCall_34_1; }
+		
+		//(entityLabel=STRING | INT)?
+		public Alternatives getAlternatives_35() { return cAlternatives_35; }
+		
+		//entityLabel=STRING
+		public Assignment getEntityLabelAssignment_35_0() { return cEntityLabelAssignment_35_0; }
 		
 		//STRING
-		public RuleCall getEntityLabelSTRINGTerminalRuleCall_33_0() { return cEntityLabelSTRINGTerminalRuleCall_33_0; }
-		
-		//WS?
-		public RuleCall getWSTerminalRuleCall_34() { return cWSTerminalRuleCall_34; }
-		
-		//subNum=INT
-		public Assignment getSubNumAssignment_35() { return cSubNumAssignment_35; }
+		public RuleCall getEntityLabelSTRINGTerminalRuleCall_35_0_0() { return cEntityLabelSTRINGTerminalRuleCall_35_0_0; }
 		
 		//INT
-		public RuleCall getSubNumINTTerminalRuleCall_35_0() { return cSubNumINTTerminalRuleCall_35_0; }
+		public RuleCall getINTTerminalRuleCall_35_1() { return cINTTerminalRuleCall_35_1; }
+		
+		//WS?
+		public RuleCall getWSTerminalRuleCall_36() { return cWSTerminalRuleCall_36; }
+		
+		//subNum=INT?
+		public Assignment getSubNumAssignment_37() { return cSubNumAssignment_37; }
+		
+		//INT
+		public RuleCall getSubNumINTTerminalRuleCall_37_0() { return cSubNumINTTerminalRuleCall_37_0; }
 		
 		//'D'
-		public Keyword getDKeyword_36() { return cDKeyword_36; }
+		public Keyword getDKeyword_38() { return cDKeyword_38; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_37() { return cWSTerminalRuleCall_37; }
+		public RuleCall getWSTerminalRuleCall_39() { return cWSTerminalRuleCall_39; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_38() { return cINTTerminalRuleCall_38; }
+		public RuleCall getINTTerminalRuleCall_40() { return cINTTerminalRuleCall_40; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_39() { return cENDLINETerminalRuleCall_39; }
+		public RuleCall getENDLINETerminalRuleCall_41() { return cENDLINETerminalRuleCall_41; }
 	}
 	public class ParametersElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Parameters");
@@ -983,7 +1016,8 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	//Entry:
 	//	WS type=INT WS? paramData=INT WS? structure=INT WS? lineFont=INT WS? level=INT WS? view=INT WS? TransformMatrix=INT
 	//	WS? INT? WS? status=INT 'D' WS? index=INT ENDLINE
-	//	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? entityLabel=STRING? WS? subNum=INT 'D'
+	//	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? (INT WS?)? (INT WS?)? (entityLabel=STRING
+	//	| INT)? WS? subNum=INT? 'D'
 	//	WS? INT ENDLINE;
 	public EntryElements getEntryAccess() {
 		return pEntry;

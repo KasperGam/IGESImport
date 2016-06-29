@@ -27,6 +27,7 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_End_WSTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_End_WSTerminalRuleCall_7_q;
 	protected AbstractElementAlias match_Entry_INTTerminalRuleCall_15_q;
+	protected AbstractElementAlias match_Entry_INTTerminalRuleCall_35_1_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_10_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_12_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_14_q;
@@ -39,11 +40,13 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_30_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_32_q;
-	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_34_q;
-	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_37_q;
+	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_36_q;
+	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_39_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_4_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_6_q;
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_8_q;
+	protected AbstractElementAlias match_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q;
+	protected AbstractElementAlias match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q;
 	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Global_WSTerminalRuleCall_7_q;
@@ -71,6 +74,7 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_End_WSTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getEndAccess().getWSTerminalRuleCall_4());
 		match_End_WSTerminalRuleCall_7_q = new TokenAlias(false, true, grammarAccess.getEndAccess().getWSTerminalRuleCall_7());
 		match_Entry_INTTerminalRuleCall_15_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getINTTerminalRuleCall_15());
+		match_Entry_INTTerminalRuleCall_35_1_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getINTTerminalRuleCall_35_1());
 		match_Entry_WSTerminalRuleCall_10_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_10());
 		match_Entry_WSTerminalRuleCall_12_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_12());
 		match_Entry_WSTerminalRuleCall_14_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_14());
@@ -83,11 +87,13 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Entry_WSTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_2());
 		match_Entry_WSTerminalRuleCall_30_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_30());
 		match_Entry_WSTerminalRuleCall_32_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_32());
-		match_Entry_WSTerminalRuleCall_34_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_34());
-		match_Entry_WSTerminalRuleCall_37_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_37());
+		match_Entry_WSTerminalRuleCall_36_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_36());
+		match_Entry_WSTerminalRuleCall_39_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_39());
 		match_Entry_WSTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_4());
 		match_Entry_WSTerminalRuleCall_6_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_6());
 		match_Entry_WSTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_8());
+		match_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntryAccess().getINTTerminalRuleCall_33_0()), new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_33_1()));
+		match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntryAccess().getINTTerminalRuleCall_34_0()), new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_34_1()));
 		match_Global_DELIMITERTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_1());
 		match_Global_DELIMITERTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_3());
 		match_Global_WSTerminalRuleCall_7_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_7());
@@ -190,6 +196,8 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_End_WSTerminalRuleCall_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_INTTerminalRuleCall_15_q.equals(syntax))
 				emit_Entry_INTTerminalRuleCall_15_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entry_INTTerminalRuleCall_35_1_q.equals(syntax))
+				emit_Entry_INTTerminalRuleCall_35_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_10_q.equals(syntax))
 				emit_Entry_WSTerminalRuleCall_10_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_12_q.equals(syntax))
@@ -214,16 +222,20 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Entry_WSTerminalRuleCall_30_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_32_q.equals(syntax))
 				emit_Entry_WSTerminalRuleCall_32_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Entry_WSTerminalRuleCall_34_q.equals(syntax))
-				emit_Entry_WSTerminalRuleCall_34_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Entry_WSTerminalRuleCall_37_q.equals(syntax))
-				emit_Entry_WSTerminalRuleCall_37_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entry_WSTerminalRuleCall_36_q.equals(syntax))
+				emit_Entry_WSTerminalRuleCall_36_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entry_WSTerminalRuleCall_39_q.equals(syntax))
+				emit_Entry_WSTerminalRuleCall_39_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_4_q.equals(syntax))
 				emit_Entry_WSTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_6_q.equals(syntax))
 				emit_Entry_WSTerminalRuleCall_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry_WSTerminalRuleCall_8_q.equals(syntax))
 				emit_Entry_WSTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q.equals(syntax))
+				emit_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q.equals(syntax))
+				emit_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Global_DELIMITERTerminalRuleCall_1_q.equals(syntax))
 				emit_Global_DELIMITERTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Global_DELIMITERTerminalRuleCall_3_q.equals(syntax))
@@ -325,6 +337,18 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     TransformMatrix=INT WS? (ambiguity) WS? status=INT
 	 */
 	protected void emit_Entry_INTTerminalRuleCall_15_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     INT?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     form=INT WS? (INT WS?)? (INT WS?)? (ambiguity) WS? 'D' WS? INT ENDLINE (rule end)
+	 *     form=INT WS? (INT WS?)? (INT WS?)? (ambiguity) WS? subNum=INT
+	 */
+	protected void emit_Entry_INTTerminalRuleCall_35_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -454,8 +478,9 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     form=INT (ambiguity) WS? subNum=INT
-	 *     form=INT (ambiguity) entityLabel=STRING
+	 *     form=INT (ambiguity) (INT WS?)? (INT WS?)? INT? WS? 'D' WS? INT ENDLINE (rule end)
+	 *     form=INT (ambiguity) (INT WS?)? (INT WS?)? INT? WS? subNum=INT
+	 *     form=INT (ambiguity) (INT WS?)? (INT WS?)? entityLabel=STRING
 	 */
 	protected void emit_Entry_WSTerminalRuleCall_32_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -466,10 +491,12 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     entityLabel=STRING (ambiguity) 'D' WS? INT ENDLINE (rule end)
 	 *     entityLabel=STRING (ambiguity) subNum=INT
-	 *     form=INT WS? (ambiguity) subNum=INT
+	 *     form=INT WS? (INT WS?)? (INT WS?)? INT? (ambiguity) 'D' WS? INT ENDLINE (rule end)
+	 *     form=INT WS? (INT WS?)? (INT WS?)? INT? (ambiguity) subNum=INT
 	 */
-	protected void emit_Entry_WSTerminalRuleCall_34_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Entry_WSTerminalRuleCall_36_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -478,9 +505,11 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     entityLabel=STRING WS? 'D' (ambiguity) INT ENDLINE (rule end)
+	 *     form=INT WS? (INT WS?)? (INT WS?)? INT? WS? 'D' (ambiguity) INT ENDLINE (rule end)
 	 *     subNum=INT 'D' (ambiguity) INT ENDLINE (rule end)
 	 */
-	protected void emit_Entry_WSTerminalRuleCall_37_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Entry_WSTerminalRuleCall_39_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -514,6 +543,32 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     lineFont=INT (ambiguity) level=INT
 	 */
 	protected void emit_Entry_WSTerminalRuleCall_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (INT WS?)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     form=INT WS? (ambiguity) (INT WS?)? INT? WS? 'D' WS? INT ENDLINE (rule end)
+	 *     form=INT WS? (ambiguity) (INT WS?)? INT? WS? subNum=INT
+	 *     form=INT WS? (ambiguity) (INT WS?)? entityLabel=STRING
+	 */
+	protected void emit_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (INT WS?)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     form=INT WS? (INT WS?)? (ambiguity) INT? WS? 'D' WS? INT ENDLINE (rule end)
+	 *     form=INT WS? (INT WS?)? (ambiguity) INT? WS? subNum=INT
+	 *     form=INT WS? (INT WS?)? (ambiguity) entityLabel=STRING
+	 */
+	protected void emit_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -35,6 +35,7 @@ public class IGESParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getEntryAccess().getAlternatives_35(), "rule__Entry__Alternatives_35");
 					put(grammarAccess.getParametersAccess().getEntriesAlternatives_0(), "rule__Parameters__EntriesAlternatives_0");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 					put(grammarAccess.getStartLineAccess().getAlternatives_0(), "rule__StartLine__Alternatives_0");
@@ -42,6 +43,8 @@ public class IGESParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGlobalAccess().getGroup(), "rule__Global__Group__0");
 					put(grammarAccess.getGlobalAccess().getGroup_4(), "rule__Global__Group_4__0");
 					put(grammarAccess.getEntryAccess().getGroup(), "rule__Entry__Group__0");
+					put(grammarAccess.getEntryAccess().getGroup_33(), "rule__Entry__Group_33__0");
+					put(grammarAccess.getEntryAccess().getGroup_34(), "rule__Entry__Group_34__0");
 					put(grammarAccess.getPEntryAccess().getGroup(), "rule__PEntry__Group__0");
 					put(grammarAccess.getPMultiEntryAccess().getGroup(), "rule__PMultiEntry__Group__0");
 					put(grammarAccess.getPMultiEntryAccess().getGroup_2(), "rule__PMultiEntry__Group_2__0");
@@ -72,8 +75,8 @@ public class IGESParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntryAccess().getColorAssignment_27(), "rule__Entry__ColorAssignment_27");
 					put(grammarAccess.getEntryAccess().getParamLinesAssignment_29(), "rule__Entry__ParamLinesAssignment_29");
 					put(grammarAccess.getEntryAccess().getFormAssignment_31(), "rule__Entry__FormAssignment_31");
-					put(grammarAccess.getEntryAccess().getEntityLabelAssignment_33(), "rule__Entry__EntityLabelAssignment_33");
-					put(grammarAccess.getEntryAccess().getSubNumAssignment_35(), "rule__Entry__SubNumAssignment_35");
+					put(grammarAccess.getEntryAccess().getEntityLabelAssignment_35_0(), "rule__Entry__EntityLabelAssignment_35_0");
+					put(grammarAccess.getEntryAccess().getSubNumAssignment_37(), "rule__Entry__SubNumAssignment_37");
 					put(grammarAccess.getParametersAccess().getEntriesAssignment(), "rule__Parameters__EntriesAssignment");
 					put(grammarAccess.getPEntryAccess().getTypeAssignment_0(), "rule__PEntry__TypeAssignment_0");
 					put(grammarAccess.getPEntryAccess().getValuesAssignment_2(), "rule__PEntry__ValuesAssignment_2");

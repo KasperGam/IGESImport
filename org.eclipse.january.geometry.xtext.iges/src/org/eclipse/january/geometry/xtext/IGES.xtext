@@ -25,7 +25,7 @@ Data:
 Entry:
 	WS type=INT WS? paramData=INT WS? structure=INT WS? lineFont=INT WS? level=INT WS? view=INT WS? TransformMatrix=INT
 	WS? INT? WS? status=INT 'D' WS? index=INT ENDLINE
-	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? (entityLabel=STRING)? WS? subNum=INT 'D'
+	WS? INT WS? lineWeight=INT WS? color=INT WS? paramLines=INT WS? form=INT WS? (INT WS?)? (INT WS?)? ((entityLabel=STRING) | INT)? WS? (subNum=INT)? 'D'
 	WS? INT ENDLINE;
 
 Parameters:

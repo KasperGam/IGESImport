@@ -149,7 +149,7 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         paramLines=INT 
 	 *         form=INT 
 	 *         entityLabel=STRING? 
-	 *         subNum=INT
+	 *         subNum=INT?
 	 *     )
 	 */
 	protected void sequence_Entry(ISerializationContext context, Entry semanticObject) {

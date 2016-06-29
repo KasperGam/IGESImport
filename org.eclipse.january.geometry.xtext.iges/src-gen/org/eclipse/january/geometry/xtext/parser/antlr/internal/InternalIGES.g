@@ -749,34 +749,65 @@ ruleEntry returns [EObject current=null]
 			}
 		)?
 		(
+			this_INT_33=RULE_INT
+			{
+				newLeafNode(this_INT_33, grammarAccess.getEntryAccess().getINTTerminalRuleCall_33_0());
+			}
 			(
-				lv_entityLabel_33_0=RULE_STRING
+				this_WS_34=RULE_WS
 				{
-					newLeafNode(lv_entityLabel_33_0, grammarAccess.getEntryAccess().getEntityLabelSTRINGTerminalRuleCall_33_0());
+					newLeafNode(this_WS_34, grammarAccess.getEntryAccess().getWSTerminalRuleCall_33_1());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEntryRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"entityLabel",
-						lv_entityLabel_33_0,
-						"org.eclipse.january.geometry.xtext.IGES.STRING");
-				}
-			)
+			)?
 		)?
 		(
-			this_WS_34=RULE_WS
+			this_INT_35=RULE_INT
 			{
-				newLeafNode(this_WS_34, grammarAccess.getEntryAccess().getWSTerminalRuleCall_34());
+				newLeafNode(this_INT_35, grammarAccess.getEntryAccess().getINTTerminalRuleCall_34_0());
+			}
+			(
+				this_WS_36=RULE_WS
+				{
+					newLeafNode(this_WS_36, grammarAccess.getEntryAccess().getWSTerminalRuleCall_34_1());
+				}
+			)?
+		)?
+		(
+			(
+				(
+					lv_entityLabel_37_0=RULE_STRING
+					{
+						newLeafNode(lv_entityLabel_37_0, grammarAccess.getEntryAccess().getEntityLabelSTRINGTerminalRuleCall_35_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEntryRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"entityLabel",
+							lv_entityLabel_37_0,
+							"org.eclipse.january.geometry.xtext.IGES.STRING");
+					}
+				)
+			)
+			    |
+			this_INT_38=RULE_INT
+			{
+				newLeafNode(this_INT_38, grammarAccess.getEntryAccess().getINTTerminalRuleCall_35_1());
+			}
+		)?
+		(
+			this_WS_39=RULE_WS
+			{
+				newLeafNode(this_WS_39, grammarAccess.getEntryAccess().getWSTerminalRuleCall_36());
 			}
 		)?
 		(
 			(
-				lv_subNum_35_0=RULE_INT
+				lv_subNum_40_0=RULE_INT
 				{
-					newLeafNode(lv_subNum_35_0, grammarAccess.getEntryAccess().getSubNumINTTerminalRuleCall_35_0());
+					newLeafNode(lv_subNum_40_0, grammarAccess.getEntryAccess().getSubNumINTTerminalRuleCall_37_0());
 				}
 				{
 					if ($current==null) {
@@ -785,28 +816,28 @@ ruleEntry returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"subNum",
-						lv_subNum_35_0,
+						lv_subNum_40_0,
 						"org.eclipse.january.geometry.xtext.IGES.INT");
 				}
 			)
-		)
-		otherlv_36='D'
+		)?
+		otherlv_41='D'
 		{
-			newLeafNode(otherlv_36, grammarAccess.getEntryAccess().getDKeyword_36());
+			newLeafNode(otherlv_41, grammarAccess.getEntryAccess().getDKeyword_38());
 		}
 		(
-			this_WS_37=RULE_WS
+			this_WS_42=RULE_WS
 			{
-				newLeafNode(this_WS_37, grammarAccess.getEntryAccess().getWSTerminalRuleCall_37());
+				newLeafNode(this_WS_42, grammarAccess.getEntryAccess().getWSTerminalRuleCall_39());
 			}
 		)?
-		this_INT_38=RULE_INT
+		this_INT_43=RULE_INT
 		{
-			newLeafNode(this_INT_38, grammarAccess.getEntryAccess().getINTTerminalRuleCall_38());
+			newLeafNode(this_INT_43, grammarAccess.getEntryAccess().getINTTerminalRuleCall_40());
 		}
-		this_ENDLINE_39=RULE_ENDLINE
+		this_ENDLINE_44=RULE_ENDLINE
 		{
-			newLeafNode(this_ENDLINE_39, grammarAccess.getEntryAccess().getENDLINETerminalRuleCall_39());
+			newLeafNode(this_ENDLINE_44, grammarAccess.getEntryAccess().getENDLINETerminalRuleCall_41());
 		}
 	)
 ;

@@ -145,10 +145,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1562:10: ( ( '0' .. '9' )+ )
-            // InternalIGES.g:1562:12: ( '0' .. '9' )+
+            // InternalIGES.g:1593:10: ( ( '0' .. '9' )+ )
+            // InternalIGES.g:1593:12: ( '0' .. '9' )+
             {
-            // InternalIGES.g:1562:12: ( '0' .. '9' )+
+            // InternalIGES.g:1593:12: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -162,7 +162,7 @@ public class InternalIGESLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalIGES.g:1562:13: '0' .. '9'
+            	    // InternalIGES.g:1593:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -194,10 +194,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1564:13: ( ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? )
-            // InternalIGES.g:1564:15: ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalIGES.g:1595:13: ( ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? )
+            // InternalIGES.g:1595:15: ( '+' | '-' )? RULE_INT '.' ( RULE_INT )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             {
-            // InternalIGES.g:1564:15: ( '+' | '-' )?
+            // InternalIGES.g:1595:15: ( '+' | '-' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -225,7 +225,7 @@ public class InternalIGESLexer extends Lexer {
 
             mRULE_INT(); 
             match('.'); 
-            // InternalIGES.g:1564:39: ( RULE_INT )?
+            // InternalIGES.g:1595:39: ( RULE_INT )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -234,7 +234,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalIGES.g:1564:39: RULE_INT
+                    // InternalIGES.g:1595:39: RULE_INT
                     {
                     mRULE_INT(); 
 
@@ -243,7 +243,7 @@ public class InternalIGESLexer extends Lexer {
 
             }
 
-            // InternalIGES.g:1564:49: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalIGES.g:1595:49: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -252,7 +252,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalIGES.g:1564:50: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalIGES.g:1595:50: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -263,7 +263,7 @@ public class InternalIGESLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalIGES.g:1564:60: ( '+' | '-' )?
+                    // InternalIGES.g:1595:60: ( '+' | '-' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -312,8 +312,8 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_HOLLERITH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1566:16: ( RULE_INT 'H' . )
-            // InternalIGES.g:1566:18: RULE_INT 'H' .
+            // InternalIGES.g:1597:16: ( RULE_INT 'H' . )
+            // InternalIGES.g:1597:18: RULE_INT 'H' .
             {
             mRULE_INT(); 
             match('H'); 
@@ -334,10 +334,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1568:13: ( ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+ )
-            // InternalIGES.g:1568:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
+            // InternalIGES.g:1599:13: ( ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+ )
+            // InternalIGES.g:1599:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
             {
-            // InternalIGES.g:1568:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
+            // InternalIGES.g:1599:15: ( 'A..Z' | 'a' .. 'z' | '0' .. '9' | '\"' )+
             int cnt6=0;
             loop6:
             do {
@@ -402,7 +402,7 @@ public class InternalIGESLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalIGES.g:1568:16: 'A..Z'
+            	    // InternalIGES.g:1599:16: 'A..Z'
             	    {
             	    match("A..Z"); 
 
@@ -410,21 +410,21 @@ public class InternalIGESLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalIGES.g:1568:23: 'a' .. 'z'
+            	    // InternalIGES.g:1599:23: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // InternalIGES.g:1568:32: '0' .. '9'
+            	    // InternalIGES.g:1599:32: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
             	    }
             	    break;
             	case 4 :
-            	    // InternalIGES.g:1568:41: '\"'
+            	    // InternalIGES.g:1599:41: '\"'
             	    {
             	    match('\"'); 
 
@@ -456,10 +456,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1570:9: ( ( ' ' | '\\t' | '\\r' )+ )
-            // InternalIGES.g:1570:11: ( ' ' | '\\t' | '\\r' )+
+            // InternalIGES.g:1601:9: ( ( ' ' | '\\t' | '\\r' )+ )
+            // InternalIGES.g:1601:11: ( ' ' | '\\t' | '\\r' )+
             {
-            // InternalIGES.g:1570:11: ( ' ' | '\\t' | '\\r' )+
+            // InternalIGES.g:1601:11: ( ' ' | '\\t' | '\\r' )+
             int cnt7=0;
             loop7:
             do {
@@ -513,10 +513,10 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_ENDLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1572:14: ( ( '\\r' )? '\\n' )
-            // InternalIGES.g:1572:16: ( '\\r' )? '\\n'
+            // InternalIGES.g:1603:14: ( ( '\\r' )? '\\n' )
+            // InternalIGES.g:1603:16: ( '\\r' )? '\\n'
             {
-            // InternalIGES.g:1572:16: ( '\\r' )?
+            // InternalIGES.g:1603:16: ( '\\r' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -525,7 +525,7 @@ public class InternalIGESLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalIGES.g:1572:16: '\\r'
+                    // InternalIGES.g:1603:16: '\\r'
                     {
                     match('\r'); 
 
@@ -551,8 +551,8 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_DELIMITER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1574:16: ( . )
-            // InternalIGES.g:1574:18: .
+            // InternalIGES.g:1605:16: ( . )
+            // InternalIGES.g:1605:18: .
             {
             matchAny(); 
 
@@ -571,8 +571,8 @@ public class InternalIGESLexer extends Lexer {
         try {
             int _type = RULE_SEPARATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalIGES.g:1576:16: ( . )
-            // InternalIGES.g:1576:18: .
+            // InternalIGES.g:1607:16: ( . )
+            // InternalIGES.g:1607:18: .
             {
             matchAny(); 
 
