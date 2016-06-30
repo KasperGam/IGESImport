@@ -41,7 +41,7 @@ public class IGESParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartLineAccess().getAlternatives_0(), "rule__StartLine__Alternatives_0");
 					put(grammarAccess.getIGESAccess().getGroup(), "rule__IGES__Group__0");
 					put(grammarAccess.getGlobalAccess().getGroup(), "rule__Global__Group__0");
-					put(grammarAccess.getGlobalAccess().getGroup_4(), "rule__Global__Group_4__0");
+					put(grammarAccess.getGlobalAccess().getGroup_3(), "rule__Global__Group_3__0");
 					put(grammarAccess.getEntryAccess().getGroup(), "rule__Entry__Group__0");
 					put(grammarAccess.getEntryAccess().getGroup_33(), "rule__Entry__Group_33__0");
 					put(grammarAccess.getEntryAccess().getGroup_34(), "rule__Entry__Group_34__0");
@@ -59,8 +59,8 @@ public class IGESParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIGESAccess().getParametersAssignment_3(), "rule__IGES__ParametersAssignment_3");
 					put(grammarAccess.getIGESAccess().getEndAssignment_4(), "rule__IGES__EndAssignment_4");
 					put(grammarAccess.getStartAccess().getLinesAssignment(), "rule__Start__LinesAssignment");
-					put(grammarAccess.getGlobalAccess().getValuesAssignment_4_0(), "rule__Global__ValuesAssignment_4_0");
-					put(grammarAccess.getGlobalAccess().getValuesAssignment_5(), "rule__Global__ValuesAssignment_5");
+					put(grammarAccess.getGlobalAccess().getValuesAssignment_3_0(), "rule__Global__ValuesAssignment_3_0");
+					put(grammarAccess.getGlobalAccess().getValuesAssignment_4(), "rule__Global__ValuesAssignment_4");
 					put(grammarAccess.getDataAccess().getEntriesAssignment(), "rule__Data__EntriesAssignment");
 					put(grammarAccess.getEntryAccess().getTypeAssignment_1(), "rule__Entry__TypeAssignment_1");
 					put(grammarAccess.getEntryAccess().getParamDataAssignment_3(), "rule__Entry__ParamDataAssignment_3");

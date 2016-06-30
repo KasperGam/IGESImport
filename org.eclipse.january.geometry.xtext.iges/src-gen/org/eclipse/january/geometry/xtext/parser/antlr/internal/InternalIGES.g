@@ -227,41 +227,34 @@ ruleGlobal returns [EObject current=null]
 }:
 	(
 		(
+			this_DELIMITER_0=RULE_DELIMITER
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getGlobalAccess().getGlobalAction_0(),
-					$current);
-			}
-		)
-		(
-			this_DELIMITER_1=RULE_DELIMITER
-			{
-				newLeafNode(this_DELIMITER_1, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_1());
+				newLeafNode(this_DELIMITER_0, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_0());
 			}
 		)?
 		(
 			{
-				newCompositeNode(grammarAccess.getGlobalAccess().getHStringParserRuleCall_2());
+				newCompositeNode(grammarAccess.getGlobalAccess().getHStringParserRuleCall_1());
 			}
-			this_HString_2=ruleHString
+			this_HString_1=ruleHString
 			{
-				$current = $this_HString_2.current;
+				$current = $this_HString_1.current;
 				afterParserOrEnumRuleCall();
 			}
 		)?
 		(
-			this_DELIMITER_3=RULE_DELIMITER
+			this_DELIMITER_2=RULE_DELIMITER
 			{
-				newLeafNode(this_DELIMITER_3, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_3());
+				newLeafNode(this_DELIMITER_2, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_2());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_3_0_0());
 					}
-					lv_values_4_0=ruleValue
+					lv_values_3_0=ruleValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGlobalRule());
@@ -269,43 +262,43 @@ ruleGlobal returns [EObject current=null]
 						add(
 							$current,
 							"values",
-							lv_values_4_0,
+							lv_values_3_0,
 							"org.eclipse.january.geometry.xtext.IGES.Value");
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)+
 			(
-				this_WS_5=RULE_WS
+				this_WS_4=RULE_WS
 				{
-					newLeafNode(this_WS_5, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_1());
+					newLeafNode(this_WS_4, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_1());
 				}
 			)?
-			otherlv_6='G'
+			otherlv_5='G'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getGlobalAccess().getGKeyword_4_2());
+				newLeafNode(otherlv_5, grammarAccess.getGlobalAccess().getGKeyword_3_2());
 			}
 			(
-				this_WS_7=RULE_WS
+				this_WS_6=RULE_WS
 				{
-					newLeafNode(this_WS_7, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_3());
+					newLeafNode(this_WS_6, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_3());
 				}
 			)?
-			this_INT_8=RULE_INT
+			this_INT_7=RULE_INT
 			{
-				newLeafNode(this_INT_8, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_4_4());
+				newLeafNode(this_INT_7, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_3_4());
 			}
-			this_ENDLINE_9=RULE_ENDLINE
+			this_ENDLINE_8=RULE_ENDLINE
 			{
-				newLeafNode(this_ENDLINE_9, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_4_5());
+				newLeafNode(this_ENDLINE_8, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_3_5());
 			}
 		)+
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getGlobalAccess().getValuesValueParserRuleCall_4_0());
 				}
-				lv_values_10_0=ruleValue
+				lv_values_9_0=ruleValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGlobalRule());
@@ -313,39 +306,39 @@ ruleGlobal returns [EObject current=null]
 					add(
 						$current,
 						"values",
-						lv_values_10_0,
+						lv_values_9_0,
 						"org.eclipse.january.geometry.xtext.IGES.Value");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		this_SEPARATOR_11=RULE_SEPARATOR
+		this_SEPARATOR_10=RULE_SEPARATOR
 		{
-			newLeafNode(this_SEPARATOR_11, grammarAccess.getGlobalAccess().getSEPARATORTerminalRuleCall_6());
+			newLeafNode(this_SEPARATOR_10, grammarAccess.getGlobalAccess().getSEPARATORTerminalRuleCall_5());
 		}
 		(
-			this_WS_12=RULE_WS
+			this_WS_11=RULE_WS
 			{
-				newLeafNode(this_WS_12, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_7());
+				newLeafNode(this_WS_11, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_6());
 			}
 		)?
-		otherlv_13='G'
+		otherlv_12='G'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getGlobalAccess().getGKeyword_8());
+			newLeafNode(otherlv_12, grammarAccess.getGlobalAccess().getGKeyword_7());
 		}
 		(
-			this_WS_14=RULE_WS
+			this_WS_13=RULE_WS
 			{
-				newLeafNode(this_WS_14, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_9());
+				newLeafNode(this_WS_13, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_8());
 			}
 		)?
-		this_INT_15=RULE_INT
+		this_INT_14=RULE_INT
 		{
-			newLeafNode(this_INT_15, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_10());
+			newLeafNode(this_INT_14, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_9());
 		}
-		this_ENDLINE_16=RULE_ENDLINE
+		this_ENDLINE_15=RULE_ENDLINE
 		{
-			newLeafNode(this_ENDLINE_16, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_11());
+			newLeafNode(this_ENDLINE_15, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_10());
 		}
 	)
 ;

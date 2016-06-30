@@ -16,6 +16,7 @@ import org.eclipse.january.geometry.xtext.iGES.PEntry
 import org.eclipse.january.geometry.xtext.iGES.HString
 import org.eclipse.january.geometry.xtext.iGES.Pointer
 import org.eclipse.january.geometry.xtext.iGES.Param
+import org.eclipse.january.geometry.xtext.iGES.Global
 
 /**
  * Provides labels for EObjects.
@@ -35,6 +36,10 @@ class IGESLabelProvider extends DefaultEObjectLabelProvider {
 	
 	def text(Start start) {
 		'Start Section'
+	}
+	
+	def text(Global global) {
+		'Global params'
 	}
 	
 	def text(Data data) {
@@ -59,15 +64,16 @@ class IGESLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	def text(HString str) {
-		str.getVal()
+		var String hol = str.getVal();
+		return hol.substring(hol.indexOf('H')+1);
 	}
 	
 	def text(Pointer p) {
-		p.getVal()
+		Integer.toString(p.getVal())
 	}
 	
 	def text(Param p) {
-		p.getVal()
+		Double.toString(p.getVal())
 	}
 	
 	def String getTypeName(int type) {
@@ -118,6 +124,7 @@ class IGESLabelProvider extends DefaultEObjectLabelProvider {
 			case 508: 'Loop'
 			case 510: 'Face'
 			case 514: 'Shell'
+			default: 'Unknown Entity'
 		}
 	}
 

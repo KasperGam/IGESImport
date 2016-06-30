@@ -47,12 +47,13 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Entry_WSTerminalRuleCall_8_q;
 	protected AbstractElementAlias match_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q;
 	protected AbstractElementAlias match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q;
-	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_1_q;
-	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_Global_WSTerminalRuleCall_7_q;
-	protected AbstractElementAlias match_Global_WSTerminalRuleCall_9_q;
-	protected AbstractElementAlias match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__a;
-	protected AbstractElementAlias match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__p;
+	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_0_q;
+	protected AbstractElementAlias match_Global_DELIMITERTerminalRuleCall_2_q;
+	protected AbstractElementAlias match_Global_WSTerminalRuleCall_3_1_q;
+	protected AbstractElementAlias match_Global_WSTerminalRuleCall_3_3_q;
+	protected AbstractElementAlias match_Global_WSTerminalRuleCall_6_q;
+	protected AbstractElementAlias match_Global_WSTerminalRuleCall_8_q;
+	protected AbstractElementAlias match_Global___WSTerminalRuleCall_3_1_q_GKeyword_3_2_WSTerminalRuleCall_3_3_q_INTTerminalRuleCall_3_4_ENDLINETerminalRuleCall_3_5__q;
 	protected AbstractElementAlias match_HString_DELIMITERTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_PEntry_DELIMITERTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_PEntry_WSTerminalRuleCall_4_q;
@@ -94,12 +95,13 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Entry_WSTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_8());
 		match_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntryAccess().getINTTerminalRuleCall_33_0()), new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_33_1()));
 		match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntryAccess().getINTTerminalRuleCall_34_0()), new TokenAlias(false, true, grammarAccess.getEntryAccess().getWSTerminalRuleCall_34_1()));
-		match_Global_DELIMITERTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_1());
-		match_Global_DELIMITERTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_3());
-		match_Global_WSTerminalRuleCall_7_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_7());
-		match_Global_WSTerminalRuleCall_9_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_9());
-		match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__a = new GroupAlias(true, true, new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getGKeyword_4_2()), new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_3()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_4_4()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_4_5()));
-		match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getGKeyword_4_2()), new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_4_3()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_4_4()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_4_5()));
+		match_Global_DELIMITERTerminalRuleCall_0_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_0());
+		match_Global_DELIMITERTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getDELIMITERTerminalRuleCall_2());
+		match_Global_WSTerminalRuleCall_3_1_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_1());
+		match_Global_WSTerminalRuleCall_3_3_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_3());
+		match_Global_WSTerminalRuleCall_6_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_6());
+		match_Global_WSTerminalRuleCall_8_q = new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_8());
+		match_Global___WSTerminalRuleCall_3_1_q_GKeyword_3_2_WSTerminalRuleCall_3_3_q_INTTerminalRuleCall_3_4_ENDLINETerminalRuleCall_3_5__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_1()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getGKeyword_3_2()), new TokenAlias(false, true, grammarAccess.getGlobalAccess().getWSTerminalRuleCall_3_3()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getINTTerminalRuleCall_3_4()), new TokenAlias(false, false, grammarAccess.getGlobalAccess().getENDLINETerminalRuleCall_3_5()));
 		match_HString_DELIMITERTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getHStringAccess().getDELIMITERTerminalRuleCall_1());
 		match_PEntry_DELIMITERTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getPEntryAccess().getDELIMITERTerminalRuleCall_1());
 		match_PEntry_WSTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getPEntryAccess().getWSTerminalRuleCall_4());
@@ -236,18 +238,20 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Entry___INTTerminalRuleCall_33_0_WSTerminalRuleCall_33_1_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q.equals(syntax))
 				emit_Entry___INTTerminalRuleCall_34_0_WSTerminalRuleCall_34_1_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global_DELIMITERTerminalRuleCall_1_q.equals(syntax))
-				emit_Global_DELIMITERTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global_DELIMITERTerminalRuleCall_3_q.equals(syntax))
-				emit_Global_DELIMITERTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global_WSTerminalRuleCall_7_q.equals(syntax))
-				emit_Global_WSTerminalRuleCall_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global_WSTerminalRuleCall_9_q.equals(syntax))
-				emit_Global_WSTerminalRuleCall_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__a.equals(syntax))
-				emit_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__p.equals(syntax))
-				emit_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_DELIMITERTerminalRuleCall_0_q.equals(syntax))
+				emit_Global_DELIMITERTerminalRuleCall_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_DELIMITERTerminalRuleCall_2_q.equals(syntax))
+				emit_Global_DELIMITERTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_WSTerminalRuleCall_3_1_q.equals(syntax))
+				emit_Global_WSTerminalRuleCall_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_WSTerminalRuleCall_3_3_q.equals(syntax))
+				emit_Global_WSTerminalRuleCall_3_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_WSTerminalRuleCall_6_q.equals(syntax))
+				emit_Global_WSTerminalRuleCall_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global_WSTerminalRuleCall_8_q.equals(syntax))
+				emit_Global_WSTerminalRuleCall_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Global___WSTerminalRuleCall_3_1_q_GKeyword_3_2_WSTerminalRuleCall_3_3_q_INTTerminalRuleCall_3_4_ENDLINETerminalRuleCall_3_5__q.equals(syntax))
+				emit_Global___WSTerminalRuleCall_3_1_q_GKeyword_3_2_WSTerminalRuleCall_3_3_q_INTTerminalRuleCall_3_4_ENDLINETerminalRuleCall_3_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HString_DELIMITERTerminalRuleCall_1_q.equals(syntax))
 				emit_HString_DELIMITERTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PEntry_DELIMITERTerminalRuleCall_1_q.equals(syntax))
@@ -577,12 +581,10 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     DELIMITER?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)* values+=Value
-	 *     (rule start) (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' WS? INT ENDLINE (rule start)
-	 *     (rule start) (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)+ values+=Value
+	 *     (rule start) (ambiguity) DELIMITER? values+=Value
 	 *     (rule start) (ambiguity) val=HOLLERITH
 	 */
-	protected void emit_Global_DELIMITERTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Global_DELIMITERTerminalRuleCall_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -591,14 +593,10 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     DELIMITER?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)* values+=Value
-	 *     (rule start) DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' WS? INT ENDLINE (rule start)
-	 *     (rule start) DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)+ values+=Value
-	 *     val=HOLLERITH DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)* values+=Value
-	 *     val=HOLLERITH DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
-	 *     val=HOLLERITH DELIMITER? (ambiguity) (WS? 'G' WS? INT ENDLINE)+ values+=Value
+	 *     (rule start) DELIMITER? (ambiguity) values+=Value
+	 *     val=HOLLERITH DELIMITER? (ambiguity) values+=Value
 	 */
-	protected void emit_Global_DELIMITERTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Global_DELIMITERTerminalRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -607,12 +605,34 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) DELIMITER? DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR (ambiguity) 'G' WS? INT ENDLINE (rule start)
-	 *     val=HOLLERITH DELIMITER? DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR (ambiguity) 'G' WS? INT ENDLINE (rule end)
-	 *     values+=Value (WS? 'G' WS? INT ENDLINE)+ SEPARATOR (ambiguity) 'G' WS? INT ENDLINE (rule end)
+	 *     values+=Value (ambiguity) 'G' WS? INT ENDLINE SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
+	 *     values+=Value (ambiguity) 'G' WS? INT ENDLINE values+=Value
+	 */
+	protected void emit_Global_WSTerminalRuleCall_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     WS?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     values+=Value WS? 'G' (ambiguity) INT ENDLINE SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
+	 *     values+=Value WS? 'G' (ambiguity) INT ENDLINE values+=Value
+	 */
+	protected void emit_Global_WSTerminalRuleCall_3_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     WS?
+	 *
+	 * This ambiguous syntax occurs at:
 	 *     values+=Value SEPARATOR (ambiguity) 'G' WS? INT ENDLINE (rule end)
+	 *     values+=Value WS? 'G' WS? INT ENDLINE SEPARATOR (ambiguity) 'G' WS? INT ENDLINE (rule end)
 	 */
-	protected void emit_Global_WSTerminalRuleCall_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Global_WSTerminalRuleCall_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -621,41 +641,21 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     WS?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) DELIMITER? DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' (ambiguity) INT ENDLINE (rule start)
-	 *     val=HOLLERITH DELIMITER? DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' (ambiguity) INT ENDLINE (rule end)
-	 *     values+=Value (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' (ambiguity) INT ENDLINE (rule end)
 	 *     values+=Value SEPARATOR WS? 'G' (ambiguity) INT ENDLINE (rule end)
+	 *     values+=Value WS? 'G' WS? INT ENDLINE SEPARATOR WS? 'G' (ambiguity) INT ENDLINE (rule end)
 	 */
-	protected void emit_Global_WSTerminalRuleCall_9_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Global_WSTerminalRuleCall_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (WS? 'G' WS? INT ENDLINE)*
+	 *     (WS? 'G' WS? INT ENDLINE)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) DELIMITER? DELIMITER? (ambiguity) values+=Value
-	 *     val=HOLLERITH DELIMITER? DELIMITER? (ambiguity) values+=Value
 	 *     values+=Value (ambiguity) values+=Value
 	 */
-	protected void emit_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (WS? 'G' WS? INT ENDLINE)+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) DELIMITER? DELIMITER? (ambiguity) SEPARATOR WS? 'G' WS? INT ENDLINE (rule start)
-	 *     (rule start) DELIMITER? DELIMITER? (ambiguity) values+=Value
-	 *     val=HOLLERITH DELIMITER? DELIMITER? (ambiguity) SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
-	 *     val=HOLLERITH DELIMITER? DELIMITER? (ambiguity) values+=Value
-	 *     values+=Value (ambiguity) SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
-	 *     values+=Value (ambiguity) values+=Value
-	 */
-	protected void emit_Global___WSTerminalRuleCall_4_1_q_GKeyword_4_2_WSTerminalRuleCall_4_3_q_INTTerminalRuleCall_4_4_ENDLINETerminalRuleCall_4_5__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Global___WSTerminalRuleCall_3_1_q_GKeyword_3_2_WSTerminalRuleCall_3_3_q_INTTerminalRuleCall_3_4_ENDLINETerminalRuleCall_3_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -665,9 +665,7 @@ public class IGESSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     val=HOLLERITH (ambiguity) (rule end)
-	 *     val=HOLLERITH (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)* values+=Value
-	 *     val=HOLLERITH (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)+ SEPARATOR WS? 'G' WS? INT ENDLINE (rule end)
-	 *     val=HOLLERITH (ambiguity) DELIMITER? (WS? 'G' WS? INT ENDLINE)+ values+=Value
+	 *     val=HOLLERITH (ambiguity) DELIMITER? values+=Value
 	 */
 	protected void emit_HString_DELIMITERTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

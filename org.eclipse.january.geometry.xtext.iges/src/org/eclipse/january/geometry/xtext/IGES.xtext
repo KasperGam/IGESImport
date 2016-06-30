@@ -14,9 +14,9 @@ Start:
 	(lines+=startLine)+;
 
 Global:
-	{Global}
+	
 	DELIMITER? HString? DELIMITER?
-	((values+=Value)*  WS? 'G' WS? INT ENDLINE)+
+	((values+=Value)+  WS? 'G' WS? INT ENDLINE)+
 	(values+=Value)* SEPARATOR WS? 'G' WS? INT ENDLINE;
 
 Data:

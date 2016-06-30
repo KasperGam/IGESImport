@@ -52,11 +52,19 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Entry(context, (Entry) semanticObject); 
 				return; 
 			case IGESPackage.GLOBAL:
-				sequence_Global_HString(context, (Global) semanticObject); 
+				sequence_Global(context, (Global) semanticObject); 
 				return; 
 			case IGESPackage.HSTRING:
-				sequence_HString(context, (HString) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getGlobalRule()) {
+					sequence_Global_HString(context, (HString) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getValueRule()
+						|| rule == grammarAccess.getHStringRule()) {
+					sequence_HString(context, (HString) semanticObject); 
+					return; 
+				}
+				else break;
 			case IGESPackage.IGES:
 				sequence_IGES(context, (IGES) semanticObject); 
 				return; 
@@ -162,9 +170,21 @@ public class IGESSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Global returns Global
 	 *
 	 * Constraint:
-	 *     (val=HOLLERITH? values+=Value* values+=Value*)
+	 *     (values+=Value+ values+=Value*)
 	 */
-	protected void sequence_Global_HString(ISerializationContext context, Global semanticObject) {
+	protected void sequence_Global(ISerializationContext context, Global semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Global returns HString
+	 *
+	 * Constraint:
+	 *     (val=HOLLERITH values+=Value+ values+=Value*)
+	 */
+	protected void sequence_Global_HString(ISerializationContext context, HString semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

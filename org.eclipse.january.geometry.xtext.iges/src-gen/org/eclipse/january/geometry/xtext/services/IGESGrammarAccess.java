@@ -6,7 +6,6 @@ package org.eclipse.january.geometry.xtext.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
-import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
@@ -95,95 +94,91 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	public class GlobalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Global");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGlobalAction_0 = (Action)cGroup.eContents().get(0);
-		private final RuleCall cDELIMITERTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cHStringParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cDELIMITERTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cValuesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cValuesValueParserRuleCall_4_0_0 = (RuleCall)cValuesAssignment_4_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Keyword cGKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_4_4 = (RuleCall)cGroup_4.eContents().get(4);
-		private final RuleCall cENDLINETerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
-		private final Assignment cValuesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cValuesValueParserRuleCall_5_0 = (RuleCall)cValuesAssignment_5.eContents().get(0);
-		private final RuleCall cSEPARATORTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final RuleCall cWSTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final Keyword cGKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final RuleCall cWSTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
-		private final RuleCall cINTTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
-		private final RuleCall cENDLINETerminalRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
+		private final RuleCall cDELIMITERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cHStringParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cDELIMITERTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cValuesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cValuesValueParserRuleCall_3_0_0 = (RuleCall)cValuesAssignment_3_0.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Keyword cGKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
+		private final RuleCall cINTTerminalRuleCall_3_4 = (RuleCall)cGroup_3.eContents().get(4);
+		private final RuleCall cENDLINETerminalRuleCall_3_5 = (RuleCall)cGroup_3.eContents().get(5);
+		private final Assignment cValuesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValuesValueParserRuleCall_4_0 = (RuleCall)cValuesAssignment_4.eContents().get(0);
+		private final RuleCall cSEPARATORTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final RuleCall cWSTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Keyword cGKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final RuleCall cWSTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final RuleCall cINTTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
+		private final RuleCall cENDLINETerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
 		
 		//Global:
-		//	{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+
+		//	DELIMITER? HString? DELIMITER? (values+=Value+ WS? 'G' WS? INT ENDLINE)+
 		//	values+=Value* SEPARATOR WS? 'G' WS? INT ENDLINE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+ values+=Value* SEPARATOR WS? 'G' WS?
-		//INT ENDLINE
+		//DELIMITER? HString? DELIMITER? (values+=Value+ WS? 'G' WS? INT ENDLINE)+ values+=Value* SEPARATOR WS? 'G' WS? INT
+		//ENDLINE
 		public Group getGroup() { return cGroup; }
 		
-		//{Global}
-		public Action getGlobalAction_0() { return cGlobalAction_0; }
-		
 		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_1() { return cDELIMITERTerminalRuleCall_1; }
+		public RuleCall getDELIMITERTerminalRuleCall_0() { return cDELIMITERTerminalRuleCall_0; }
 		
 		//HString?
-		public RuleCall getHStringParserRuleCall_2() { return cHStringParserRuleCall_2; }
+		public RuleCall getHStringParserRuleCall_1() { return cHStringParserRuleCall_1; }
 		
 		//DELIMITER?
-		public RuleCall getDELIMITERTerminalRuleCall_3() { return cDELIMITERTerminalRuleCall_3; }
+		public RuleCall getDELIMITERTerminalRuleCall_2() { return cDELIMITERTerminalRuleCall_2; }
 		
-		//(values+=Value* WS? 'G' WS? INT ENDLINE)+
-		public Group getGroup_4() { return cGroup_4; }
+		//(values+=Value+ WS? 'G' WS? INT ENDLINE)+
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//values+=Value*
-		public Assignment getValuesAssignment_4_0() { return cValuesAssignment_4_0; }
+		//values+=Value+
+		public Assignment getValuesAssignment_3_0() { return cValuesAssignment_3_0; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_4_0_0() { return cValuesValueParserRuleCall_4_0_0; }
+		public RuleCall getValuesValueParserRuleCall_3_0_0() { return cValuesValueParserRuleCall_3_0_0; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_4_1() { return cWSTerminalRuleCall_4_1; }
+		public RuleCall getWSTerminalRuleCall_3_1() { return cWSTerminalRuleCall_3_1; }
 		
 		//'G'
-		public Keyword getGKeyword_4_2() { return cGKeyword_4_2; }
+		public Keyword getGKeyword_3_2() { return cGKeyword_3_2; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_4_3() { return cWSTerminalRuleCall_4_3; }
+		public RuleCall getWSTerminalRuleCall_3_3() { return cWSTerminalRuleCall_3_3; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_4_4() { return cINTTerminalRuleCall_4_4; }
+		public RuleCall getINTTerminalRuleCall_3_4() { return cINTTerminalRuleCall_3_4; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_4_5() { return cENDLINETerminalRuleCall_4_5; }
+		public RuleCall getENDLINETerminalRuleCall_3_5() { return cENDLINETerminalRuleCall_3_5; }
 		
 		//values+=Value*
-		public Assignment getValuesAssignment_5() { return cValuesAssignment_5; }
+		public Assignment getValuesAssignment_4() { return cValuesAssignment_4; }
 		
 		//Value
-		public RuleCall getValuesValueParserRuleCall_5_0() { return cValuesValueParserRuleCall_5_0; }
+		public RuleCall getValuesValueParserRuleCall_4_0() { return cValuesValueParserRuleCall_4_0; }
 		
 		//SEPARATOR
-		public RuleCall getSEPARATORTerminalRuleCall_6() { return cSEPARATORTerminalRuleCall_6; }
+		public RuleCall getSEPARATORTerminalRuleCall_5() { return cSEPARATORTerminalRuleCall_5; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_7() { return cWSTerminalRuleCall_7; }
+		public RuleCall getWSTerminalRuleCall_6() { return cWSTerminalRuleCall_6; }
 		
 		//'G'
-		public Keyword getGKeyword_8() { return cGKeyword_8; }
+		public Keyword getGKeyword_7() { return cGKeyword_7; }
 		
 		//WS?
-		public RuleCall getWSTerminalRuleCall_9() { return cWSTerminalRuleCall_9; }
+		public RuleCall getWSTerminalRuleCall_8() { return cWSTerminalRuleCall_8; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_10() { return cINTTerminalRuleCall_10; }
+		public RuleCall getINTTerminalRuleCall_9() { return cINTTerminalRuleCall_9; }
 		
 		//ENDLINE
-		public RuleCall getENDLINETerminalRuleCall_11() { return cENDLINETerminalRuleCall_11; }
+		public RuleCall getENDLINETerminalRuleCall_10() { return cENDLINETerminalRuleCall_10; }
 	}
 	public class DataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.january.geometry.xtext.IGES.Data");
@@ -993,7 +988,7 @@ public class IGESGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Global:
-	//	{Global} DELIMITER? HString? DELIMITER? (values+=Value* WS? 'G' WS? INT ENDLINE)+
+	//	DELIMITER? HString? DELIMITER? (values+=Value+ WS? 'G' WS? INT ENDLINE)+
 	//	values+=Value* SEPARATOR WS? 'G' WS? INT ENDLINE;
 	public GlobalElements getGlobalAccess() {
 		return pGlobal;
