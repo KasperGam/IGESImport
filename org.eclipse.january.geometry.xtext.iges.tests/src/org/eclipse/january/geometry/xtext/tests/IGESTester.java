@@ -19,7 +19,8 @@ import com.google.inject.Injector;
 
 public class IGESTester {
 	
-	private boolean testWikiIGES = true;
+	private boolean testWikiIGES = false;
+	private boolean printout = false;
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,50 +28,53 @@ public class IGESTester {
 
 	@Test
 	public void test() {
+		long time = System.currentTimeMillis();
 		Path path = FileSystems.getDefault().getPath("src", "org", "eclipse", "january", "geometry", "xtext",
-				"tests", "resources", "test.iges");
+				"tests", "resources", "test1.igs");
 		Injector injector = new IGESStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		Resource resource = resourceSet.getResource(URI.createFileURI(path.toFile().getAbsolutePath()), true);
 
 		IGES data = (IGES) resource.getContents().get(0);
-		
-		System.out.println(data.getStart());
-		
-		List<Value> values = data.getGlobal().getValues();
-		
-		for(Value v: values) {
-			if (v instanceof HString) {
-				System.out.print(((HString)v).getVal()+",");
-			}else if (v instanceof Pointer) {
-				System.out.print(((Pointer)v).getVal()+",");
-			} else {
-				System.out.print(((Param)v).getVal()+",");
-			}
-		}
-		System.out.println();
-		
-		List<Entry> entries = data.getData().getEntries();
-		for(Entry e: entries) {
-			System.out.println(e.getType()+" "+e.getParamData()+" "+e.getStructure()+" "+e.getLineFont()+" "+e.getLevel()+" "+e.getView()+" "+e.getTransformMatrix()+" 0 "+e.getStatus()+" "+e.getIndex()+"\n"
-						+e.getType()+" "+e.getLineWeight()+" "+e.getColor()+" "+e.getParamLines()+" "+e.getForm()+" "+e.getSubNum()+" ");
-		}
-		
-		List<PEntry> parameters = data.getParameters().getEntries();
-		for(PEntry e: parameters) {
-			System.out.print(e.getType()+",");
-			for(Value v: e.getValues()) {
-				if (v instanceof Pointer) {
+		System.out.println("Took " + ((System.currentTimeMillis()-time)/1000.0) + "seconds to load file.");
+		if (printout) {
+			System.out.println(data.getStart());
+			
+			List<Value> values = data.getGlobal().getValues();
+			
+			for(Value v: values) {
+				if (v instanceof HString) {
+					System.out.print(((HString)v).getVal()+",");
+				}else if (v instanceof Pointer) {
 					System.out.print(((Pointer)v).getVal()+",");
 				} else {
 					System.out.print(((Param)v).getVal()+",");
 				}
 			}
-			System.out.println("    P "+e.getIndicies().get(0));
+			System.out.println();
+			
+			List<Entry> entries = data.getData().getEntries();
+			for(Entry e: entries) {
+				System.out.println(e.getType()+" "+e.getParamData()+" "+e.getStructure()+" "+e.getLineFont()+" "+e.getLevel()+" "+e.getView()+" "+e.getTransformMatrix()+" 0 "+e.getStatus()+" "+e.getIndex()+"\n"
+							+e.getType()+" "+e.getLineWeight()+" "+e.getColor()+" "+e.getParamLines()+" "+e.getForm()+" "+e.getSubNum()+" ");
+			}
+			
+			List<PEntry> parameters = data.getParameters().getEntries();
+			for(PEntry e: parameters) {
+				System.out.print(e.getType()+",");
+				for(Value v: e.getValues()) {
+					if (v instanceof Pointer) {
+						System.out.print(((Pointer)v).getVal()+",");
+					} else {
+						System.out.print(((Param)v).getVal()+",");
+					}
+				}
+				System.out.println("    P "+e.getIndicies().get(0));
+			}
+			System.out.println(data.getEnd());
 		}
-		System.out.println(data.getEnd());
-
+		
 		if (testWikiIGES) {
 			testIGES(data);
 		}
